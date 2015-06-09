@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187366F11B27379E006B539B /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187366EE1B27379E006B539B /* Monster.swift */; };
+		187366F21B27379E006B539B /* MonsterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187366EF1B27379E006B539B /* MonsterFactory.swift */; };
+		187366F31B27379E006B539B /* TimePeriodsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187366F01B27379E006B539B /* TimePeriodsEnum.swift */; };
 		4F2C19951B272FBC00F95BB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C19941B272FBC00F95BB7 /* main.m */; };
 		4F2C19981B272FBC00F95BB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C19971B272FBC00F95BB7 /* AppDelegate.m */; };
 		4F2C199B1B272FBC00F95BB7 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C199A1B272FBC00F95BB7 /* GameScene.m */; };
@@ -29,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		187366EE1B27379E006B539B /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		187366EF1B27379E006B539B /* MonsterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterFactory.swift; sourceTree = "<group>"; };
+		187366F01B27379E006B539B /* TimePeriodsEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriodsEnum.swift; sourceTree = "<group>"; };
 		4F2C198F1B272FBC00F95BB7 /* AsAventurasDeMMM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsAventurasDeMMM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2C19931B272FBC00F95BB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F2C19941B272FBC00F95BB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -65,6 +71,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		187366ED1B27372D006B539B /* Amitay_Classes */ = {
+			isa = PBXGroup;
+			children = (
+				187366EE1B27379E006B539B /* Monster.swift */,
+				187366EF1B27379E006B539B /* MonsterFactory.swift */,
+				187366F01B27379E006B539B /* TimePeriodsEnum.swift */,
+			);
+			name = Amitay_Classes;
+			sourceTree = "<group>";
+		};
 		4F2C19861B272FBC00F95BB7 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +102,7 @@
 		4F2C19911B272FBC00F95BB7 /* AsAventurasDeMMM */ = {
 			isa = PBXGroup;
 			children = (
+				187366ED1B27372D006B539B /* Amitay_Classes */,
 				4F2C19961B272FBC00F95BB7 /* AppDelegate.h */,
 				4F2C19971B272FBC00F95BB7 /* AppDelegate.m */,
 				4F2C19991B272FBC00F95BB7 /* GameScene.h */,
@@ -228,8 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187366F11B27379E006B539B /* Monster.swift in Sources */,
+				187366F21B27379E006B539B /* MonsterFactory.swift in Sources */,
 				4F2C19A01B272FBC00F95BB7 /* GameViewController.m in Sources */,
 				4F2C19981B272FBC00F95BB7 /* AppDelegate.m in Sources */,
+				187366F31B27379E006B539B /* TimePeriodsEnum.swift in Sources */,
 				4F2C199B1B272FBC00F95BB7 /* GameScene.m in Sources */,
 				4F2C19951B272FBC00F95BB7 /* main.m in Sources */,
 			);
@@ -428,6 +448,7 @@
 				4F2C19B91B272FBC00F95BB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F2C19BA1B272FBC00F95BB7 /* Build configuration list for PBXNativeTarget "AsAventurasDeMMMTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +457,7 @@
 				4F2C19BC1B272FBC00F95BB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

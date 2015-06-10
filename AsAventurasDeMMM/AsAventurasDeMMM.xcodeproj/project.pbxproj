@@ -131,7 +131,8 @@
 		4F2C19911B272FBC00F95BB7 /* AsAventurasDeMMM */ = {
 			isa = PBXGroup;
 			children = (
-				4F2C19BD1B28A28F00F95BB7 /* MapNode.swift */,
+				4F2C19BF1B28ACC600F95BB7 /* JEF_Classes */,
+				07C6B87D1B28A5AB00156D74 /* Cadu_Classes */,
 				187366ED1B27372D006B539B /* Amitay_Classes */,
 				4F2C19961B272FBC00F95BB7 /* AppDelegate.h */,
 				4F2C19971B272FBC00F95BB7 /* AppDelegate.m */,
@@ -172,6 +173,14 @@
 				4F2C19B21B272FBC00F95BB7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F2C19BF1B28ACC600F95BB7 /* JEF_Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4F2C19BD1B28A28F00F95BB7 /* MapNode.swift */,
+			);
+			name = JEF_Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +425,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = AsAventurasDeMMM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -426,6 +437,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = AsAventurasDeMMM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -9,5 +9,26 @@
 import SpriteKit
 
 class MapNode: SKSpriteNode {
-   
+    var camera: SKShapeNode!
+    
+    internal init(map:[[String]], backgroundTexture: SKTexture!){
+        
+        super.init(texture: backgroundTexture, color: UIColor.clearColor(), size: backgroundTexture.size())
+        
+        self.texture = backgroundTexture
+        self.camera = SKShapeNode(rect: CGRect(x: 0, y: 0, width: 640, height: 640))
+        self.addChild(camera)
+        self.size = self.camera.frame.size
+        centerOnNode(self.camera)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func centerOnNode(node:SKNode){
+        let cameraPositionInScene = node.scene!.convertPoint(node.position, fromNode: node.parent!)
+        
+        node.parent!.position = CGPointMake(node.parent!.position.x - cameraPositionInScene.x,                                       node.parent!.position.y - cameraPositionInScene.y);
+    }
 }

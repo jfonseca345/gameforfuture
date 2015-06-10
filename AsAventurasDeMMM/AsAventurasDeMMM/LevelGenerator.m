@@ -138,6 +138,6 @@
         }
     }
     
-    return nil;
+    return randomizedMap;
 }
 @end

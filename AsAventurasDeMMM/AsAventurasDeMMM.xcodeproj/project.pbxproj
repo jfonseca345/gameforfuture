@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1853A63E1B2870120040C305 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853A63D1B2870120040C305 /* Weapon.swift */; };
+		1853A6401B2870E50040C305 /* WeaponFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853A63F1B2870E50040C305 /* WeaponFactory.swift */; };
 		187366F11B27379E006B539B /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187366EE1B27379E006B539B /* Monster.swift */; };
 		187366F21B27379E006B539B /* MonsterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187366EF1B27379E006B539B /* MonsterFactory.swift */; };
 		187366F31B27379E006B539B /* TimePeriodsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187366F01B27379E006B539B /* TimePeriodsEnum.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1853A63D1B2870120040C305 /* Weapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		1853A63F1B2870E50040C305 /* WeaponFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponFactory.swift; sourceTree = "<group>"; };
 		187366EE1B27379E006B539B /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
 		187366EF1B27379E006B539B /* MonsterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterFactory.swift; sourceTree = "<group>"; };
 		187366F01B27379E006B539B /* TimePeriodsEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriodsEnum.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				187366EE1B27379E006B539B /* Monster.swift */,
+				1853A63D1B2870120040C305 /* Weapon.swift */,
+				1853A63F1B2870E50040C305 /* WeaponFactory.swift */,
 				187366EF1B27379E006B539B /* MonsterFactory.swift */,
 				187366F01B27379E006B539B /* TimePeriodsEnum.swift */,
 			);
@@ -245,7 +251,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1853A6401B2870E50040C305 /* WeaponFactory.swift in Sources */,
 				187366F11B27379E006B539B /* Monster.swift in Sources */,
+				1853A63E1B2870120040C305 /* Weapon.swift in Sources */,
 				187366F21B27379E006B539B /* MonsterFactory.swift in Sources */,
 				4F2C19A01B272FBC00F95BB7 /* GameViewController.m in Sources */,
 				4F2C19981B272FBC00F95BB7 /* AppDelegate.m in Sources */,

@@ -22,6 +22,7 @@
 		4F2C19A51B272FBC00F95BB7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F2C19A41B272FBC00F95BB7 /* Images.xcassets */; };
 		4F2C19A81B272FBC00F95BB7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2C19A61B272FBC00F95BB7 /* LaunchScreen.xib */; };
 		4F2C19B41B272FBC00F95BB7 /* AsAventurasDeMMMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C19B31B272FBC00F95BB7 /* AsAventurasDeMMMTests.m */; };
+		4F2C19BE1B28A28F00F95BB7 /* MapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C19BD1B28A28F00F95BB7 /* MapNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		4F2C19AD1B272FBC00F95BB7 /* AsAventurasDeMMMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsAventurasDeMMMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2C19B21B272FBC00F95BB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F2C19B31B272FBC00F95BB7 /* AsAventurasDeMMMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsAventurasDeMMMTests.m; sourceTree = "<group>"; };
+		4F2C19BD1B28A28F00F95BB7 /* MapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapNode.swift; path = ../MapNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		4F2C19911B272FBC00F95BB7 /* AsAventurasDeMMM */ = {
 			isa = PBXGroup;
 			children = (
+				4F2C19BD1B28A28F00F95BB7 /* MapNode.swift */,
 				187366ED1B27372D006B539B /* Amitay_Classes */,
 				4F2C19961B272FBC00F95BB7 /* AppDelegate.h */,
 				4F2C19971B272FBC00F95BB7 /* AppDelegate.m */,
@@ -258,6 +261,7 @@
 				187366F11B27379E006B539B /* Monster.swift in Sources */,
 				1853A6421B287F4B0040C305 /* StatsEffects.swift in Sources */,
 				1853A63E1B2870120040C305 /* Weapon.swift in Sources */,
+				4F2C19BE1B28A28F00F95BB7 /* MapNode.swift in Sources */,
 				187366F21B27379E006B539B /* MonsterFactory.swift in Sources */,
 				4F2C19A01B272FBC00F95BB7 /* GameViewController.m in Sources */,
 				4F2C19981B272FBC00F95BB7 /* AppDelegate.m in Sources */,

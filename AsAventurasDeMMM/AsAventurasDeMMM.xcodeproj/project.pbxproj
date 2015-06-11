@@ -66,6 +66,7 @@
 		4F2C19B21B272FBC00F95BB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F2C19B31B272FBC00F95BB7 /* AsAventurasDeMMMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsAventurasDeMMMTests.m; sourceTree = "<group>"; };
 		4F2C19BD1B28A28F00F95BB7 /* MapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapNode.swift; path = ../MapNode.swift; sourceTree = "<group>"; };
+		4F2C19C01B29B1BC00F95BB7 /* AsAventurasDeMMM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsAventurasDeMMM-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +153,7 @@
 		4F2C19921B272FBC00F95BB7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4F2C19C01B29B1BC00F95BB7 /* AsAventurasDeMMM-Bridging-Header.h */,
 				4F2C19931B272FBC00F95BB7 /* Info.plist */,
 				4F2C19941B272FBC00F95BB7 /* main.m */,
 			);
@@ -430,6 +432,7 @@
 				INFOPLIST_FILE = AsAventurasDeMMM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AsAventurasDeMMM-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -442,6 +445,7 @@
 				INFOPLIST_FILE = AsAventurasDeMMM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AsAventurasDeMMM-Bridging-Header.h";
 			};
 			name = Release;
 		};

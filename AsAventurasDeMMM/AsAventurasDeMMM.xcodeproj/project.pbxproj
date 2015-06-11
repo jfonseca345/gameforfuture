@@ -16,6 +16,8 @@
 		187366F11B27379E006B539B /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187366EE1B27379E006B539B /* Monster.swift */; };
 		187366F21B27379E006B539B /* MonsterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187366EF1B27379E006B539B /* MonsterFactory.swift */; };
 		187366F31B27379E006B539B /* TimePeriodsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187366F01B27379E006B539B /* TimePeriodsEnum.swift */; };
+		18DDEA561B29C47300255FD9 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DDEA551B29C47300255FD9 /* Tile.swift */; };
+		18DDEA5A1B29C5BE00255FD9 /* DoorTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DDEA591B29C5BE00255FD9 /* DoorTile.swift */; };
 		4F2C19951B272FBC00F95BB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C19941B272FBC00F95BB7 /* main.m */; };
 		4F2C19981B272FBC00F95BB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C19971B272FBC00F95BB7 /* AppDelegate.m */; };
 		4F2C199B1B272FBC00F95BB7 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C199A1B272FBC00F95BB7 /* GameScene.m */; };
@@ -49,6 +51,8 @@
 		187366EE1B27379E006B539B /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
 		187366EF1B27379E006B539B /* MonsterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterFactory.swift; sourceTree = "<group>"; };
 		187366F01B27379E006B539B /* TimePeriodsEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriodsEnum.swift; sourceTree = "<group>"; };
+		18DDEA551B29C47300255FD9 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		18DDEA591B29C5BE00255FD9 /* DoorTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoorTile.swift; path = ../DoorTile.swift; sourceTree = "<group>"; };
 		4F2C198F1B272FBC00F95BB7 /* AsAventurasDeMMM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsAventurasDeMMM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2C19931B272FBC00F95BB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F2C19941B272FBC00F95BB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				187366EE1B27379E006B539B /* Monster.swift */,
+				18DDEA551B29C47300255FD9 /* Tile.swift */,
+				18DDEA591B29C5BE00255FD9 /* DoorTile.swift */,
 				1853A6411B287F4B0040C305 /* StatsEffects.swift */,
 				1853A63D1B2870120040C305 /* Weapon.swift */,
 				1853A63F1B2870E50040C305 /* WeaponFactory.swift */,
@@ -293,11 +299,13 @@
 				07C6B87A1B28A5A200156D74 /* LevelGenerator.m in Sources */,
 				1853A6421B287F4B0040C305 /* StatsEffects.swift in Sources */,
 				1853A63E1B2870120040C305 /* Weapon.swift in Sources */,
+				18DDEA561B29C47300255FD9 /* Tile.swift in Sources */,
 				4F2C19BE1B28A28F00F95BB7 /* MapNode.swift in Sources */,
 				187366F21B27379E006B539B /* MonsterFactory.swift in Sources */,
 				4F2C19A01B272FBC00F95BB7 /* GameViewController.m in Sources */,
 				4F2C19981B272FBC00F95BB7 /* AppDelegate.m in Sources */,
 				187366F31B27379E006B539B /* TimePeriodsEnum.swift in Sources */,
+				18DDEA5A1B29C5BE00255FD9 /* DoorTile.swift in Sources */,
 				4F2C199B1B272FBC00F95BB7 /* GameScene.m in Sources */,
 				4F2C19951B272FBC00F95BB7 /* main.m in Sources */,
 			);

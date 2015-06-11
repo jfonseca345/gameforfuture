@@ -73,15 +73,14 @@ class WeaponFactory{
     func rollQuality()->Int
     {
         /*Rolls the quality of the weapon, with the following chances
-            Great (4) -> 10%    Check if number is divisible by 6
-            Well Done (3) -> 15%    Check if number is divisible by 3
-            Average (2) -> 20%  Check if number is divisible by 5
-            Poor (1) -> 35%     Check if number is even
-            Broken(0) -> 30%    Check if number is odd
-        
+            Great (4) -> 15%        Check if number is divisible by 6 -> (6,12,18)
+            Well Done (3) -> 15%    Check if number is divisible by 3 -> (3,9,15)
+            Average (2) -> 10%      Check if number is divisible by 5 -> (5,10)
+            Poor (1) -> 30%         Check if number is even -> (0,2,4,8,14,16)
+            Broken(0) -> 30%        Check if number is odd -> (1,7,11,13,17,19)
         */
         
-        let diceRoll: Int = Int(arc4random_uniform(21)) //Rolls a number from 0 to 20
+        let diceRoll: Int = Int(arc4random_uniform(20)) //Rolls a number from 0 to 19
         
         //We pass the number through filters
         

@@ -21,30 +21,22 @@
                                    CGRectGetMidY(self.frame));
     
     [self addChild:myLabel];*/
+    
+    MapNode* map = [[MapNode alloc] initWithBackgroundTexture:[SKTexture textureWithImageNamed:@"dungeon1"]];
+    [self addChild:map];
+    [map centerOnNode];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
-    
-    for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.xScale = 0.5;
-        sprite.yScale = 0.5;
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
-    }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+    MapNode* map = (MapNode*)[self childNodeWithName:@"world"];
+    SKNode* camera = [self childNodeWithName:@"//camera"];
+    camera.position=CGPointApplyAffineTransform(camera.position, CGAffineTransformMakeTranslation(-1, -1));
+    [map centerOnNode];
 }
 
 @end

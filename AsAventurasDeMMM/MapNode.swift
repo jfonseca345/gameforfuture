@@ -8,21 +8,25 @@
 
 import SpriteKit
 
+@objc
 class MapNode: SKSpriteNode {
-    var camera: SKShapeNode!
+
     
     @objc(initWithBackgroundTexture:)
     init(backgroundTexture:SKTexture){
         
         super.init(texture: backgroundTexture, color: UIColor.clearColor(), size: backgroundTexture.size())
-        self.camera = SKShapeNode(rect: CGRect(x: 0, y: 0, width: 640, height: 640))
+        let camera = SKSpriteNode()
+        camera.position = CGPoint(x: 320, y: 320)
+        camera.name = "camera"
         self.addChild(camera)
-        self.size = self.camera.frame.size
-        centerOnNode(self.camera)
+        //self.size = CGSize(width: 640, height: 640)
+        //centerOnNode()
+        self.name = "world"
     }
 
     
-    
+    @objc
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -31,9 +35,17 @@ class MapNode: SKSpriteNode {
         self.texture = backgroundTexture        
     }
     
-    func centerOnNode(node:SKNode){
-        let cameraPositionInScene = node.scene!.convertPoint(node.position, fromNode: node.parent!)
+    func addFromMap(charMap: [[String]]{
+    }
+    
+    func
+    
+    @objc
+    func centerOnNode(){
+        let cameraNode = self.childNodeWithName("camera")
+        let node = cameraNode!
+        let cameraPositionInScene = node.scene!.convertPoint(node.position, fromNode: self)
         
-        node.parent!.position = CGPointMake(node.parent!.position.x - cameraPositionInScene.x,                                       node.parent!.position.y - cameraPositionInScene.y);
+        self.position = CGPoint(x: self.position.x - cameraPositionInScene.x, y: self.position.y - cameraPositionInScene.y)
     }
 }

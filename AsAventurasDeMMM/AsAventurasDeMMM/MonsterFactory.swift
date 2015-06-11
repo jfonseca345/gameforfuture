@@ -29,13 +29,13 @@ class MonsterFactory{
         case .Past:
             if(monsterVersion == 0)
             {
-               monsterName = "EASY_PASTMONSTER1"
+               monsterName = "Giant Dragonfly"
                monsterMapImage = UIImage(named: "past_easy1")!
                monsterBattleImage = UIImage(named: "past_easy1")!
             }
             else
             {
-                monsterName = "EASY_PASTMONSTER2"
+                monsterName = "Carnivorous Plant"
                 monsterMapImage = UIImage(named: "past_easy2")!
                 monsterBattleImage = UIImage(named: "past_easy2")!
             }
@@ -43,7 +43,7 @@ class MonsterFactory{
         case .Present:
             if(monsterVersion == 0)
             {
-                monsterName = "EASY_PRESENTMONSTER1"
+                monsterName = "Stray Dog"
                 monsterMapImage = UIImage(named: "prest_easy1")!
                 monsterBattleImage = UIImage(named: "prest_easy1")!
             }
@@ -100,13 +100,13 @@ class MonsterFactory{
         case .Past:
             if(monsterVersion == 0)
             {
-                monsterName = "MEDIUM_PASTMONSTER1"
+                monsterName = "Sabertooth"
                 monsterMapImage = UIImage(named: "past_med1")!
                 monsterBattleImage = UIImage(named: "past_med1")!
             }
             else
             {
-                monsterName = "MEDIUM_PASTMONSTER2"
+                monsterName = "Mammoth"
                 monsterMapImage = UIImage(named: "past_med2")!
                 monsterBattleImage = UIImage(named: "past_med2")!
             }
@@ -114,13 +114,13 @@ class MonsterFactory{
         case .Present:
             if(monsterVersion == 0)
             {
-                monsterName = "MEDIUM_PRESENTMONSTER1"
+                monsterName = "Cultist"
                 monsterMapImage = UIImage(named: "prest_med1")!
                 monsterBattleImage = UIImage(named: "prest_med1")!
             }
             else
             {
-                monsterName = "MEDIUM_PRESENTMONSTER2"
+                monsterName = "Zombie"
                 monsterMapImage = UIImage(named: "prest_med2")!
                 monsterBattleImage = UIImage(named: "prest_med2")!
             }
@@ -129,7 +129,7 @@ class MonsterFactory{
         case .Future:
             if(monsterVersion == 0)
             {
-                monsterName = "MEDIUM_FUTUREMONSTER1"
+                monsterName = "Alien"
                 monsterMapImage = UIImage(named: "future_med1")!
                 monsterBattleImage = UIImage(named: "future_med1")!
             }
@@ -169,19 +169,19 @@ class MonsterFactory{
         switch onPeriod{
         case .Past:
             
-            monsterName = "BOSS_PASTMONSTER"
+            monsterName = "T-Rex"
             monsterMapImage = UIImage(named: "past_boss")!
             monsterBattleImage = UIImage(named: "past_boss")!
             
         case .Present:
             
-            monsterName = "BOSS_PRESENTMONSTER"
+            monsterName = "Lovecraftian Horror"
             monsterMapImage = UIImage(named: "prest_boss")!
             monsterBattleImage = UIImage(named: "prest_boss")!
             
         case .Future:
             
-            monsterName = "BOSS_FUTUREMONSTER"
+            monsterName = "Cybernetic Death Kitty"
             monsterMapImage = UIImage(named: "future_boss")!
             monsterBattleImage = UIImage(named: "future_boss")!
             

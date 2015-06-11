@@ -9,7 +9,11 @@
 import UIKit
 class DoorTile{
     
-    let openDoorTexture: UIImage
-    let closedDoorTexture: UIImage
+    var openDoorTexture: UIImage!
+    var closedDoorTexture: UIImage!
+    
+    init(){
+    }
+    
     
 }

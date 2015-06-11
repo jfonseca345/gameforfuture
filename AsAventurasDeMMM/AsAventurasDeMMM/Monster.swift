@@ -24,6 +24,8 @@ class Monster{
     var XP: Int
     var Gold: Int
     
+    
+    
     //Initiation Method
     init(monsterWithName: String, MapImage: UIImage, BattleImage: UIImage, hp: Int, atk: Int, def: Int, xp: Int, gold: Int)
     {

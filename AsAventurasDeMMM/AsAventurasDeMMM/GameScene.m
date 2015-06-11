@@ -7,6 +7,7 @@
 //
 
 #import "GameScene.h"
+#import "AsAventurasDeMMM-Swift.h"
 
 @implementation GameScene
 
@@ -19,7 +20,9 @@
     myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                    CGRectGetMidY(self.frame));
     
-    [self addChild:myLabel];*/
+    [self addChild:myLabel];*/   
+    
+
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

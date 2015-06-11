@@ -35,10 +35,8 @@ class MapNode: SKSpriteNode {
         self.texture = backgroundTexture        
     }
     
-    func addFromMap(charMap: [[String]]{
+    func addFromMap(charMap: [[String]]){
     }
-    
-    func
     
     @objc
     func centerOnNode(){

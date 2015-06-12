@@ -12,16 +12,16 @@
 
 @interface AnalogGesture : UIGestureRecognizer
 
-typedef enum analogDirectionTypes
+typedef NS_ENUM(NSInteger, analogDirectionTypes)
 {
     ANALOG_UP,
     ANALOG_DOWN,
     ANALOG_LEFT,
     ANALOG_RIGHT,
     ANALOG_ZERO,
-} AnalogDirection_t;
+};
 
-@property AnalogDirection_t analogDirection;
+@property analogDirectionTypes analogDirection;
 
 - (instancetype)initWithTarget:(id)target action:(SEL)action scene: (SKScene *)scene;
 - (void)reset;

@@ -26,6 +26,9 @@
     MapNode* map = [[MapNode alloc] initWithBackgroundTexture:[SKTexture textureWithImageNamed:@"dungeon1"]];
     [self addChild:map];
     [map centerOnNode];
+    AnalogGesture * gameAnalogic;
+    gameAnalogic = [[AnalogGesture alloc] initWithTarget:self action:@selector(directionChanged:) scene:self];
+    [self.view addGestureRecognizer:gameAnalogic];
     self.heroPosition = CGPointZero;
     
 }

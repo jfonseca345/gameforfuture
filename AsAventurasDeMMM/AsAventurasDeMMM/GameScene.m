@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 #import "AsAventurasDeMMM-Swift.h"
+#import "AnalogGesture.h"
 
 @implementation GameScene
 
@@ -21,30 +22,52 @@
                                    CGRectGetMidY(self.frame));
     
     [self addChild:myLabel];*/
+    
+    MapNode* map = [[MapNode alloc] initWithBackgroundTexture:[SKTexture textureWithImageNamed:@"dungeon1"]];
+    [self addChild:map];
+    [map centerOnNode];
+    AnalogGesture * gameAnalogic;
+    gameAnalogic = [[AnalogGesture alloc] initWithTarget:self action:@selector(directionChanged:) scene:self];
+    [self.view addGestureRecognizer:gameAnalogic];
+    self.heroPosition = CGPointZero;
+    
 }
+
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
-    
-    for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.xScale = 0.5;
-        sprite.yScale = 0.5;
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
-    }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+    MapNode* map = (MapNode*)[self childNodeWithName:@"world"];
+    SKNode* camera = [self childNodeWithName:@"//camera"];
+    
+    /*if (self.walking == 0 ){
+        if (camera.position.x< (map.size.width-320)){
+            camera.position = CGPointApplyAffineTransform(camera.position, CGAffineTransformMakeTranslation(256, 0));
+        }
+        else{
+            camera.position = CGPointMake(camera.position.x, camera.position.y+256);
+            self.walking = 1;
+        }
+    }
+    else{
+        if (camera.position.x >= -320){
+            camera.position = CGPointApplyAffineTransform(camera.position, CGAffineTransformMakeTranslation(-256, 0));
+        }
+        else{
+            camera.position = CGPointMake(camera.position.x, camera.position.y+256);
+            self.walking = 0;
+        }
+    }*/
+    camera.position = [map convertFromTileToMap:heroPosition];
+    [map centerOnNode];
+}
+- (void)directionChanged:(AnalogGesture * )sender
+{
+    NSLog(@"%ld",(long)sender.analogDirection);
 }
 
 @end

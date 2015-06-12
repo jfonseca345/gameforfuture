@@ -9,5 +9,5 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface LevelGenerator : SKShapeNode
-+ (char**) randomizeLevel:(int)levelNumber withWeak:(int)weakCount medium:(int)mediumCount strong:(int)strongCount;
++ (NSArray *) randomizeLevel:(int)levelNumber withWeak:(int)weakCount medium:(int)mediumCount strong:(int)strongCount;
 @end

@@ -9,5 +9,7 @@
 #ifndef AsAventurasDeMMM_AsAventurasDeMMM_Bridging_Header_h
 #define AsAventurasDeMMM_AsAventurasDeMMM_Bridging_Header_h
 
+#import "LevelGenerator.h"
+#import "AnalogGesture.h"
 
 #endif

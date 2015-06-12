@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		078AC4561B2B110B00914F33 /* AnalogGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AC4551B2B110B00914F33 /* AnalogGesture.m */; };
 		07C6B87A1B28A5A200156D74 /* LevelGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C6B8771B28A5A200156D74 /* LevelGenerator.m */; };
 		07C6B87B1B28A5A200156D74 /* model1.level in Resources */ = {isa = PBXBuildFile; fileRef = 07C6B8781B28A5A200156D74 /* model1.level */; };
 		07C6B87C1B28A5A200156D74 /* pattern.level in Resources */ = {isa = PBXBuildFile; fileRef = 07C6B8791B28A5A200156D74 /* pattern.level */; };
@@ -28,6 +29,7 @@
 		4F2C19A81B272FBC00F95BB7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2C19A61B272FBC00F95BB7 /* LaunchScreen.xib */; };
 		4F2C19B41B272FBC00F95BB7 /* AsAventurasDeMMMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C19B31B272FBC00F95BB7 /* AsAventurasDeMMMTests.m */; };
 		4F2C19BE1B28A28F00F95BB7 /* MapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C19BD1B28A28F00F95BB7 /* MapNode.swift */; };
+		4F2C19C21B2B1B3500F95BB7 /* WallTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C19C11B2B1B3500F95BB7 /* WallTile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		078AC4541B2B110B00914F33 /* AnalogGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalogGesture.h; sourceTree = "<group>"; };
+		078AC4551B2B110B00914F33 /* AnalogGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalogGesture.m; sourceTree = "<group>"; };
 		07C6B8761B28A5A200156D74 /* LevelGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelGenerator.h; sourceTree = "<group>"; };
 		07C6B8771B28A5A200156D74 /* LevelGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelGenerator.m; sourceTree = "<group>"; };
 		07C6B8781B28A5A200156D74 /* model1.level */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = model1.level; sourceTree = "<group>"; };
@@ -71,6 +75,7 @@
 		4F2C19B31B272FBC00F95BB7 /* AsAventurasDeMMMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsAventurasDeMMMTests.m; sourceTree = "<group>"; };
 		4F2C19BD1B28A28F00F95BB7 /* MapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapNode.swift; path = ../MapNode.swift; sourceTree = "<group>"; };
 		4F2C19C01B29B1BC00F95BB7 /* AsAventurasDeMMM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsAventurasDeMMM-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		4F2C19C11B2B1B3500F95BB7 /* WallTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WallTile.swift; path = ../WallTile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +103,8 @@
 				07C6B8771B28A5A200156D74 /* LevelGenerator.m */,
 				07C6B8781B28A5A200156D74 /* model1.level */,
 				07C6B8791B28A5A200156D74 /* pattern.level */,
+				078AC4541B2B110B00914F33 /* AnalogGesture.h */,
+				078AC4551B2B110B00914F33 /* AnalogGesture.m */,
 			);
 			name = Cadu_Classes;
 			sourceTree = "<group>";
@@ -105,6 +112,7 @@
 		187366ED1B27372D006B539B /* Amitay_Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4F2C19C11B2B1B3500F95BB7 /* WallTile.swift */,
 				187366EE1B27379E006B539B /* Monster.swift */,
 				18DDEA551B29C47300255FD9 /* Tile.swift */,
 				18DDEA591B29C5BE00255FD9 /* DoorTile.swift */,
@@ -299,6 +307,7 @@
 				07C6B87A1B28A5A200156D74 /* LevelGenerator.m in Sources */,
 				1853A6421B287F4B0040C305 /* StatsEffects.swift in Sources */,
 				1853A63E1B2870120040C305 /* Weapon.swift in Sources */,
+				4F2C19C21B2B1B3500F95BB7 /* WallTile.swift in Sources */,
 				18DDEA561B29C47300255FD9 /* Tile.swift in Sources */,
 				4F2C19BE1B28A28F00F95BB7 /* MapNode.swift in Sources */,
 				187366F21B27379E006B539B /* MonsterFactory.swift in Sources */,
@@ -308,6 +317,7 @@
 				18DDEA5A1B29C5BE00255FD9 /* DoorTile.swift in Sources */,
 				4F2C199B1B272FBC00F95BB7 /* GameScene.m in Sources */,
 				4F2C19951B272FBC00F95BB7 /* main.m in Sources */,
+				078AC4561B2B110B00914F33 /* AnalogGesture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

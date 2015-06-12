@@ -66,7 +66,7 @@
 }
 - (void)directionChanged:(AnalogGesture * )sender
 {
-    NSLog(@"%u",sender.analogDirection);
+    NSLog(@"%ld",(long)sender.analogDirection);
 }
 
 @end

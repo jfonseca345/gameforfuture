@@ -112,7 +112,7 @@ class MapNode: SKSpriteNode {
         
         let heroTile = SKSpriteNode(texture: SKTexture(imageNamed: "Hero"), size: CGSize(width: 64, height: 64))
         heroTile.anchorPoint = CGPointZero
-        heroTile.position = CGPointZero
+        heroTile.position = convertFromTileToMap(CGPointZero)
         heroTile.zPosition = 1
         addChild(heroTile)
         
@@ -130,24 +130,24 @@ class MapNode: SKSpriteNode {
     }
     
     @objc
-    func verifyPosition(actualPosition:CGPoint, direction: Int)->Bool{
+    func verifyPosition(actualPosition:CGPoint, direction: analogDirectionTypes)->Bool{
         switch(direction){
-            case 0:
+            case ANALOG_RIGHT:
                 if ((Int(actualPosition.x) + 1 < self.mapContent[Int(actualPosition.y)].count) &&  (self.mapContent[Int(actualPosition.y)][Int(actualPosition.x) + 1] == "0")) {
                     return true
                 }
             
-            case 90:
+            case .ANALOG_UP:
                 if ((Int(actualPosition.y) - 1 >= 0) &&  (self.mapContent[Int(actualPosition.y) - 1][Int(actualPosition.x)] == "0")){
                     return true
                 }
             
-            case 180:
+            case .ANALOG_LEFT:
                 if ((Int(actualPosition.x) - 1 >= 0) &&  (self.mapContent[Int(actualPosition.y)][Int(actualPosition.x) - 1] == "0")){
                     return true
                 }
             
-            case 270:
+            case .ANALOG_DOWN:
                 if ((Int(actualPosition.y) + 1 < self.mapContent.count) &&  (self.mapContent[Int(actualPosition.y) + 1][Int(actualPosition.x)] == "0")){
                     return true
                 }
@@ -158,5 +158,10 @@ class MapNode: SKSpriteNode {
         }
         
         return false
+    }
+    
+    @objc
+    func convertFromTileToMap(point: CGPoint)->CGPoint{
+        return CGPoint(x: (mapContent[Int(point.y)].count - 1 - Int(point.x)) * 64, y: (mapContent.count - 1 - Int(point.y)) * 64)
     }
 }

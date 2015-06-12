@@ -44,7 +44,7 @@
     MapNode* map = (MapNode*)[self childNodeWithName:@"world"];
     SKNode* camera = [self childNodeWithName:@"//camera"];
     
-    if (self.walking == 0 ){
+    /*if (self.walking == 0 ){
         if (camera.position.x< (map.size.width-320)){
             camera.position = CGPointApplyAffineTransform(camera.position, CGAffineTransformMakeTranslation(256, 0));
         }
@@ -61,7 +61,8 @@
             camera.position = CGPointMake(camera.position.x, camera.position.y+256);
             self.walking = 0;
         }
-    }
+    }*/
+    camera.position = [map convertFromTileToMap:heroPosition];
     [map centerOnNode];
 }
 - (void)directionChanged:(AnalogGesture * )sender

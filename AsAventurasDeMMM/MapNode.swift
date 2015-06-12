@@ -110,6 +110,13 @@ class MapNode: SKSpriteNode {
             }
         }
         
+        let heroTile = SKSpriteNode(texture: SKTexture(imageNamed: "Hero"), size: CGSize(width: 64, height: 64))
+        heroTile.anchorPoint = CGPointZero
+        heroTile.position = CGPointZero
+        heroTile.zPosition = 1
+        addChild(heroTile)
+        
+        
         mapContent = charMap
     }
     

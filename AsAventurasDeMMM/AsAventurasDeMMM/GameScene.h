@@ -12,4 +12,5 @@
 @interface GameScene : SKScene
 
 @property (nonatomic) int walking;
+@property (nonatomic) CGPoint heroPosition;
 @end

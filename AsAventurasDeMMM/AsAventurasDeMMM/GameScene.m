@@ -25,6 +25,8 @@
     MapNode* map = [[MapNode alloc] initWithBackgroundTexture:[SKTexture textureWithImageNamed:@"dungeon1"]];
     [self addChild:map];
     [map centerOnNode];
+    self.heroPosition = CGPointZero;
+    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

@@ -13,18 +13,18 @@ class WeaponFactory{
 //Creates randomized weapons
 
     //We list all the possible weapon names and their respectives base powers, based on the time Period
-    let pastWeaponNames: [String] = ["Club","Slingshot","Spear"] //2,3,4
+    static let pastWeaponNames: [String] = ["Club","Slingshot","Spear"] //2,3,4
     
-    let presentWeaponNames: [String] = ["Machete","Gun","Spellbook"] //4,5,6
+    static let presentWeaponNames: [String] = ["Machete","Gun","Spellbook"] //4,5,6
     
-    let futureWeaponNames: [String] = ["Laser Sword","Plasma Rifle","Alien Thrower"] //6,7,8
+    static let futureWeaponNames: [String] = ["Laser Sword","Plasma Rifle","Alien Thrower"] //6,7,8
     
     //Weapons can have adjective based on it's power
     
-    let weaponAdjectives: [String] = ["Broken", "Poor", "Average", "Well Done", "Great"] //-2,-1,0,+1,+2
+    static let weaponAdjectives: [String] = ["Broken", "Poor", "Average", "Well Done", "Great"] //-2,-1,0,+1,+2
     
     
-    func createWeaponOfPeriod(period: Period)->Weapon
+    class func createWeaponOfPeriod(period: Period)->Weapon
     {
         //First let us roll which weapon shall be generated
         let weaponIndex: Int = Int(arc4random_uniform(3))
@@ -70,7 +70,7 @@ class WeaponFactory{
     }
     
     
-    func rollQuality()->Int
+    class func rollQuality()->Int
     {
         /*Rolls the quality of the weapon, with the following chances
             Great (4) -> 15%        Check if number is divisible by 6 -> (6,12,18)

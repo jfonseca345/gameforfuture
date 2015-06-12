@@ -12,7 +12,7 @@ class MonsterFactory{
     
     //Used to create monsters
     
-    func createEasyMonster(onPeriod: Period) -> Monster
+    class func createEasyMonster(onPeriod: Period) -> Monster
     {
         var easyMonster: Monster
         
@@ -83,7 +83,7 @@ class MonsterFactory{
         return easyMonster
     }
     
-    func createMediumMonster(onPeriod: Period) -> Monster
+    class func createMediumMonster(onPeriod: Period) -> Monster
     {
         var mediumMonster: Monster
         
@@ -154,7 +154,7 @@ class MonsterFactory{
         return mediumMonster
     }
     
-    func createBoss(onPeriod: Period) ->Monster
+    class func createBoss(onPeriod: Period) ->Monster
     {
         //Ey b0ss
         

@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 #import "AsAventurasDeMMM-Swift.h"
+#import "AnalogGesture.h"
 
 @implementation GameScene
 
@@ -25,7 +26,13 @@
     MapNode* map = [[MapNode alloc] initWithBackgroundTexture:[SKTexture textureWithImageNamed:@"dungeon1"]];
     [self addChild:map];
     [map centerOnNode];
+    AnalogGesture * gameAnalogic;
+    gameAnalogic = [[AnalogGesture alloc] initWithTarget:self action:@selector(directionChanged:) scene:self];
+    [self.view addGestureRecognizer:gameAnalogic];
+    
 }
+
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
@@ -37,6 +44,10 @@
     SKNode* camera = [self childNodeWithName:@"//camera"];
     camera.position=CGPointApplyAffineTransform(camera.position, CGAffineTransformMakeTranslation(-1, -1));
     [map centerOnNode];
+}
+- (void)directionChanged:(AnalogGesture * )sender
+{
+    NSLog(@"%u",sender.analogDirection);
 }
 
 @end

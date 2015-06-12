@@ -42,7 +42,25 @@
     /* Called before each frame is rendered */
     MapNode* map = (MapNode*)[self childNodeWithName:@"world"];
     SKNode* camera = [self childNodeWithName:@"//camera"];
-    camera.position=CGPointApplyAffineTransform(camera.position, CGAffineTransformMakeTranslation(-1, -1));
+    
+    if (self.walking == 0 ){
+        if (camera.position.x< (map.size.width-320)){
+            camera.position = CGPointApplyAffineTransform(camera.position, CGAffineTransformMakeTranslation(256, 0));
+        }
+        else{
+            camera.position = CGPointMake(camera.position.x, camera.position.y+256);
+            self.walking = 1;
+        }
+    }
+    else{
+        if (camera.position.x >= -320){
+            camera.position = CGPointApplyAffineTransform(camera.position, CGAffineTransformMakeTranslation(-256, 0));
+        }
+        else{
+            camera.position = CGPointMake(camera.position.x, camera.position.y+256);
+            self.walking = 0;
+        }
+    }
     [map centerOnNode];
 }
 - (void)directionChanged:(AnalogGesture * )sender

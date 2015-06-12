@@ -42,7 +42,7 @@ class MapNode: SKSpriteNode {
         self.size = CGSize(width: charMap.count * 64, height: charMap[0].count * 64)
         for y in 0..<charMap.count{
             for x in 0..<charMap[y].count{
-                let tilePosition = CGPoint(x: (charMap[y].count - 1 - x) * 64, y: (charMap.count - 1 - y) * 64)
+                let tilePosition = CGPoint(x: x * 64, y: (charMap.count - 1 - y) * 64)
                 switch(charMap[y][x]){
                     case "1":
                         let wallTile = WallTile()
@@ -98,8 +98,20 @@ class MapNode: SKSpriteNode {
                         floorTile.position = tilePosition
                         floorTile.zPosition = 0
                         addChild(floorTile)
+                    case "b":
+                        let floorTile = Tile()
+                        floorTile.setPeriod(period)
+                        floorTile.anchorPoint = CGPointZero
+                        floorTile.position = tilePosition
+                        floorTile.zPosition = 0
+                        addChild(floorTile)
                     
                     default:
+                        let bossTile = SKSpriteNode(texture: SKTexture(imageNamed: "B0ss"), size: CGSize(width: 64, height: 64))
+                        bossTile.anchorPoint = CGPointZero
+                        bossTile.position = tilePosition
+                        bossTile.zPosition = 1
+                        addChild(bossTile)
                         let floorTile = Tile()
                         floorTile.setPeriod(period)
                         floorTile.anchorPoint = CGPointZero
@@ -112,12 +124,14 @@ class MapNode: SKSpriteNode {
         
         let heroTile = SKSpriteNode(texture: SKTexture(imageNamed: "Hero"), size: CGSize(width: 64, height: 64))
         heroTile.anchorPoint = CGPointZero
-        heroTile.position = convertFromTileToMap(CGPointZero)
-        heroTile.zPosition = 1
+        heroTile.position = convertFromTileToMap(CGPoint(x: 50, y: 50))
+        heroTile.name = "HeroTile"
+        heroTile.zPosition = 2
         addChild(heroTile)
-        
-        
         mapContent = charMap
+        
+        
+        
     }
     
     @objc
@@ -162,6 +176,8 @@ class MapNode: SKSpriteNode {
     
     @objc
     func convertFromTileToMap(point: CGPoint)->CGPoint{
-        return CGPoint(x: (mapContent[Int(point.y)].count - 1 - Int(point.x)) * 64, y: (mapContent.count - 1 - Int(point.y)) * 64)
+        let pointX = Int(point.x)
+        let pointY = (mapContent.count - 1 - Int(point.y)) * 64
+        return CGPoint(x: pointX * 64, y: pointY)
     }
 }

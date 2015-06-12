@@ -23,13 +23,14 @@
     
     [self addChild:myLabel];*/
     
+    self.anchorPoint = CGPointMake(0.5, 0.5);
     MapNode* map = [[MapNode alloc] initWithBackgroundTexture:[SKTexture textureWithImageNamed:@"dungeon1"]];
     [self addChild:map];
     [map centerOnNode];
     AnalogGesture * gameAnalogic;
     gameAnalogic = [[AnalogGesture alloc] initWithTarget:self action:@selector(directionChanged:) scene:self];
     [self.view addGestureRecognizer:gameAnalogic];
-    self.heroPosition = CGPointZero;
+    self.heroPosition = CGPointMake(50, 50);
     
 }
 
@@ -43,6 +44,7 @@
     /* Called before each frame is rendered */
     MapNode* map = (MapNode*)[self childNodeWithName:@"world"];
     SKNode* camera = [self childNodeWithName:@"//camera"];
+    SKSpriteNode* heroTile = (SKSpriteNode*)[self childNodeWithName:@"//HeroTile"];
     
     /*if (self.walking == 0 ){
         if (camera.position.x< (map.size.width-320)){
@@ -62,12 +64,37 @@
             self.walking = 0;
         }
     }*/
-    camera.position = [map convertFromTileToMap:heroPosition];
+    camera.position = [map convertFromTileToMap:self.heroPosition];
+    heroTile.position = CGPointMake(camera.position.x, camera.position.y);
     [map centerOnNode];
 }
 - (void)directionChanged:(AnalogGesture * )sender
 {
     NSLog(@"%ld",(long)sender.analogDirection);
+    MapNode* map = (MapNode*)[self childNodeWithName:@"world"];
+    BOOL canWalk = [map verifyPosition:self.heroPosition direction:sender.analogDirection];
+    if (canWalk){
+        switch (sender.analogDirection) {
+            case ANALOG_UP:
+                self.heroPosition = CGPointMake(self.heroPosition.x, self.heroPosition.y-1);
+            break;
+                
+            case ANALOG_LEFT:
+                self.heroPosition = CGPointMake(self.heroPosition.x-1, self.heroPosition.y);
+                break;
+                
+            case ANALOG_RIGHT:
+                self.heroPosition = CGPointMake(self.heroPosition.x+1, self.heroPosition.y);
+                break;
+                
+            case ANALOG_DOWN:
+                self.heroPosition = CGPointMake(self.heroPosition.x, self.heroPosition.y+1);
+                break;
+            
+            default:
+                break;
+        }
+    }
 }
 
 @end

@@ -61,6 +61,8 @@
     [super touchesMoved:touches withEvent:event];
     if (self.state == UIGestureRecognizerStatePossible)
     {
+        [self.analogCircle setZPosition:10];
+        [self.analogPos setZPosition:10];
         [self.analogCircle setPosition:self.touchPosition];
         [self.analogPos setPosition:self.touchPosition];
         [self.parentScene addChild:self.analogCircle];

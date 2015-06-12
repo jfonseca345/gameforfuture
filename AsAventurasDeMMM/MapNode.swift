@@ -132,7 +132,7 @@ class MapNode: SKSpriteNode {
     @objc
     func verifyPosition(actualPosition:CGPoint, direction: analogDirectionTypes)->Bool{
         switch(direction){
-            case ANALOG_RIGHT:
+            case .ANALOG_RIGHT:
                 if ((Int(actualPosition.x) + 1 < self.mapContent[Int(actualPosition.y)].count) &&  (self.mapContent[Int(actualPosition.y)][Int(actualPosition.x) + 1] == "0")) {
                     return true
                 }

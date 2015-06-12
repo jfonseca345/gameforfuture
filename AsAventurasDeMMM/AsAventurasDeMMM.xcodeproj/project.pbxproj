@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		078AC4561B2B110B00914F33 /* AnalogGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AC4551B2B110B00914F33 /* AnalogGesture.m */; };
 		07C6B87A1B28A5A200156D74 /* LevelGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C6B8771B28A5A200156D74 /* LevelGenerator.m */; };
 		07C6B87B1B28A5A200156D74 /* model1.level in Resources */ = {isa = PBXBuildFile; fileRef = 07C6B8781B28A5A200156D74 /* model1.level */; };
 		07C6B87C1B28A5A200156D74 /* pattern.level in Resources */ = {isa = PBXBuildFile; fileRef = 07C6B8791B28A5A200156D74 /* pattern.level */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		078AC4541B2B110B00914F33 /* AnalogGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalogGesture.h; sourceTree = "<group>"; };
+		078AC4551B2B110B00914F33 /* AnalogGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalogGesture.m; sourceTree = "<group>"; };
 		07C6B8761B28A5A200156D74 /* LevelGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelGenerator.h; sourceTree = "<group>"; };
 		07C6B8771B28A5A200156D74 /* LevelGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelGenerator.m; sourceTree = "<group>"; };
 		07C6B8781B28A5A200156D74 /* model1.level */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = model1.level; sourceTree = "<group>"; };
@@ -100,6 +103,8 @@
 				07C6B8771B28A5A200156D74 /* LevelGenerator.m */,
 				07C6B8781B28A5A200156D74 /* model1.level */,
 				07C6B8791B28A5A200156D74 /* pattern.level */,
+				078AC4541B2B110B00914F33 /* AnalogGesture.h */,
+				078AC4551B2B110B00914F33 /* AnalogGesture.m */,
 			);
 			name = Cadu_Classes;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				18DDEA5A1B29C5BE00255FD9 /* DoorTile.swift in Sources */,
 				4F2C199B1B272FBC00F95BB7 /* GameScene.m in Sources */,
 				4F2C19951B272FBC00F95BB7 /* main.m in Sources */,
+				078AC4561B2B110B00914F33 /* AnalogGesture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

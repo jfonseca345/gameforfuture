@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 #import "AsAventurasDeMMM-Swift.h"
+#import "AnalogGesture.h"
 
 @implementation GameScene
 
@@ -28,6 +29,8 @@
     self.heroPosition = CGPointZero;
     
 }
+
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
@@ -57,6 +60,10 @@
         }
     }
     [map centerOnNode];
+}
+- (void)directionChanged:(AnalogGesture * )sender
+{
+    NSLog(@"%u",sender.analogDirection);
 }
 
 @end

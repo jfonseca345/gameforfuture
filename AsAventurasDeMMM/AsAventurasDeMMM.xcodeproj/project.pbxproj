@@ -51,6 +51,7 @@
 /* Begin PBXFileReference section */
 		072268931B3059950090E354 /* buttonPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buttonPad.h; sourceTree = "<group>"; };
 		072268941B3059950090E354 /* buttonPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buttonPad.m; sourceTree = "<group>"; };
+		072268961B3069CF0090E354 /* deck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = deck.h; sourceTree = "<group>"; };
 		078AC4541B2B110B00914F33 /* AnalogGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalogGesture.h; sourceTree = "<group>"; };
 		078AC4551B2B110B00914F33 /* AnalogGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalogGesture.m; sourceTree = "<group>"; };
 		07C6B8761B28A5A200156D74 /* LevelGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelGenerator.h; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 				078AC4551B2B110B00914F33 /* AnalogGesture.m */,
 				072268931B3059950090E354 /* buttonPad.h */,
 				072268941B3059950090E354 /* buttonPad.m */,
+				072268961B3069CF0090E354 /* deck.h */,
 			);
 			name = Cadu_Classes;
 			sourceTree = "<group>";

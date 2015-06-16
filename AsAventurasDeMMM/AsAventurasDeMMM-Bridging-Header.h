@@ -11,5 +11,6 @@
 
 #import "LevelGenerator.h"
 #import "AnalogGesture.h"
+#import "deck.h"
 
 #endif

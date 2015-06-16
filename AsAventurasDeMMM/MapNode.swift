@@ -12,6 +12,7 @@ import SpriteKit
 class MapNode: SKSpriteNode {
 
     private var mapContent:[[String]]=[[""]]
+    var heroInitialPosition:CGPoint!
     
     @objc(initWithBackgroundTexture:)
     init(backgroundTexture:SKTexture){
@@ -53,10 +54,14 @@ class MapNode: SKSpriteNode {
                     addChild(floorTile)
                     
                 }
+                
+                if (charMap[y][x] == "@"){
+                    heroInitialPosition = CGPoint(x: x, y: y)
+                }
             }
         }
-
-        mapContent = charMap        
+        mapContent[0][0] = "1"
+        mapContent = charMap
     }
     
     @objc
@@ -139,8 +144,15 @@ class MapNode: SKSpriteNode {
         case "=", "9", "8":
             return true
             
+        case "2", "3", "4":
+            return true
+            
         default:
             return false
         }
+    }
+    
+    @objc func getHeroInitialPosition() -> CGPoint{
+        return heroInitialPosition!
     }
 }

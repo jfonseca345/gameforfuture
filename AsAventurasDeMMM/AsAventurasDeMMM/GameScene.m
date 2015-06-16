@@ -23,15 +23,19 @@
     
     [self addChild:myLabel];*/
     self.walking = NO;
+    self.heroDirection = ANALOG_ZERO;
     
     self.anchorPoint = CGPointMake(0.5, 0.5);
     MapNode* map = [[MapNode alloc] initWithBackgroundTexture:[SKTexture textureWithImageNamed:@"dungeon1"]];
     [self addChild:map];
     [map centerOnNode];
+    self.heroPosition = [map getHeroInitialPosition];
+    
     AnalogGesture * gameAnalogic;
     gameAnalogic = [[AnalogGesture alloc] initWithTarget:self action:@selector(directionChanged:) scene:self];
     [self.view addGestureRecognizer:gameAnalogic];
-    self.heroPosition = CGPointMake(50, 50);
+    
+    
     buttonPad * btp;
     btp = [[buttonPad alloc] init];
     [self addChild:btp];
@@ -47,7 +51,6 @@
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     [self updateHero];
-    
 }
 - (void)directionChanged:(AnalogGesture * )sender
 {
@@ -56,28 +59,11 @@
 }
 
 -(void) updateHero{
-        MapNode* map = (MapNode*)[self childNodeWithName:@"world"];
-        SKNode* camera = [self childNodeWithName:@"//camera"];
-        SKSpriteNode* heroTile = (SKSpriteNode*)[self childNodeWithName:@"//HeroTile"];
-        
-        /*if (self.walking == 0 ){
-         if (camera.position.x< (map.size.width-320)){
-         camera.position = CGPointApplyAffineTransform(camera.position, CGAffineTransformMakeTranslation(256, 0));
-         }
-         else{
-         camera.position = CGPointMake(camera.position.x, camera.position.y+256);
-         self.walking = 1;
-         }
-         }
-         else{
-         if (camera.position.x >= -320){
-         camera.position = CGPointApplyAffineTransform(camera.position, CGAffineTransformMakeTranslation(-256, 0));
-         }
-         else{
-         camera.position = CGPointMake(camera.position.x, camera.position.y+256);
-         self.walking = 0;
-         }
-         }*/
+    MapNode* map = (MapNode*)[self childNodeWithName:@"world"];
+    SKNode* camera = [self childNodeWithName:@"//camera"];
+    SKSpriteNode* heroTile = (SKSpriteNode*)[self childNodeWithName:@"//HeroTile"];
+    
+    if (!self.walking){
         BOOL canWalk = [map verifyPosition:self.heroPosition direction:self.heroDirection];
     
         if (canWalk){
@@ -103,11 +89,16 @@
             }
         }
         CGPoint cameraPosition = [map convertFromTileToMap:self.heroPosition];
-        camera.position = [map convertFromTileToMap:self.heroPosition];
-        heroTile.position = CGPointMake(camera.position.x, camera.position.y);
-        [map centerOnNode];
-        
-        
+        SKAction* walkAction = [SKAction moveTo:cameraPosition duration:0.1];
+        if (self.heroDirection != ANALOG_ZERO){
+            [heroTile runAction:walkAction completion:^{self.walking = NO;}];
+            self.walking = YES;
+        }
+    }
+    camera.position = CGPointMake(heroTile.position.x + 32, heroTile.position.y + 32);
+    
+    [map centerOnNode];
+    
     }
 
 @end

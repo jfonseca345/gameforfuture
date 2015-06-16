@@ -12,13 +12,22 @@ class TileFactory: Tile {
     class func createTile(type:String, tilePosition:CGPoint, period:Period)->Tile{
         switch(type){
             
-            case "1", "2", "3","4":
+            case "1":
                 let wallTile = WallTile()
                 wallTile.setPeriod(period)
                 wallTile.anchorPoint = CGPointZero
                 wallTile.position = tilePosition
                 wallTile.zPosition = 1
                 return wallTile
+            
+            case  "2", "3", "4":
+                let obstacleTile = Tile()
+                
+                obstacleTile.texture = SKTexture(imageNamed: "presentObstacle")
+                obstacleTile.anchorPoint = CGPointZero
+                obstacleTile.position = tilePosition
+                obstacleTile.zPosition = 1
+                return obstacleTile
             
             case "0":
                 let floorTile = Tile()
@@ -87,7 +96,7 @@ class TileFactory: Tile {
             
             case "8":
                 let chestTile = Tile()
-                chestTile.texture = SKTexture(imageNamed: "B0ss")
+                chestTile.texture = SKTexture(imageNamed: "Chest1")
                 chestTile.anchorPoint = CGPointZero
                 chestTile.position = tilePosition
                 chestTile.zPosition = 1

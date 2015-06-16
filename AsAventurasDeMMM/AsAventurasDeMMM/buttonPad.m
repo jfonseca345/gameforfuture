@@ -27,10 +27,12 @@
     {
         [self setZPosition:9];
         
-        self.background = [[SKSpriteNode alloc] initWithColor:[UIColor grayColor] size:CGSizeMake(60, 40)];
+        self.background = [[SKSpriteNode alloc] initWithColor:nil size:CGSizeMake(60, 40)];
         [self.background setAnchorPoint:CGPointMake(0.5, 0.5)];
-        self.theAButton = [[SKSpriteNode alloc] initWithColor:[UIColor yellowColor] size:CGSizeMake(20, 20)];
-        self.theBButton = [[SKSpriteNode alloc] initWithColor:[UIColor blueColor] size:CGSizeMake(20, 20)];
+        self.theAButton = [[SKSpriteNode alloc] initWithImageNamed:@"Button1"];
+        [self.theAButton setScale:0.7];
+        self.theBButton = [[SKSpriteNode alloc] initWithImageNamed:@"Button2"];
+        [self.theBButton setScale:0.7];
         [self addChild: self.background];
         
         [self.theBButton setPosition:CGPointMake(0 + self.theBButton.size.width/2 + 5, 0)];

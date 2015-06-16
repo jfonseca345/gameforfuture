@@ -7,10 +7,14 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "AnalogGesture.h"
 
 
 @interface GameScene : SKScene
 
 @property (nonatomic) int walking;
+@property (nonatomic) analogDirectionTypes heroDirection;
 @property (nonatomic) CGPoint heroPosition;
+
+-(void) updateHero;
 @end

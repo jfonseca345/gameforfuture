@@ -12,8 +12,8 @@
 
 @interface AnalogGesture()
 
-@property SKShapeNode * analogCircle;
-@property SKShapeNode * analogPos;
+@property SKSpriteNode * analogCircle;
+@property SKSpriteNode * analogPos;
 @property SKScene * parentScene;
 @property CGPoint touchPosition;
 @property CGPoint touchNow;
@@ -26,12 +26,8 @@
     self = [super initWithTarget:target action:action];
     if (self != nil)
     {
-        self.analogCircle = [SKShapeNode shapeNodeWithCircleOfRadius:48];
-        [self.analogCircle setStrokeColor:[UIColor blackColor]];
-        [self.analogCircle setFillColor:nil];
-        [self.analogCircle setLineWidth:3];
-        self.analogPos = [SKShapeNode shapeNodeWithCircleOfRadius:8];
-        [self.analogPos setFillColor:[UIColor purpleColor]];
+        self.analogCircle = [[SKSpriteNode alloc] initWithImageNamed:@"Outer_CrossHair"];
+        self.analogPos = [[SKSpriteNode alloc] initWithImageNamed:@"Inner_CrossHair"];
         self.parentScene = scene;
     }
     return self;
@@ -67,13 +63,23 @@
         [self.analogPos setPosition:self.touchPosition];
         [self.parentScene addChild:self.analogCircle];
         [self.parentScene addChild:self.analogPos];
+        [self.analogPos setScale:2];
         NSLog(@"Add all");
         self.state = UIGestureRecognizerStateBegan;
     }
     else
     {
         self.touchNow = [[[event allTouches] anyObject] locationInNode:self.parentScene];
-        [self.analogPos setPosition: self.touchNow];
+        CGPoint newPosition = self.touchNow;
+        CGPoint vector = CGPointMake(self.touchNow.x - self.touchPosition.x,self.touchNow.y - self.touchPosition.y);
+        double transform = sqrt(vector.x*vector.x + vector.y*vector.y);
+//        NSLog(@"%f<>%f<>%f<>%f",transform, vector.x, vector.y, self.analogCircle.size.height/2);
+        if (transform > self.analogCircle.size.height/2)
+        {
+            newPosition.x = self.touchPosition.x + ((vector.x/transform) * self.analogCircle.size.height/2);
+            newPosition.y = self.touchPosition.y + ((vector.y/transform) * self.analogCircle.size.height/2);
+        }
+        [self.analogPos setPosition: newPosition];
         int xDif = self.touchNow.x - self.touchPosition.x;
         int yDif = self.touchNow.y - self.touchPosition.y;
         if (abs(xDif) > abs(yDif))

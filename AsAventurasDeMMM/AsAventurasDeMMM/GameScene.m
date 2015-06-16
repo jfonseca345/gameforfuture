@@ -9,6 +9,7 @@
 #import "GameScene.h"
 #import "AsAventurasDeMMM-Swift.h"
 #import "buttonPad.h"
+#import "CardCombatController.h"
 
 @implementation GameScene
 
@@ -35,10 +36,14 @@
     gameAnalogic = [[AnalogGesture alloc] initWithTarget:self action:@selector(directionChanged:) scene:self];
     [self.view addGestureRecognizer:gameAnalogic];
     
+    CardCombatController* cardCombatController = [[CardCombatController alloc] init];
+    [cardCombatController shuffleCards];
     
     buttonPad * btp;
     btp = [[buttonPad alloc] init];
     [self addChild:btp];
+    
+    
     
 }
 

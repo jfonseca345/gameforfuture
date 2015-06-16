@@ -9,21 +9,34 @@
 #ifndef AsAventurasDeMMM_deck_h
 #define AsAventurasDeMMM_deck_h
 
-typedef NS_ENUM(NSInteger, gameDeck)
+typedef NS_ENUM(NSInteger, gameDeckNumber)
 {//A,K,Q,J,10,9,8,7,6,5,4,3,2.
-    A,
+    A = 0,
     K,
     Q,
     J,
-    DEZ,
-    NOVE,
-    OITO,
-    SETE,
-    SEIS,
-    CINCO,
-    QUATRO,
-    TRES,
-    DOIS,
+    TEN,
+    NINE,
+    EIGHT,
+    SEVEN,
+    SIX,
+    FIVE,
+    FOUR,
+    THREE,
+    TWO,
+    
+    numberCount
+};
+
+typedef NS_ENUM(NSInteger, gameDeckSuit)
+{//Diamonds, Swords, Hearts, Clubs
+    DIAMOND = 0,
+    SWORD,
+    HEART,
+    CLUB,
+    
+    suitCount
+    
 };
 
 #endif

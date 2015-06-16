@@ -11,6 +11,7 @@
 		07C6B87A1B28A5A200156D74 /* LevelGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C6B8771B28A5A200156D74 /* LevelGenerator.m */; };
 		07C6B87B1B28A5A200156D74 /* model1.level in Resources */ = {isa = PBXBuildFile; fileRef = 07C6B8781B28A5A200156D74 /* model1.level */; };
 		07C6B87C1B28A5A200156D74 /* pattern.level in Resources */ = {isa = PBXBuildFile; fileRef = 07C6B8791B28A5A200156D74 /* pattern.level */; };
+		180C92E01B30641D00270553 /* RegrasPoker in Resources */ = {isa = PBXBuildFile; fileRef = 180C92DF1B30641D00270553 /* RegrasPoker */; };
 		1853A63E1B2870120040C305 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853A63D1B2870120040C305 /* Weapon.swift */; };
 		1853A6401B2870E50040C305 /* WeaponFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853A63F1B2870E50040C305 /* WeaponFactory.swift */; };
 		1853A6421B287F4B0040C305 /* StatsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853A6411B287F4B0040C305 /* StatsEffects.swift */; };
@@ -52,6 +53,7 @@
 		07C6B8771B28A5A200156D74 /* LevelGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelGenerator.m; sourceTree = "<group>"; };
 		07C6B8781B28A5A200156D74 /* model1.level */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = model1.level; sourceTree = "<group>"; };
 		07C6B8791B28A5A200156D74 /* pattern.level */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pattern.level; sourceTree = "<group>"; };
+		180C92DF1B30641D00270553 /* RegrasPoker */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RegrasPoker; sourceTree = "<group>"; };
 		1853A63D1B2870120040C305 /* Weapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		1853A63F1B2870E50040C305 /* WeaponFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponFactory.swift; sourceTree = "<group>"; };
 		1853A6411B287F4B0040C305 /* StatsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsEffects.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				4F2C19A41B272FBC00F95BB7 /* Images.xcassets */,
 				4F2C19A61B272FBC00F95BB7 /* LaunchScreen.xib */,
 				4F2C19921B272FBC00F95BB7 /* Supporting Files */,
+				180C92DF1B30641D00270553 /* RegrasPoker */,
 			);
 			path = AsAventurasDeMMM;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				07C6B87C1B28A5A200156D74 /* pattern.level in Resources */,
 				07C6B87B1B28A5A200156D74 /* model1.level in Resources */,
 				4F2C19A51B272FBC00F95BB7 /* Images.xcassets in Resources */,
+				180C92E01B30641D00270553 /* RegrasPoker in Resources */,
 				4F2C199D1B272FBC00F95BB7 /* GameScene.sks in Resources */,
 				4F2C19A31B272FBC00F95BB7 /* Main.storyboard in Resources */,
 			);

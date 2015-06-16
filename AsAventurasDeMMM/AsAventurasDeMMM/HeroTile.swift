@@ -25,4 +25,6 @@ class HeroTile: Tile{
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    
 }

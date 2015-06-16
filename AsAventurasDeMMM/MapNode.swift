@@ -39,99 +39,24 @@ class MapNode: SKSpriteNode {
     }
     
     func addFromMap(charMap: [[String]], period: Period){
+        
         self.size = CGSize(width: charMap.count * 64, height: charMap[0].count * 64)
+        
         for y in 0..<charMap.count{
             for x in 0..<charMap[y].count{
                 let tilePosition = CGPoint(x: x * 64, y: (charMap.count - 1 - y) * 64)
-                switch(charMap[y][x]){
-                    case "1":
-                        let wallTile = WallTile()
-                        wallTile.setPeriod(period)
-                        wallTile.anchorPoint = CGPointZero
-                        wallTile.position = tilePosition
-                        wallTile.zPosition = 1
-                        addChild(wallTile)
+                let tile = TileFactory.createTile(charMap[y][x], tilePosition: tilePosition, period: period)
+                addChild(tile)
+                
+                if (needBackground(charMap[y][x])){
+                    let floorTile = TileFactory.createTile("0", tilePosition: tilePosition, period: period)
+                    addChild(floorTile)
                     
-                    case "0":
-                        let floorTile = Tile()
-                        floorTile.setPeriod(period)
-                        floorTile.anchorPoint = CGPointZero
-                        floorTile.position = tilePosition
-                        floorTile.zPosition = 0
-                        addChild(floorTile)
-                    
-                    case "%":
-                        let easyTile = SKSpriteNode(texture: SKTexture(imageNamed: "Easy"), size: CGSize(width: 64, height: 64))
-                        easyTile.anchorPoint = CGPointZero
-                        easyTile.position = tilePosition
-                        easyTile.zPosition = 1
-                        addChild(easyTile)
-                        let floorTile = Tile()
-                        floorTile.setPeriod(period)
-                        floorTile.anchorPoint = CGPointZero
-                        floorTile.position = tilePosition
-                        floorTile.zPosition = 0
-                        addChild(floorTile)
-                    
-                    case "^":
-                        let mediumTile = SKSpriteNode(texture: SKTexture(imageNamed: "Medium"), size: CGSize(width: 64, height: 64))
-                        mediumTile.anchorPoint = CGPointZero
-                        mediumTile.position = tilePosition
-                        mediumTile.zPosition = 1
-                        addChild(mediumTile)
-                        let floorTile = Tile()
-                        floorTile.setPeriod(period)
-                        floorTile.anchorPoint = CGPointZero
-                        floorTile.position = tilePosition
-                        floorTile.zPosition = 0
-                        addChild(floorTile)
-                    
-                    case "&":
-                        let bossTile = SKSpriteNode(texture: SKTexture(imageNamed: "B0ss"), size: CGSize(width: 64, height: 64))
-                        bossTile.anchorPoint = CGPointZero
-                        bossTile.position = tilePosition
-                        bossTile.zPosition = 1
-                        addChild(bossTile)
-                        let floorTile = Tile()
-                        floorTile.setPeriod(period)
-                        floorTile.anchorPoint = CGPointZero
-                        floorTile.position = tilePosition
-                        floorTile.zPosition = 0
-                        addChild(floorTile)
-                    case "b":
-                        let floorTile = Tile()
-                        floorTile.setPeriod(period)
-                        floorTile.anchorPoint = CGPointZero
-                        floorTile.position = tilePosition
-                        floorTile.zPosition = 0
-                        addChild(floorTile)
-                    
-                    default:
-                        let bossTile = SKSpriteNode(texture: SKTexture(imageNamed: "B0ss"), size: CGSize(width: 64, height: 64))
-                        bossTile.anchorPoint = CGPointZero
-                        bossTile.position = tilePosition
-                        bossTile.zPosition = 1
-                        addChild(bossTile)
-                        let floorTile = Tile()
-                        floorTile.setPeriod(period)
-                        floorTile.anchorPoint = CGPointZero
-                        floorTile.position = tilePosition
-                        floorTile.zPosition = 0
-                        addChild(floorTile)
                 }
             }
         }
-        
-        let heroTile = SKSpriteNode(texture: SKTexture(imageNamed: "Hero"), size: CGSize(width: 64, height: 64))
-        heroTile.anchorPoint = CGPointZero
-        heroTile.position = convertFromTileToMap(CGPoint(x: 50, y: 50))
-        heroTile.name = "HeroTile"
-        heroTile.zPosition = 2
-        addChild(heroTile)
-        mapContent = charMap
-        
-        
-        
+
+        mapContent = charMap        
     }
     
     @objc
@@ -147,22 +72,22 @@ class MapNode: SKSpriteNode {
     func verifyPosition(actualPosition:CGPoint, direction: analogDirectionTypes)->Bool{
         switch(direction){
             case .ANALOG_RIGHT:
-                if ((Int(actualPosition.x) + 1 < self.mapContent[Int(actualPosition.y)].count) &&  (self.mapContent[Int(actualPosition.y)][Int(actualPosition.x) + 1] == "0")) {
+                if ((Int(actualPosition.x) + 1 < self.mapContent[Int(actualPosition.y)].count) &&  (isWalkable(self.mapContent[Int(actualPosition.y)][Int(actualPosition.x) + 1]))) {
                     return true
                 }
             
             case .ANALOG_UP:
-                if ((Int(actualPosition.y) - 1 >= 0) &&  (self.mapContent[Int(actualPosition.y) - 1][Int(actualPosition.x)] == "0")){
+                if ((Int(actualPosition.y) - 1 >= 0) &&  (isWalkable(self.mapContent[Int(actualPosition.y) - 1][Int(actualPosition.x)]))){
                     return true
                 }
             
             case .ANALOG_LEFT:
-                if ((Int(actualPosition.x) - 1 >= 0) &&  (self.mapContent[Int(actualPosition.y)][Int(actualPosition.x) - 1] == "0")){
+                if ((Int(actualPosition.x) - 1 >= 0) &&  (isWalkable(self.mapContent[Int(actualPosition.y)][Int(actualPosition.x) - 1]))){
                     return true
                 }
             
             case .ANALOG_DOWN:
-                if ((Int(actualPosition.y) + 1 < self.mapContent.count) &&  (self.mapContent[Int(actualPosition.y) + 1][Int(actualPosition.x)] == "0")){
+                if ((Int(actualPosition.y) + 1 < self.mapContent.count) &&  (isWalkable(self.mapContent[Int(actualPosition.y) + 1][Int(actualPosition.x)]))){
                     return true
                 }
             
@@ -179,5 +104,46 @@ class MapNode: SKSpriteNode {
         let pointX = Int(point.x)
         let pointY = (mapContent.count - 1 - Int(point.y)) * 64
         return CGPoint(x: pointX * 64, y: pointY)
+    }
+    
+    func isWalkable(charTile: String) -> Bool{
+        switch(charTile){
+            case "0":
+            return true
+    
+            case "b":
+            return true
+            
+            case "-":
+            return true
+            
+            case "@":
+            return true
+            
+            default:
+            return false
+        }
+    }
+    
+    func needBackground(charTile:String)->Bool{
+        switch(charTile){
+        case "%":
+            return true
+            
+        case "^":
+            return true
+            
+        case "&":
+            return true
+            
+        case "@":
+            return true
+        
+        case "-":
+            return true
+            
+        default:
+            return false
+        }
     }
 }

@@ -91,6 +91,9 @@ class MapNode: SKSpriteNode {
                     return true
                 }
             
+            case .ANALOG_ZERO:
+                return true
+            
             default:
                 return false
         
@@ -114,7 +117,7 @@ class MapNode: SKSpriteNode {
             case "b":
             return true
             
-            case "-":
+            case "=", "9":
             return true
             
             case "@":
@@ -127,19 +130,13 @@ class MapNode: SKSpriteNode {
     
     func needBackground(charTile:String)->Bool{
         switch(charTile){
-        case "%":
+        case "%", "^", "&":
             return true
             
-        case "^":
-            return true
-            
-        case "&":
-            return true
-            
-        case "@":
+        case "@", "-":
             return true
         
-        case "-":
+        case "=", "9", "8":
             return true
             
         default:

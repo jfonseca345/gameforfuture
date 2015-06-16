@@ -53,7 +53,7 @@ class TileFactory: Tile {
                 //let bossMonster = MonsterFactory.createBoss(.Past)
                 //let bossTile = MonsterTile(monster: bossMonster)
                 let bossTile = Tile()
-                bossTile.texture = SKTexture(imageNamed: "B0ss")
+                bossTile.texture = SKTexture(imageNamed: "TrexSprite")
                 bossTile.anchorPoint = CGPointZero
                 bossTile.position = tilePosition
                 bossTile.zPosition = 1
@@ -85,19 +85,27 @@ class TileFactory: Tile {
                 waterTile.zPosition = 0
                 return waterTile
             
-            case "-":
+            case "8":
+                let chestTile = Tile()
+                chestTile.texture = SKTexture(imageNamed: "B0ss")
+                chestTile.anchorPoint = CGPointZero
+                chestTile.position = tilePosition
+                chestTile.zPosition = 1
+                return chestTile
+            
+            case "9", "=":
                 let doorTile = DoorTile()
                 doorTile.anchorPoint = CGPointZero
                 doorTile.position = tilePosition
                 doorTile.zPosition = 1
                 return doorTile
             
-            case "=":
+            case "-":
                 let npcTile = Tile()
                 npcTile.texture = SKTexture(imageNamed: "ZombieSprite")
                 npcTile.anchorPoint = CGPointZero
                 npcTile.position = tilePosition
-                npcTile.zPosition = 0
+                npcTile.zPosition = 1
                 return npcTile
             
             default:

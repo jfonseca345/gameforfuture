@@ -22,6 +22,7 @@
                                    CGRectGetMidY(self.frame));
     
     [self addChild:myLabel];*/
+    self.walking = NO;
     
     self.anchorPoint = CGPointMake(0.5, 0.5);
     MapNode* map = [[MapNode alloc] initWithBackgroundTexture:[SKTexture textureWithImageNamed:@"dungeon1"]];
@@ -101,8 +102,7 @@
                     break;
             }
         }
-
-        
+        CGPoint cameraPosition = [map convertFromTileToMap:self.heroPosition];
         camera.position = [map convertFromTileToMap:self.heroPosition];
         heroTile.position = CGPointMake(camera.position.x, camera.position.y);
         [map centerOnNode];

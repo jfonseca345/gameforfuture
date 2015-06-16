@@ -12,7 +12,7 @@
 
 @interface GameScene : SKScene
 
-@property (nonatomic) int walking;
+@property (nonatomic) BOOL walking;
 @property (nonatomic) analogDirectionTypes heroDirection;
 @property (nonatomic) CGPoint heroPosition;
 

@@ -100,6 +100,7 @@
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    self.analogDirection = ANALOG_ZERO;
     [super touchesEnded:touches withEvent:event];
     [self.analogCircle removeFromParent];
     [self.analogPos removeFromParent];
@@ -109,6 +110,7 @@
 }
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    self.analogDirection = ANALOG_ZERO;
     [super touchesCancelled:touches withEvent:event];
     [self.analogCircle removeFromParent];
     [self.analogPos removeFromParent];

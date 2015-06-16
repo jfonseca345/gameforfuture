@@ -11,7 +11,8 @@ import UIKit
 class TileFactory: Tile {
     class func createTile(type:String, tilePosition:CGPoint, period:Period)->Tile{
         switch(type){
-            case "1":
+            
+            case "1", "2", "3","4":
                 let wallTile = WallTile()
                 wallTile.setPeriod(period)
                 wallTile.anchorPoint = CGPointZero
@@ -88,12 +89,12 @@ class TileFactory: Tile {
                 let doorTile = DoorTile()
                 doorTile.anchorPoint = CGPointZero
                 doorTile.position = tilePosition
-                doorTile.zPosition = 0
+                doorTile.zPosition = 1
                 return doorTile
             
             case "=":
                 let npcTile = Tile()
-                npcTile.texture = SKTexture(imageNamed: "zombieSprite")
+                npcTile.texture = SKTexture(imageNamed: "ZombieSprite")
                 npcTile.anchorPoint = CGPointZero
                 npcTile.position = tilePosition
                 npcTile.zPosition = 0

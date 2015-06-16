@@ -17,7 +17,7 @@ class DoorTile:Tile{
         openDoorTexture = UIImage(named: "PastDoor_Unlocked_Horizontal")
         closedDoorTexture = UIImage(named: "PastDoor_Locked_Horizontal")
         super.init()
-        texture = SKTexture(CGImage: closedDoorTexture.CGImage)
+        texture = SKTexture(CGImage: closedDoorTexture.CGImage!)
     }
 
     required init?(coder aDecoder: NSCoder) {

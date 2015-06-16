@@ -9,6 +9,7 @@
 #import "GameScene.h"
 #import "AsAventurasDeMMM-Swift.h"
 #import "AnalogGesture.h"
+#import "buttonPad.h"
 
 @implementation GameScene
 
@@ -31,6 +32,9 @@
     gameAnalogic = [[AnalogGesture alloc] initWithTarget:self action:@selector(directionChanged:) scene:self];
     [self.view addGestureRecognizer:gameAnalogic];
     self.heroPosition = CGPointMake(50, 50);
+    buttonPad * btp;
+    btp = [[buttonPad alloc] init];
+    [self addChild:btp];
     
 }
 
@@ -70,7 +74,7 @@
 }
 - (void)directionChanged:(AnalogGesture * )sender
 {
-    NSLog(@"%ld",(long)sender.analogDirection);
+    //NSLog(@"%ld",(long)sender.analogDirection);
     MapNode* map = (MapNode*)[self childNodeWithName:@"world"];
     BOOL canWalk = [map verifyPosition:self.heroPosition direction:sender.analogDirection];
     if (canWalk){

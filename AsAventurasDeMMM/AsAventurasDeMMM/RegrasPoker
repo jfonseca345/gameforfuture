@@ -1,0 +1,57 @@
+Regras 5 Hand Pocker
+
+-> Variação do poker, onde cada jogador possui 5 cartas. Como o jogo funciona:
+
+*** FUNCIONAMENTO DE UMA RODADA ***
+
+-> Cada jogador recebe 5 cartas
+-> Primeira rodada de apostas
+-> Jogador troca de 0 até 5 cartas
+-> Segunda rodada de apostas
+-> Showdown (Jogador mostra as cartas)
+
+*** Aposta ***
+-> Na primeira rodada de apostas um jogador começa com uma aposta minima (na proxima rodada
+outro jogador irá começar)
+-> O outro jogador pode:
+    -> Check: Aposta exatamente a aposta minima
+    -> Fold: Desistir da rodada, o que foi apostado até agora vai para o jogador
+    -> Raise: Aumentar a aposta
+
+
+*** Como a mecanica do poker é usada no nosso jogo***
+
+-> O perdedor da rodada toma um dano igual:
+        [Pot]*(Atk(vencedor) - Def(perdedor)) em um minimo de 1, caso Def > Atk
+
+    O jogador ganha XP igual a quantas "vezes" ele matou o oponente, por exemplo:
+
+    O inimigo possui 3 HP, na primeira rodada o jogador deu 2 de dano nele, logo na proxima rodada
+    o jogador não precisa apostar muito para matar o inimigo, porém ele decide apostar bastante e dá
+    7 de dano no inimigo, deixando ele com -6 de vida, ou seja, ele matou o inimigo 3 vezes (Deu 9 de dano), ganhando assim o triplo de XP.
+
+-> A vida atual mostra quanto de "dinheiro" o jogador tem para apostar no começo do combate
+
+-> O primeiro jogador a apostar é definido aleatoriamente (podemos implementar um status Velocidade
+depois?)
+
+-> Caso o jogador seja o primeiro a apostar ele não pode dar fold.
+
+*** Combinações de cartas ***
+Em sua ordem de valor
+
+A ordem de valor das cartas é: A,K,Q,J,10,9,8,7,6,5,4,3,2.
+Naipes não tem valor, logo duas combinaçoes iguais de naipe diferente empatam, o pot é dividido
+entre ambos jogadores
+
+High Card -> Nenhuma combinação, apenas uma carta. A carta mais alta do jogo é o A.
+One Pair  -> Um par de cartas iguais
+Two Pair  -> Dois pares de cartas iguais
+Three of a kind -> Uma trinca de cartas iguais
+Straight -> 5 cartas seguidas de naipes diferentes. Ex: 3,4,5,6,7.
+Flush   -> 5 cartas do mesmo naipe, não seguidas
+Full House -> Uma trinca e um par
+Four of a kind -> 4 cartas iguais
+Straight Flush -> Uma sequencia de mesmo naipe
+Royal Flush -> 5 cartas seguidas do mesmo naipe indo de 10 até A. [10,J,Q,K,A]
+

@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072268951B3059950090E354 /* buttonPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 072268941B3059950090E354 /* buttonPad.m */; };
 		078AC4561B2B110B00914F33 /* AnalogGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AC4551B2B110B00914F33 /* AnalogGesture.m */; };
 		07C6B87A1B28A5A200156D74 /* LevelGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C6B8771B28A5A200156D74 /* LevelGenerator.m */; };
 		07C6B87B1B28A5A200156D74 /* model1.level in Resources */ = {isa = PBXBuildFile; fileRef = 07C6B8781B28A5A200156D74 /* model1.level */; };
 		07C6B87C1B28A5A200156D74 /* pattern.level in Resources */ = {isa = PBXBuildFile; fileRef = 07C6B8791B28A5A200156D74 /* pattern.level */; };
+		180C92E01B30641D00270553 /* RegrasPoker in Resources */ = {isa = PBXBuildFile; fileRef = 180C92DF1B30641D00270553 /* RegrasPoker */; };
 		1853A63E1B2870120040C305 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853A63D1B2870120040C305 /* Weapon.swift */; };
 		1853A6401B2870E50040C305 /* WeaponFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853A63F1B2870E50040C305 /* WeaponFactory.swift */; };
 		1853A6421B287F4B0040C305 /* StatsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853A6411B287F4B0040C305 /* StatsEffects.swift */; };
@@ -47,12 +49,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		072268931B3059950090E354 /* buttonPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buttonPad.h; sourceTree = "<group>"; };
+		072268941B3059950090E354 /* buttonPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buttonPad.m; sourceTree = "<group>"; };
 		078AC4541B2B110B00914F33 /* AnalogGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalogGesture.h; sourceTree = "<group>"; };
 		078AC4551B2B110B00914F33 /* AnalogGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalogGesture.m; sourceTree = "<group>"; };
 		07C6B8761B28A5A200156D74 /* LevelGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelGenerator.h; sourceTree = "<group>"; };
 		07C6B8771B28A5A200156D74 /* LevelGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelGenerator.m; sourceTree = "<group>"; };
 		07C6B8781B28A5A200156D74 /* model1.level */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = model1.level; sourceTree = "<group>"; };
 		07C6B8791B28A5A200156D74 /* pattern.level */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pattern.level; sourceTree = "<group>"; };
+		180C92DF1B30641D00270553 /* RegrasPoker */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RegrasPoker; sourceTree = "<group>"; };
 		1853A63D1B2870120040C305 /* Weapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		1853A63F1B2870E50040C305 /* WeaponFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponFactory.swift; sourceTree = "<group>"; };
 		1853A6411B287F4B0040C305 /* StatsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsEffects.swift; sourceTree = "<group>"; };
@@ -113,6 +118,8 @@
 				07C6B8791B28A5A200156D74 /* pattern.level */,
 				078AC4541B2B110B00914F33 /* AnalogGesture.h */,
 				078AC4551B2B110B00914F33 /* AnalogGesture.m */,
+				072268931B3059950090E354 /* buttonPad.h */,
+				072268941B3059950090E354 /* buttonPad.m */,
 			);
 			name = Cadu_Classes;
 			sourceTree = "<group>";
@@ -204,6 +211,7 @@
 				4F2C19A41B272FBC00F95BB7 /* Images.xcassets */,
 				4F2C19A61B272FBC00F95BB7 /* LaunchScreen.xib */,
 				4F2C19921B272FBC00F95BB7 /* Supporting Files */,
+				180C92DF1B30641D00270553 /* RegrasPoker */,
 			);
 			path = AsAventurasDeMMM;
 			sourceTree = "<group>";
@@ -327,6 +335,7 @@
 				07C6B87C1B28A5A200156D74 /* pattern.level in Resources */,
 				07C6B87B1B28A5A200156D74 /* model1.level in Resources */,
 				4F2C19A51B272FBC00F95BB7 /* Images.xcassets in Resources */,
+				180C92E01B30641D00270553 /* RegrasPoker in Resources */,
 				4F2C199D1B272FBC00F95BB7 /* GameScene.sks in Resources */,
 				4F2C19A31B272FBC00F95BB7 /* Main.storyboard in Resources */,
 			);
@@ -366,6 +375,7 @@
 				4F2C199B1B272FBC00F95BB7 /* GameScene.m in Sources */,
 				4F2C19951B272FBC00F95BB7 /* main.m in Sources */,
 				078AC4561B2B110B00914F33 /* AnalogGesture.m in Sources */,
+				072268951B3059950090E354 /* buttonPad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

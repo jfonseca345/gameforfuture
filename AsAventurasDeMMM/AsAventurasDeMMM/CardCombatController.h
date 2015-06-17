@@ -8,10 +8,27 @@
 
 #import <Foundation/Foundation.h>
 #import "deck.h"
+#import "CardContainer.h"
 
 @interface CardCombatController : NSObject
 
-@property (strong, nonatomic) NSMutableArray* deck;
+#pragma Deck Manipulation Methods and Atributes
 
+@property (strong, nonatomic) NSMutableArray* deck;
+@property int drawCounter;
+
+-(CardContainer*) drawCard;
 -(void) shuffleCards;
+
+#pragma Hand Atributes
+@property (strong, nonatomic) NSMutableArray* playerHand;
+@property (strong, nonatomic) NSMutableArray* monsterHand;
+
+#pragma Game Managements Methods and Atributes
+
+@property int pot;
+
+-(void) prepareGame;
+-(void) tradeCards: (int)playerCardsToTrade : (int)monsterCardsToTrade;
+
 @end

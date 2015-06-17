@@ -10,14 +10,8 @@
 #define AsAventurasDeMMM_deck_h
 
 typedef NS_ENUM(NSInteger, gameDeckNumber)
-{//A,K,Q,J,10,9,8,7,6,5,4,3,2.
+{//A,7,6,5,4,3,2.
     A = 0,
-    K,
-    Q,
-    J,
-    TEN,
-    NINE,
-    EIGHT,
     SEVEN,
     SIX,
     FIVE,
@@ -29,9 +23,9 @@ typedef NS_ENUM(NSInteger, gameDeckNumber)
 };
 
 typedef NS_ENUM(NSInteger, gameDeckSuit)
-{//Diamonds, Swords, Hearts, Clubs
+{//Diamonds, Spades, Hearts, Clubs
     DIAMOND = 0,
-    SWORD,
+    SPADE,
     HEART,
     CLUB,
     

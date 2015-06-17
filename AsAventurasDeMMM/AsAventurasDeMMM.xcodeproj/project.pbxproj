@@ -119,39 +119,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		07C6B87D1B28A5AB00156D74 /* Cadu_Classes */ = {
+		07C6B87D1B28A5AB00156D74 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4FA35D381B30A85E00E6731A /* CardContainer.h */,
-				4FA35D391B30A85E00E6731A /* CardContainer.m */,
-				07C6B8761B28A5A200156D74 /* LevelGenerator.h */,
-				07C6B8771B28A5A200156D74 /* LevelGenerator.m */,
-				07C6B8781B28A5A200156D74 /* model1.level */,
-				07C6B8791B28A5A200156D74 /* pattern.level */,
 				078AC4541B2B110B00914F33 /* AnalogGesture.h */,
 				078AC4551B2B110B00914F33 /* AnalogGesture.m */,
 				072268931B3059950090E354 /* buttonPad.h */,
 				072268941B3059950090E354 /* buttonPad.m */,
-				072268961B3069CF0090E354 /* deck.h */,
-				4FA35D351B30A28A00E6731A /* CardCombatController.h */,
-				4FA35D361B30A28A00E6731A /* CardCombatController.m */,
-				079062E51B31C0260098F717 /* InitialScreen.h */,
-				079062E61B31C0260098F717 /* InitialScreen.m */,
 			);
-			name = Cadu_Classes;
+			name = UI;
 			sourceTree = "<group>";
 		};
-		187366ED1B27372D006B539B /* Amitay_Classes */ = {
+		187366ED1B27372D006B539B /* Future */ = {
 			isa = PBXGroup;
 			children = (
-				18F7B3D11B2B45420033AACA /* Hero */,
-				18F7B3CC1B2B3EEA0033AACA /* Equipment */,
-				18F7B3CB1B2B3EDC0033AACA /* Monster */,
-				18F7B3C91B2B3EC00033AACA /* Tiles */,
 				1853A6411B287F4B0040C305 /* StatsEffects.swift */,
 				187366F01B27379E006B539B /* TimePeriodsEnum.swift */,
 			);
-			name = Amitay_Classes;
+			name = Future;
 			sourceTree = "<group>";
 		};
 		18F7B3C91B2B3EC00033AACA /* Tiles */ = {
@@ -214,21 +199,20 @@
 		4F2C19911B272FBC00F95BB7 /* AsAventurasDeMMM */ = {
 			isa = PBXGroup;
 			children = (
-				4F2C19BF1B28ACC600F95BB7 /* JEF_Classes */,
-				07C6B87D1B28A5AB00156D74 /* Cadu_Classes */,
-				187366ED1B27372D006B539B /* Amitay_Classes */,
+				4FA35D3D1B31DB9700E6731A /* Screen */,
+				4FA35D3C1B31DB1300E6731A /* Combat */,
+				18F7B3D11B2B45420033AACA /* Hero */,
+				18F7B3CC1B2B3EEA0033AACA /* Equipment */,
+				18F7B3CB1B2B3EDC0033AACA /* Monster */,
+				18F7B3C91B2B3EC00033AACA /* Tiles */,
+				4FA35D3B1B31DAFA00E6731A /* Map */,
+				07C6B87D1B28A5AB00156D74 /* UI */,
+				187366ED1B27372D006B539B /* Future */,
 				4F2C19961B272FBC00F95BB7 /* AppDelegate.h */,
 				4F2C19971B272FBC00F95BB7 /* AppDelegate.m */,
-				4F2C19991B272FBC00F95BB7 /* GameScene.h */,
-				4F2C199A1B272FBC00F95BB7 /* GameScene.m */,
-				4F2C199C1B272FBC00F95BB7 /* GameScene.sks */,
-				4F2C199E1B272FBC00F95BB7 /* GameViewController.h */,
-				4F2C199F1B272FBC00F95BB7 /* GameViewController.m */,
-				4F2C19A11B272FBC00F95BB7 /* Main.storyboard */,
 				4F2C19A41B272FBC00F95BB7 /* Images.xcassets */,
 				4F2C19A61B272FBC00F95BB7 /* LaunchScreen.xib */,
 				4F2C19921B272FBC00F95BB7 /* Supporting Files */,
-				180C92DF1B30641D00270553 /* RegrasPoker */,
 			);
 			path = AsAventurasDeMMM;
 			sourceTree = "<group>";
@@ -236,6 +220,7 @@
 		4F2C19921B272FBC00F95BB7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				180C92DF1B30641D00270553 /* RegrasPoker */,
 				4F2C19C01B29B1BC00F95BB7 /* AsAventurasDeMMM-Bridging-Header.h */,
 				4F2C19931B272FBC00F95BB7 /* Info.plist */,
 				4F2C19941B272FBC00F95BB7 /* main.m */,
@@ -260,12 +245,43 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4F2C19BF1B28ACC600F95BB7 /* JEF_Classes */ = {
+		4FA35D3B1B31DAFA00E6731A /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				07C6B8761B28A5A200156D74 /* LevelGenerator.h */,
+				07C6B8771B28A5A200156D74 /* LevelGenerator.m */,
+				07C6B8781B28A5A200156D74 /* model1.level */,
+				07C6B8791B28A5A200156D74 /* pattern.level */,
 				4F2C19BD1B28A28F00F95BB7 /* MapNode.swift */,
 			);
-			name = JEF_Classes;
+			name = Map;
+			sourceTree = "<group>";
+		};
+		4FA35D3C1B31DB1300E6731A /* Combat */ = {
+			isa = PBXGroup;
+			children = (
+				4FA35D381B30A85E00E6731A /* CardContainer.h */,
+				4FA35D391B30A85E00E6731A /* CardContainer.m */,
+				072268961B3069CF0090E354 /* deck.h */,
+				4FA35D351B30A28A00E6731A /* CardCombatController.h */,
+				4FA35D361B30A28A00E6731A /* CardCombatController.m */,
+			);
+			name = Combat;
+			sourceTree = "<group>";
+		};
+		4FA35D3D1B31DB9700E6731A /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				079062E51B31C0260098F717 /* InitialScreen.h */,
+				079062E61B31C0260098F717 /* InitialScreen.m */,
+				4F2C19991B272FBC00F95BB7 /* GameScene.h */,
+				4F2C199A1B272FBC00F95BB7 /* GameScene.m */,
+				4F2C199C1B272FBC00F95BB7 /* GameScene.sks */,
+				4F2C199E1B272FBC00F95BB7 /* GameViewController.h */,
+				4F2C199F1B272FBC00F95BB7 /* GameViewController.m */,
+				4F2C19A11B272FBC00F95BB7 /* Main.storyboard */,
+			);
+			name = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -17,8 +17,8 @@ class MonsterTile: Tile{
         self.monster = monster
         super.init()
         
-        self.texture = SKTexture(imageNamed:"zombieSprite")
-        //self.texture = SKTexture(image: self.monster.mapImage)
+        //self.texture = SKTexture(imageNamed:"zombieSprite")
+        self.texture = SKTexture(image: self.monster.mapImage)
     }
 
     required init?(coder aDecoder: NSCoder) {

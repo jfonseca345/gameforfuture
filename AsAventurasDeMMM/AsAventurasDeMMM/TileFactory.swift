@@ -38,9 +38,9 @@ class TileFactory: Tile {
                 return floorTile
             
             case "%":
-                //let easyMonster = MonsterFactory.createEasyMonster(.Past)
-                //let easyTile = MonsterTile(monster: easyMonster)
-                let easyTile = Tile()
+                let easyMonster = MonsterFactory.createEasyMonsterTesting(.Past)
+                let easyTile = MonsterTile(monster: easyMonster)
+                //let easyTile = Tile()
                 easyTile.texture = SKTexture(imageNamed: "Easy")
                 easyTile.anchorPoint = CGPointZero
                 easyTile.position = tilePosition
@@ -49,9 +49,9 @@ class TileFactory: Tile {
             
             
             case "^":
-                //let mediumMonster = MonsterFactory.createMediumMonster(.Past)
-                //let mediumTile = MonsterTile(monster: mediumMonster)
-                let mediumTile = Tile()
+                let mediumMonster = MonsterFactory.createMediumMonsterTesting(.Past)
+                let mediumTile = MonsterTile(monster: mediumMonster)
+                //let mediumTile = Tile()
                 mediumTile.texture = SKTexture(imageNamed: "Medium")
                 mediumTile.anchorPoint = CGPointZero
                 mediumTile.position = tilePosition
@@ -59,9 +59,9 @@ class TileFactory: Tile {
                 return mediumTile
             
             case "&":
-                //let bossMonster = MonsterFactory.createBoss(.Past)
-                //let bossTile = MonsterTile(monster: bossMonster)
-                let bossTile = Tile()
+                let bossMonster = MonsterFactory.createBossTesting(.Past)
+                let bossTile = MonsterTile(monster: bossMonster)
+                //let bossTile = Tile()
                 bossTile.texture = SKTexture(imageNamed: "TrexSprite")
                 bossTile.anchorPoint = CGPointZero
                 bossTile.position = tilePosition
@@ -77,9 +77,9 @@ class TileFactory: Tile {
                 return bridgeTile
             
             case "@":
-                //let heroTile = HeroTile(hero: Hero())
-                let heroTile = Tile()
-                heroTile.texture = SKTexture(imageNamed: "Hero")
+                let heroTile = HeroTile(hero: Hero())
+                //let heroTile = Tile()
+                //heroTile.texture = SKTexture(imageNamed: "Hero")
                 heroTile.anchorPoint = CGPointZero
                 heroTile.position = tilePosition
                 heroTile.zPosition = 2

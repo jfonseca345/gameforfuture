@@ -8,7 +8,6 @@
 
 #import "GameScene.h"
 #import "AsAventurasDeMMM-Swift.h"
-#import "buttonPad.h"
 #import "CardCombatController.h"
 
 @implementation GameScene
@@ -41,8 +40,11 @@
     
     buttonPad * btp;
     btp = [[buttonPad alloc] init];
+    [btp setPosition:CGPointMake([UIScreen mainScreen].bounds.size.width/2, -[UIScreen mainScreen].bounds.size.height/2)];
+//    [btp setPosition:CGPointMake(100, 100)];
+    NSLog(@"%f, %f", btp.position.x, btp.position.y);
+    btp.delegate = self;
     [self addChild:btp];
-    
     
     
 }
@@ -59,7 +61,7 @@
 }
 - (void)directionChanged:(AnalogGesture * )sender
 {
-    NSLog(@"%ld",(long)sender.analogDirection);
+//    NSLog(@"%ld",(long)sender.analogDirection);
     self.heroDirection = sender.analogDirection;
 }
 
@@ -94,7 +96,7 @@
             }
         }
         CGPoint cameraPosition = [map convertFromTileToMap:self.heroPosition];
-        SKAction* walkAction = [SKAction moveTo:cameraPosition duration:0.1];
+        SKAction* walkAction = [SKAction moveTo:cameraPosition duration:0.15];
         if (self.heroDirection != ANALOG_ZERO){
             [heroTile runAction:walkAction completion:^{self.walking = NO;}];
             self.walking = YES;
@@ -104,6 +106,15 @@
     
     [map centerOnNode];
     
-    }
+}
 
+-(void)aButtonTapped
+{
+//    NSLog(@"AAAA");
+}
+
+-(void)bButtonTapped
+{
+//    NSLog(@"BBBB");
+}
 @end

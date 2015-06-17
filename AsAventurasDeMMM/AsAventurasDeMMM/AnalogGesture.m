@@ -39,7 +39,7 @@
     self.analogDirection = ANALOG_ZERO;
     [self.analogCircle removeFromParent];
     [self.analogPos removeFromParent];
-    NSLog(@"Remove all");
+//    NSLog(@"Remove all");
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -49,8 +49,19 @@
         self.state = UIGestureRecognizerStateFailed;
         return;
     }
-    UITouch * touch = [[event allTouches] anyObject];
+    UITouch * touch = [[event allTouches] allObjects][0];
     self.touchPosition = [touch locationInNode:self.parentScene];
+    if ([[[self.parentScene nodeAtPoint:self.touchPosition] name] isEqualToString:@"button1"])
+    {
+        self.state = UIGestureRecognizerStateFailed;
+//        NSLog(@"THAAGAME");
+    }
+    else if ([[[self.parentScene nodeAtPoint:self.touchPosition] name] isEqualToString:@"button2"])
+    {
+        self.state = UIGestureRecognizerStateFailed;
+//        NSLog(@"THAAGAMETWWW");
+    }
+//    NSLog(@"%@",[self.parentScene nodeAtPoint:self.touchPosition]);
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -64,12 +75,12 @@
         [self.parentScene addChild:self.analogCircle];
         [self.parentScene addChild:self.analogPos];
         [self.analogPos setScale:2];
-        NSLog(@"Add all");
+//        NSLog(@"Add all");
         self.state = UIGestureRecognizerStateBegan;
     }
     else
     {
-        self.touchNow = [[[event allTouches] anyObject] locationInNode:self.parentScene];
+        self.touchNow = [[[event allTouches] allObjects][0] locationInNode:self.parentScene];
         CGPoint newPosition = self.touchNow;
         CGPoint vector = CGPointMake(self.touchNow.x - self.touchPosition.x,self.touchNow.y - self.touchPosition.y);
         double transform = sqrt(vector.x*vector.x + vector.y*vector.y);
@@ -104,7 +115,7 @@
     [super touchesEnded:touches withEvent:event];
     [self.analogCircle removeFromParent];
     [self.analogPos removeFromParent];
-    NSLog(@"Remove all");
+//    NSLog(@"Remove all");
     self.state = UIGestureRecognizerStateEnded;
     
 }
@@ -114,7 +125,7 @@
     [super touchesCancelled:touches withEvent:event];
     [self.analogCircle removeFromParent];
     [self.analogPos removeFromParent];
-    NSLog(@"Remove all");
+//    NSLog(@"Remove all");
     self.state = UIGestureRecognizerStateCancelled;
 }
 

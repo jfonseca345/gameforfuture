@@ -8,9 +8,10 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "AnalogGesture.h"
+#import "buttonPad.h"
 
 
-@interface GameScene : SKScene
+@interface GameScene : SKScene <buttonPadDelegate>
 
 @property (nonatomic) BOOL walking;
 @property (nonatomic) analogDirectionTypes heroDirection;

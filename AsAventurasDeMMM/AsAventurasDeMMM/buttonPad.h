@@ -20,4 +20,6 @@
 
 @property (weak) id <buttonPadDelegate> delegate;
 
+- (CGPoint)size;
+
 @end

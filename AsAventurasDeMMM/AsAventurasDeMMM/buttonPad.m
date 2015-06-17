@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Archbold S.A. All rights reserved.
 //
 
+#define BKG_WIDTH 60
+#define BKG_HEIGHT 40
 #import "buttonPad.h"
 
 @interface buttonPad()
@@ -27,16 +29,18 @@
     {
         [self setZPosition:9];
         
-        self.background = [[SKSpriteNode alloc] initWithColor:nil size:CGSizeMake(60, 40)];
+        self.background = [[SKSpriteNode alloc] initWithColor:nil size:CGSizeMake(BKG_WIDTH, BKG_HEIGHT)];
         [self.background setAnchorPoint:CGPointMake(0.5, 0.5)];
         self.theAButton = [[SKSpriteNode alloc] initWithImageNamed:@"Button1"];
-        [self.theAButton setScale:0.7];
+        [self.theAButton setScale:1.5];
+        self.theAButton.name = @"button1";
         self.theBButton = [[SKSpriteNode alloc] initWithImageNamed:@"Button2"];
-        [self.theBButton setScale:0.7];
+        [self.theBButton setScale:1.5];
+        self.theBButton.name = @"button2";
         [self addChild: self.background];
         
-        [self.theBButton setPosition:CGPointMake(0 + self.theBButton.size.width/2 + 5, 0)];
-        [self.theAButton setPosition:CGPointMake(0 - self.theAButton.size.width/2 - 5, 0)];
+        [self.theBButton setPosition:CGPointMake(0 + self.theBButton.size.width/2 + 10, 0)];
+        [self.theAButton setPosition:CGPointMake(0 - self.theAButton.size.width/2 - 10, 0)];
         
         [self.background addChild:self.theAButton];
         [self.background addChild:self.theBButton];
@@ -60,6 +64,13 @@
         [self.delegate aButtonTapped];
     }
     
+}
+
+- (CGPoint)size
+{
+    CGPoint mySize;
+    mySize = CGPointMake(BKG_WIDTH, BKG_HEIGHT);
+    return mySize;
 }
 
 @end

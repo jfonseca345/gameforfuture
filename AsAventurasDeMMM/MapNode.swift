@@ -70,7 +70,11 @@ class MapNode: SKSpriteNode {
         let node = cameraNode!
         let cameraPositionInScene = node.scene!.convertPoint(node.position, fromNode: self)
         
-        self.position = CGPoint(x: self.position.x - cameraPositionInScene.x, y: self.position.y - cameraPositionInScene.y)
+        //Jucelio querido, o mapa nao estava andando junto com o personagem, entao dava uma piscada nele. Tentei arrumar, deu uma melhorada, mas nao foi o suficiente. MAAUS. Só pra deixar um recadinho aqui mesmo :)
+        let walkAction = SKAction.moveTo(CGPoint(x: self.position.x - cameraPositionInScene.x, y: self.position.y - cameraPositionInScene.y), duration: 0.1)
+        
+        self.runAction(walkAction);
+        //self.position = CGPoint(x: , y: self.position.y - cameraPositionInScene.y)
     }
     
     @objc

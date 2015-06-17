@@ -30,7 +30,7 @@
 }
 
 -(void) shuffleCards{
-    NSLog(@"InitialConfigurtion:");
+    NSLog(@"InitialConfiguration:");
     for(int i = 0; i < [self.deck count]; i++){
         NSLog([NSString stringWithFormat:@"%@",[self.deck[i] description]]);
     }

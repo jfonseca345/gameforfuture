@@ -78,15 +78,15 @@
         {
             switch (map[i][j]) {
                 case '2':
-                    if ((arc4random_uniform(4)+1)%4 == 0) randomizedMap[i][j] = '2';
+                    if ((arc4random_uniform(100)+1) > 50) randomizedMap[i][j] = '2';
                     else randomizedMap[i][j] = '0';
                     break;
                 case '3':
-                    if ((arc4random_uniform(3)+1)%3 == 0) randomizedMap[i][j] = '3';
+                    if ((arc4random_uniform(100)+1) > 30) randomizedMap[i][j] = '3';
                     else randomizedMap[i][j] = '0';
                     break;
                 case '4':
-                    if ((arc4random_uniform(2)+1)%2 == 0) randomizedMap[i][j] = '4';
+                    if ((arc4random_uniform(100)+1) > 10) randomizedMap[i][j] = '4';
                     else randomizedMap[i][j] = '0';
                     break;
                 case '%':

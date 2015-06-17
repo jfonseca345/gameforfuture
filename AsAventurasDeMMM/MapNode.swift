@@ -14,6 +14,7 @@ class MapNode: SKSpriteNode {
     private var mapContent:[[String]]=[[""]]
     private var mapMovable:[[String]]=[[""]]
     var heroInitialPosition:CGPoint!
+    //var moveCount = 0
     
     @objc(initWithBackgroundTexture:)
     init(backgroundTexture:SKTexture){
@@ -70,7 +71,6 @@ class MapNode: SKSpriteNode {
                 else{
                     mapContent[y][x] = charMap[y][x]
                 }
-                
             }
         }
     }
@@ -85,6 +85,19 @@ class MapNode: SKSpriteNode {
         let walkAction = SKAction.moveTo(CGPoint(x: self.position.x - cameraPositionInScene.x, y: self.position.y - cameraPositionInScene.y), duration: 0.1)
         
         self.runAction(walkAction);
+        
+        /*if (moveCount == 20){
+            for y in 0..<mapMovable.count{
+                for x in 0..<mapMovable[y].count{
+                    if (mapMovable[y][x] != "0" && mapMovable[y][x] != "@"){
+                        moveMonsters(x, y: y)
+                    }
+                }
+            }
+        
+            moveCount = 0
+        }
+        moveCount = moveCount + 1*/
         //self.position = CGPoint(x: , y: self.position.y - cameraPositionInScene.y)
     }
     
@@ -185,6 +198,49 @@ class MapNode: SKSpriteNode {
             return false
         }
     }
+    
+    /*func moveMonsters(x: Int, y: Int){
+        var mx = 0
+        var my = 0
+        if (x < Int(heroInitialPosition.x)){
+            mx = 1
+        }
+        else{
+            mx = -1
+        }
+        
+        if (y < Int(heroInitialPosition.y)){
+            my = 1
+        }
+        else{
+            my = -1
+        }
+        
+        let zero = rand()%2
+        
+        if (zero == 0){
+            mx = 0
+        }
+        else {
+            my = 0
+        }
+        
+        if (isWalkable(mapContent[y+my][x+mx]) &&
+            isWalkable(mapMovable[y+my][x+mx])){
+            mapMovable[y+my][x+mx] = mapMovable[y][x]
+            mapMovable[y][x] = "0"
+                
+            let tiles = nodesAtPoint(convertFromTileToMap(CGPoint(x: x, y: y)))
+            println(tiles.count)
+            for tile in tiles{
+                if (tile.zPosition == 1){
+                    let moveAction = SKAction.moveTo(convertFromTileToMap(CGPoint(x: x + mx, y: y + my)), duration: 0.1)
+                    tile.runAction(moveAction)
+                    break
+                }
+            }
+        }
+    }*/
     
     @objc func getHeroInitialPosition() -> CGPoint{
         return heroInitialPosition!

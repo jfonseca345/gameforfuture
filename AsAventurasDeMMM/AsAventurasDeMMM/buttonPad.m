@@ -33,7 +33,7 @@
         [self.background setAnchorPoint:CGPointMake(0.5, 0.5)];
         self.theAButton = [[SKSpriteNode alloc] initWithImageNamed:@"Button1"];
         [self.theAButton setScale:0.7];
-        self.theBButton = [[SKSpriteNode alloc] initWithImageNamed:@"button2"];
+        self.theBButton = [[SKSpriteNode alloc] initWithImageNamed:@"Button2"];
         [self.theBButton setScale:0.7];
         [self addChild: self.background];
         

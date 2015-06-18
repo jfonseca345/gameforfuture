@@ -10,6 +10,7 @@
 		072268951B3059950090E354 /* buttonPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 072268941B3059950090E354 /* buttonPad.m */; };
 		078AC4561B2B110B00914F33 /* AnalogGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AC4551B2B110B00914F33 /* AnalogGesture.m */; };
 		079062E71B31C0260098F717 /* InitialScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 079062E61B31C0260098F717 /* InitialScreen.m */; };
+		07A24AFD1B32EE620021BFA0 /* PathFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A24AFC1B32EE620021BFA0 /* PathFinder.m */; };
 		07C6B87A1B28A5A200156D74 /* LevelGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C6B8771B28A5A200156D74 /* LevelGenerator.m */; };
 		07C6B87B1B28A5A200156D74 /* model1.level in Resources */ = {isa = PBXBuildFile; fileRef = 07C6B8781B28A5A200156D74 /* model1.level */; };
 		07C6B87C1B28A5A200156D74 /* pattern.level in Resources */ = {isa = PBXBuildFile; fileRef = 07C6B8791B28A5A200156D74 /* pattern.level */; };
@@ -59,6 +60,8 @@
 		078AC4551B2B110B00914F33 /* AnalogGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalogGesture.m; sourceTree = "<group>"; };
 		079062E51B31C0260098F717 /* InitialScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialScreen.h; sourceTree = "<group>"; };
 		079062E61B31C0260098F717 /* InitialScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialScreen.m; sourceTree = "<group>"; };
+		07A24AFB1B32EE620021BFA0 /* PathFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFinder.h; sourceTree = "<group>"; };
+		07A24AFC1B32EE620021BFA0 /* PathFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathFinder.m; sourceTree = "<group>"; };
 		07C6B8761B28A5A200156D74 /* LevelGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelGenerator.h; sourceTree = "<group>"; };
 		07C6B8771B28A5A200156D74 /* LevelGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelGenerator.m; sourceTree = "<group>"; };
 		07C6B8781B28A5A200156D74 /* model1.level */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = model1.level; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 			children = (
 				187366EE1B27379E006B539B /* Monster.swift */,
 				187366EF1B27379E006B539B /* MonsterFactory.swift */,
+				07A24AFB1B32EE620021BFA0 /* PathFinder.h */,
+				07A24AFC1B32EE620021BFA0 /* PathFinder.m */,
 			);
 			name = Monster;
 			sourceTree = "<group>";
@@ -400,6 +405,7 @@
 				18DDEA561B29C47300255FD9 /* Tile.swift in Sources */,
 				18F7B3D31B2B455E0033AACA /* HeroTile.swift in Sources */,
 				4F2C19BE1B28A28F00F95BB7 /* MapNode.swift in Sources */,
+				07A24AFD1B32EE620021BFA0 /* PathFinder.m in Sources */,
 				187366F21B27379E006B539B /* MonsterFactory.swift in Sources */,
 				4F2C19A01B272FBC00F95BB7 /* GameViewController.m in Sources */,
 				4F2C19981B272FBC00F95BB7 /* AppDelegate.m in Sources */,

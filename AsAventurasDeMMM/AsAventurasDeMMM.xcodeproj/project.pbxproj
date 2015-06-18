@@ -70,6 +70,7 @@
 		1853A63D1B2870120040C305 /* Weapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		1853A63F1B2870E50040C305 /* WeaponFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponFactory.swift; sourceTree = "<group>"; };
 		1853A6411B287F4B0040C305 /* StatsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsEffects.swift; sourceTree = "<group>"; };
+		1868D41F1B31EF5F00B608E8 /* CombatState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CombatState.h; sourceTree = "<group>"; };
 		187366EE1B27379E006B539B /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
 		187366EF1B27379E006B539B /* MonsterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterFactory.swift; sourceTree = "<group>"; };
 		187366F01B27379E006B539B /* TimePeriodsEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriodsEnum.swift; sourceTree = "<group>"; };
@@ -268,6 +269,7 @@
 				4FA35D381B30A85E00E6731A /* CardContainer.h */,
 				4FA35D391B30A85E00E6731A /* CardContainer.m */,
 				072268961B3069CF0090E354 /* deck.h */,
+				1868D41F1B31EF5F00B608E8 /* CombatState.h */,
 				4FA35D351B30A28A00E6731A /* CardCombatController.h */,
 				4FA35D361B30A28A00E6731A /* CardCombatController.m */,
 			);

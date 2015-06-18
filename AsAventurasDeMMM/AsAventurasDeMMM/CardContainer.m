@@ -13,8 +13,9 @@
 
 - (NSString *)description
 {
-    NSArray* numberArray = @[@"A", @"7",@"6",@"5",@"4",@"3",@"2"];
+    NSArray* numberArray = @[@"2", @"3",@"4",@"5",@"6",@"7",@"A"];
     NSArray* suitArray = @[@"DIAMOND",@"SPADE",@"HEART",@"CLUB"];
     return [NSString stringWithFormat:@"Card: < %@, %@ >",numberArray[(int)self.number], suitArray[(int)self.suit] ];
 }
+
 @end

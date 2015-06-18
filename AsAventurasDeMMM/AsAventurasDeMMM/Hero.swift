@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-class Hero{
+@objc class Hero{
     
     //Hero
     var heroName: String = "DEFAULT_NAME"

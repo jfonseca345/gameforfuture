@@ -10,6 +10,7 @@
 #import "deck.h"
 
 @interface CardContainer : NSObject
-@property (nonatomic) gameDeckNumber number;
+@property (nonatomic) gameDeckNumber number; //0-6
 @property (nonatomic) gameDeckSuit suit;
+
 @end

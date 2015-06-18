@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Monster{
+@objc class Monster{
     
     //Monster Graphical Attributes
     var name: String

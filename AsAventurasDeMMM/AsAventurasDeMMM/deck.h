@@ -11,13 +11,13 @@
 
 typedef NS_ENUM(NSInteger, gameDeckNumber)
 {//A,7,6,5,4,3,2.
-    A = 0,
-    SEVEN,
-    SIX,
-    FIVE,
-    FOUR,
+    TWO = 0,
     THREE,
-    TWO,
+    FOUR,
+    FIVE,
+    SIX,
+    SEVEN,
+    ACE,
     
     numberCount
 };

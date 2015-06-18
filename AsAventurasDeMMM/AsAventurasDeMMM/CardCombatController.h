@@ -9,10 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "deck.h"
 #import "CardContainer.h"
+#import "AsAventurasDeMMM-Swift.h"
 
 @interface CardCombatController : NSObject
 
-#pragma Deck Manipulation Methods and Atributes
+#pragma mark Players Attributes
+
+@property (nonatomic) Hero* player;
+@property (nonatomic) Monster* monster;
+
+
+#pragma mark Deck Manipulation Methods and Attributes
 
 @property (strong, nonatomic) NSMutableArray* deck;
 @property int drawCounter;
@@ -24,11 +31,12 @@
 @property (strong, nonatomic) NSMutableArray* playerHand;
 @property (strong, nonatomic) NSMutableArray* monsterHand;
 
-#pragma Game Managements Methods and Atributes
+#pragma Game Managements Methods and Attributes
 
 @property int pot;
 
--(void) prepareGame;
+-(void) prepareGame: (Hero*)withHero : (Monster*)andMonster;
+-(void) prepareRound;
 -(void) tradeCards: (int)playerCardsToTrade : (int)monsterCardsToTrade;
 
 @end

@@ -86,11 +86,20 @@ class MapNode: SKSpriteNode {
         
         self.runAction(walkAction);
         
-        if (moveCount == 500){
+        if (moveCount == 40){
             for y in 0..<mapMovable.count{
                 for x in 0..<mapMovable[y].count{
-                    if (mapMovable[y][x] != "0" && mapMovable[y][x] != "@"){
+                    if (mapMovable[y][x] != "0" && mapMovable[y][x] != "@" && mapMovable[y][x] != "-" && count(mapMovable[y][x]) != 2){
+                        mapMovable[y][x] = mapMovable[y][x]+"d"
                         moveMonsters(x, y:y)
+                    }
+                }
+            }
+            
+            for y in 0..<mapMovable.count{
+                for x in 0..<mapMovable[y].count{
+                    if (count(mapMovable[y][x]) == 2){
+                        mapMovable[y][x] = mapMovable[y][x].substringToIndex(advance(mapMovable[y][x].startIndex,1))
                     }
                 }
             }
@@ -157,9 +166,6 @@ class MapNode: SKSpriteNode {
             return true
             
             case "=", "9":
-            return true
-            
-            case "@":
             return true
             
             default:

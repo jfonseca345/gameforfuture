@@ -70,7 +70,8 @@
 //Trade cards from both hands, the argument has the indexes of the cards to be traded
 -(void) tradeCards: (int)playerCardsToTrade : (int) monsterCardsToTrade
 {
-    int tradeMask = 0x00001;
+    
+    int tradeMask = 0b00001;
     
     //We start by trading the players cards
     for(int i=0 ;i<5;i++)
@@ -123,14 +124,14 @@
 {
     /*
      1.0 High Card -> Nenhuma combinação, apenas uma carta. A carta mais alta do jogo é o A.
-     2.0 One Pair  -> Um par de cartas iguais
-     3.0 Two Pair  -> Dois pares de cartas iguais
-     4.0 Three of a kind -> Uma trinca de cartas iguais
-     5.0 Straight -> 5 cartas seguidas de naipes diferentes. Ex: 3,4,5,6,7.
+     ->2.0 One Pair  -> Um par de cartas iguais
+     ->3.0 Two Pair  -> Dois pares de cartas iguais
+     ->4.0 Three of a kind -> Uma trinca de cartas iguais
+     ->5.0 Straight -> 5 cartas seguidas de naipes diferentes. Ex: 3,4,5,6,7.
      6.0 Flush   -> 5 cartas do mesmo naipe, não seguidas
-     7.0 Full House -> Uma trinca e um par
-     8.0 Four of a kind -> 4 cartas iguais
-     9.0 Straight Flush -> Uma sequencia de mesmo naipe
+     ->7.0 Full House -> Uma trinca e um par
+     ->8.0 Four of a kind -> 4 cartas iguais
+     ->9.0 Straight Flush -> Uma sequencia de mesmo naipe
     */
     
     //First of all, we must sort our hand to make it easier to detect straights
@@ -150,7 +151,7 @@
     
     //Assuming it is sorted, we will detect if there is a Straight
     
-    for(int i=0; i<4; i++)
+    for(int i=0; i<5; i++)
     {
         CardContainer *card1 = [hand objectAtIndex:i];
         CardContainer *card2 = [hand objectAtIndex:i+1];
@@ -158,11 +159,11 @@
         if(!((card1.number+1)%7) == (card2.number%7))
             break;
         
-        //If i == 3, it means that the loop never broke, so we have a straight
-        if(i==3)
+        //If i == 4, it means that the loop never broke, so we have a straight
+        if(i==4)
         {
             //Let us just check if we have a plain flush or a straight flush
-            for(int j=0; j<4; j++)
+            for(int j=0; j<5; j++)
             {
                 CardContainer *cardFoo = [hand objectAtIndex:j];
                 CardContainer *cardBar = [hand objectAtIndex:j+1];
@@ -170,8 +171,8 @@
                 if(!(cardFoo.suit == cardBar.suit))
                     break;
                 
-                //If j ==3, it also means that the loop never broke, so we have a straight flush
-                if(j==3)
+                //If j == 4, it also means that the loop never broke, so we have a straight flush
+                if(j== 4)
                 {
                     return 9.0;
                 }
@@ -181,13 +182,103 @@
         }
         //We do not have a straight, let us check other combinations
         
+        //Let us count how many groups of different cards we have
+        int firstGroupNumber = 0;
+        int secondGroupNumber = 0;
         
+        //Boolean to help us define which group we are counting
+        BOOL group = false;
         
+        //Since the hand is sorted, it is easy to count the number of combinations
+        for(int i =0; i<5; i++)
+        {
+            CardContainer *card1 = [hand objectAtIndex:i];
+            CardContainer *card2 = [hand objectAtIndex:i+1];
+            
+            if(card1.number != card2.number)
+            {
+                //If we already counted a group
+                if(firstGroupNumber > 0)
+                    //We can start counting a second group
+                    group = true;
+                
+            }else
+            {
+                //We check which group we are counting
+                if(group){
+                    if(secondGroupNumber == 0)
+                        secondGroupNumber = 2;
+                    else
+                    secondGroupNumber++;
+                }
+                else
+                    if(firstGroupNumber == 0)
+                        firstGroupNumber = 2;
+                else
+                    firstGroupNumber++;
+            }
+            
+        }
+        
+        //Now we counted how many groups, and how many card on each group
+        
+        switch (firstGroupNumber+secondGroupNumber) {
+            case 2:
+            //We have one pair
+                return 2.0;
+                break;
+            case 3:
+            //We have a Three of a kind
+                return 4.0;
+                break;
+            case 4:
+            //We need to check if we have two pair or four of a kind
+            if(firstGroupNumber == secondGroupNumber)
+                //We have two pair
+                return 3.0;
+            else
+                //We have a four of a kind
+                return 8.0;
+                break;
+            case 5:
+                //We have a full house
+                return 7.0;
+                break;
+
+            default:
+                //We dont have any combinations, lastly let us see if we at least have a flush
+                
+                for(int j=0; j<5; j++)
+                {
+                    CardContainer *cardFoo = [hand objectAtIndex:j];
+                    CardContainer *cardBar = [hand objectAtIndex:j+1];
+                    
+                    if(!(cardFoo.suit == cardBar.suit))
+                        break;
+                    
+                    //If j == 4, it also means that the loop never broke, so we have a flush
+                    if(j== 4)
+                    {
+                        return 6.0;
+                    }
+                }
+                    //If we got to this point we have only a high card
+                    CardContainer *highCard = [hand lastObject];
+                    
+                    return 1.0 +((float)(highCard.number)/10.0);
+                break;
+        }
     }
-    
-    
-    
     return 0;
+}
+
+//Returns the damage done based on the pot
+-(int) damageDone : (int)attack : (int)defense{
+        int dam = self.pot*(attack-defense);
+        if(dam < 0)
+            dam = 1;
+    
+    return dam;
 }
 
 //Shuffles the deck

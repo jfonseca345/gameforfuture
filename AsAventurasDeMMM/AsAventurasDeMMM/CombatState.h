@@ -12,14 +12,14 @@
 typedef NS_ENUM(state)
 {/*PRE_COMBAT,PRE_ROUND,FIRST_BETTING, TRADE_CARDS, SECOND_BETTING, SHOWDOWN,
     DAMAGE,COMBAT_END*/
-    PRE_COMBAT,
-    PRE_ROUND,
-    FIRST_BETTING,
-    TRADE_CARDS,
-    SECOND_BETTING,
-    SHOWDOWN,
-    DAMAGE,
-    COMBAT_END
+    PRE_COMBAT, //Before combat begins, set the game
+    PRE_ROUND,  //Shuffles the deck, deals the hands, pot = zero
+    FIRST_BETTING, //Defines the first player to play, he bets. Second player then bets (check, fold, raise)
+    TRADE_CARDS,  //Players trade cards
+    SECOND_BETTING, //Second betting, first player bets (check,fold,raise), second players bets (check,fold,raise)
+    SHOWDOWN,   //Compare hands
+    DAMAGE,     //Deals damage to loser
+    COMBAT_END  //Check if someone's hp is zero, if so ends.
     
 };
 

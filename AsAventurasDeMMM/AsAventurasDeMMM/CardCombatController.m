@@ -309,12 +309,65 @@
     return 0;
 }
 
-- (void) playTheGameWithHero:(Hero*)Hero andMonster:(Monster*)Monster;
+- (void) playTheGameWithHero:(Hero<IsAPlayerProtocol>*)Hero andMonster:(Monster<IsAPlayerProtocol>*)Monster;
 {
+    int firstPlayer = arc4random_uniform(1), i;
+    move moveOne, moveTwo;
     self.gameState = PRE_COMBAT;
-    [self prepareGame:Hero :Monster];
-    self.gameState = PRE_ROUND;
-    [self prepareRound];
+    
+    while (self.gameState != COMBAT_END) {
+        switch (self.gameState) {
+            case PRE_COMBAT:
+                [self prepareGame:Hero :Monster];
+                self.gameState = PRE_ROUND;
+                break;
+            case PRE_ROUND:
+                [self prepareRound];
+                self.gameState = FIRST_BETTING;
+                break;
+            case FIRST_BETTING:
+                if (firstPlayer == 0){
+                    moveOne = [Hero move];
+                }
+                else{
+                    moveOne = [Monster move];
+                }
+                if (moveOne.action == FOLD){
+                    self.gameState = DAMAGE;
+                }
+                else{
+                    self.gameState = TRADE_CARDS;
+                }
+                break;
+            case TRADE_CARDS:
+                [self tradeCards:[Hero cardsToTrade] :[Monster cardsToTrade]];
+                self.gameState = SECOND_BETTING;
+                break;
+            case SECOND_BETTING:
+                if (firstPlayer == 0){
+                    moveTwo = [Monster move];
+                }
+                else{
+                    moveTwo = [Hero move];
+                }
+                if (moveTwo.action == FOLD){
+                    self.gameState = DAMAGE;
+                }
+                else
+                {
+                    self.gameState = SHOWDOWN;
+                }
+                break;
+            case SHOWDOWN:
+                break;
+            case DAMAGE:
+                break;
+            default:
+                NSLog(@"ERROR, UNKNOWN STATE");
+                break;
+        }
+    }
+    
 }
 
 //Evaluate both hands, then damages the loser

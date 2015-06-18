@@ -17,16 +17,16 @@
         case TWO:
             switch (suit) {
                 case DIAMOND:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"2Ouros"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"2Diamond"];
                     break;
                 case SPADE:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"2Espadas"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"2Spade"];
                     break;
                 case HEART:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"2Copas"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"2Heart"];
                     break;
                 case CLUB:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"2Paus"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"2Club"];
                     break;
                 default:
                     break;
@@ -35,16 +35,16 @@
         case THREE:
             switch (suit) {
                 case DIAMOND:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"3Ouros"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"3Diamond"];
                     break;
                 case SPADE:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"3Espadas"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"3Spade"];
                     break;
                 case HEART:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"3Copas"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"3Heart"];
                     break;
                 case CLUB:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"3Paus"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"3Club"];
                     break;
                 default:
                     break;
@@ -53,16 +53,16 @@
         case FOUR:
             switch (suit) {
                 case DIAMOND:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"4Ouros"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"4Diamond"];
                     break;
                 case SPADE:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"4Espadas"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"4Spade"];
                     break;
                 case HEART:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"4Copas"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"4Heart"];
                     break;
                 case CLUB:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"4Paus"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"4Club"];
                     break;
                 default:
                     break;
@@ -71,16 +71,16 @@
         case FIVE:
             switch (suit) {
                 case DIAMOND:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"5Ouros"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"5Diamond"];
                     break;
                 case SPADE:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"5Espadas"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"5Spade"];
                     break;
                 case HEART:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"5Copas"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"5Heart"];
                     break;
                 case CLUB:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"5Paus"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"5Club"];
                     break;
                 default:
                     break;
@@ -89,16 +89,16 @@
         case SIX:
             switch (suit) {
                 case DIAMOND:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"6Ouros"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"6Diamond"];
                     break;
                 case SPADE:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"6Espadas"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"6Spade"];
                     break;
                 case HEART:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"6Copas"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"6Heart"];
                     break;
                 case CLUB:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"6Paus"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"6Club"];
                     break;
                 default:
                     break;
@@ -107,16 +107,16 @@
         case SEVEN:
             switch (suit) {
                 case DIAMOND:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"7Ouros"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"7Diamond"];
                     break;
                 case SPADE:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"7Espadas"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"7Spade"];
                     break;
                 case HEART:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"7Copas"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"7Heart"];
                     break;
                 case CLUB:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"7Paus"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"7Club"];
                     break;
                 default:
                     break;
@@ -125,23 +125,23 @@
         case ACE:
             switch (suit) {
                 case DIAMOND:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"As-Ouros"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"aceDiamond"];
                     break;
                 case SPADE:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"As-Espadas"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"aceSpade"];
                     break;
                 case HEART:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"As-Copas"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"aceHeart"];
                     break;
                 case CLUB:
-                    card = [[SKSpriteNode alloc] initWithImageNamed:@"As-Paus"];
+                    card = [[SKSpriteNode alloc] initWithImageNamed:@"aceClub"];
                     break;
                 default:
                     break;
             }
             break;
         default:
-            NSLog(@"ERROR CARD SPRITE FACTORY");
+            card = [[SKSpriteNode alloc] initWithImageNamed:@"card_cover"];
             break;
     }
     return card;

@@ -14,4 +14,7 @@
 @property Hero * player1;
 @property Monster * player2;
 
+@property HeroTile * tile1;
+@property MonsterTile *tile2;
+
 @end

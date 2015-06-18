@@ -18,7 +18,10 @@
 #pragma mark Players Attributes
 
 @property (nonatomic) Hero* player;
+@property (nonatomic) NSString* playerMove;
+
 @property (nonatomic) Monster* monster;
+@property (nonatomic) NSString* monsterMove;
 
 
 #pragma mark Deck Manipulation Methods and Attributes

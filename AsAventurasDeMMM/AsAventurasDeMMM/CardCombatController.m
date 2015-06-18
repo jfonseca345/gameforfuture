@@ -53,6 +53,10 @@
     //Shuffles the deck
     [self shuffleCards];
     
+    //Init both move strings
+    self.playerMove = NULL;
+    self.monsterMove = NULL;
+    
     //Deals both hands
     for(int i=0; i<5; i++)
     {
@@ -100,6 +104,31 @@
 }
 
 #pragma mark Deck Manipulation Methods
+//Shuffles the deck
+-(void) shuffleCards{
+    NSLog(@"InitialConfiguration:");
+    for(int i = 0; i < [self.deck count]; i++){
+        NSLog([NSString stringWithFormat:@"%@",[self.deck[i] description]]);
+    }
+    
+    for(int i = 0; i < [self.deck count]; i++){
+        int j = arc4random_uniform((u_int32_t) self.deck.count);
+        
+        NSObject* auxiliarSwap = self.deck[i];
+        self.deck[i] = self.deck[j];
+        self.deck[j] = auxiliarSwap;
+        
+    }
+    
+    NSLog(@"shuffledConfigurtion:");
+    for(int i = 0; i < [self.deck count]; i++){
+        NSLog([NSString stringWithFormat:@"%@",[self.deck[i] description]]);
+    }
+    
+    //Resets the drawCounter
+    self.drawCounter = 1;
+}
+
 
 //Draws a card from the deck
 -(CardContainer*) drawCard{
@@ -120,7 +149,7 @@
 }
 
 //Evaluate hand
--(float) evaluateHand: (NSMutableArray*) hand
+-(float) evaluateHand: (NSMutableArray*) hand : (NSString*) move
 {
     /*
      1.0 High Card -> Nenhuma combinação, apenas uma carta. A carta mais alta do jogo é o A.
@@ -174,10 +203,12 @@
                 //If j == 4, it also means that the loop never broke, so we have a straight flush
                 if(j== 4)
                 {
+                    move = @"Straight Flush";
                     return 9.0;
                 }
             }
             //If we broke from the previous loop, we have a plain straight
+            move = @"Straight";
             return 5.0;
         }
         //We do not have a straight, let us check other combinations
@@ -225,23 +256,29 @@
         switch (firstGroupNumber+secondGroupNumber) {
             case 2:
             //We have one pair
+                move = @"One Pair";
                 return 2.0;
                 break;
             case 3:
             //We have a Three of a kind
+                move = @"Three of a Kind";
                 return 4.0;
                 break;
             case 4:
             //We need to check if we have two pair or four of a kind
             if(firstGroupNumber == secondGroupNumber)
-                //We have two pair
+            {    //We have two pair
+                move = @"Two Pair";
                 return 3.0;
+            }
             else
                 //We have a four of a kind
+                move = @"Four of a Kind";
                 return 8.0;
                 break;
             case 5:
                 //We have a full house
+                move = @"Full House";
                 return 7.0;
                 break;
 
@@ -264,7 +301,7 @@
                 }
                     //If we got to this point we have only a high card
                     CardContainer *highCard = [hand lastObject];
-                    
+                    move = @"HIGH CARD";
                     return 1.0 +((float)(highCard.number)/10.0);
                 break;
         }
@@ -333,6 +370,44 @@
     
 }
 
+//Evaluate both hands, then damages the loser
+-(void) showDown: (NSMutableArray*)playerHand : (NSMutableArray*) monsterHand
+{
+    //We evaluate both hands
+    float playerScore = [self evaluateHand: playerHand: self.playerMove ];
+    
+    float monsterScore = [self evaluateHand:monsterHand: self.monsterMove];
+    
+    if(playerScore > monsterScore)
+    {
+      //Player Wins
+        int damage = [self damageDone:(int)self.player.atk :(int)self.monster.Def];
+        self.monster.HP -= damage;
+        
+    }else
+    if(playerScore < monsterScore)
+    {
+     //Monster Wins
+        int damage = [self damageDone:(int)self.monster.Atk :(int)self.player.def];
+        self.player.hp -=damage;
+    }
+    else
+    {
+        //Tie
+        //Pot is divided by 2
+        self.pot = self.pot/2;
+        //Calculate damage based on new pot
+        int monsterDamage = [self damageDone:(int) self.player.atk :(int) self.monster.Def];
+        int playerDamage = [self damageDone:(int) self.monster.Atk :(int) self.player.def];
+        
+        self.monster.HP -=monsterDamage;
+        self.player.hp -= playerDamage;
+        
+    }
+    
+}
+
+
 //Returns the damage done based on the pot
 -(int) damageDone : (int)attack : (int)defense{
         int dam = self.pot*(attack-defense);
@@ -341,31 +416,6 @@
     
     return dam;
     
-}
-
-//Shuffles the deck
--(void) shuffleCards{
-    NSLog(@"InitialConfiguration:");
-    for(int i = 0; i < [self.deck count]; i++){
-        NSLog([NSString stringWithFormat:@"%@",[self.deck[i] description]]);
-    }
-    
-    for(int i = 0; i < [self.deck count]; i++){
-        int j = arc4random_uniform((u_int32_t) self.deck.count);
-        
-        NSObject* auxiliarSwap = self.deck[i];
-        self.deck[i] = self.deck[j];
-        self.deck[j] = auxiliarSwap;
-        
-    }
-    
-    NSLog(@"shuffledConfigurtion:");
-    for(int i = 0; i < [self.deck count]; i++){
-        NSLog([NSString stringWithFormat:@"%@",[self.deck[i] description]]);
-    }
-    
-    //Resets the drawCounter
-    self.drawCounter = 1;
 }
 
 @end

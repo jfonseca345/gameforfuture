@@ -19,7 +19,7 @@ outro jogador irá começar)
     -> Raise: Aumentar a aposta
 
 
-*** Como a mecanica do poker é usada no nosso jogo***
+*** Como a mecanica do poker é usada no nosso jogo ***
 
 -> O perdedor da rodada toma um dano igual:
         [Pot]*(Atk(vencedor) - Def(perdedor)) em um minimo de 1, caso Def > Atk

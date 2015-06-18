@@ -11,6 +11,7 @@
 		078AC4561B2B110B00914F33 /* AnalogGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AC4551B2B110B00914F33 /* AnalogGesture.m */; };
 		079062E71B31C0260098F717 /* InitialScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 079062E61B31C0260098F717 /* InitialScreen.m */; };
 		07A24AFD1B32EE620021BFA0 /* PathFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A24AFC1B32EE620021BFA0 /* PathFinder.m */; };
+		07A24B011B3320830021BFA0 /* I-pixel-u.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A24B001B3320830021BFA0 /* I-pixel-u.ttf */; };
 		07C6B87A1B28A5A200156D74 /* LevelGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C6B8771B28A5A200156D74 /* LevelGenerator.m */; };
 		07C6B87B1B28A5A200156D74 /* model1.level in Resources */ = {isa = PBXBuildFile; fileRef = 07C6B8781B28A5A200156D74 /* model1.level */; };
 		07C6B87C1B28A5A200156D74 /* pattern.level in Resources */ = {isa = PBXBuildFile; fileRef = 07C6B8791B28A5A200156D74 /* pattern.level */; };
@@ -63,6 +64,7 @@
 		07A24AFB1B32EE620021BFA0 /* PathFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFinder.h; sourceTree = "<group>"; };
 		07A24AFC1B32EE620021BFA0 /* PathFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathFinder.m; sourceTree = "<group>"; };
 		07A24AFE1B3300170021BFA0 /* IsAPlayerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsAPlayerProtocol.h; sourceTree = "<group>"; };
+		07A24B001B3320830021BFA0 /* I-pixel-u.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "I-pixel-u.ttf"; sourceTree = "<group>"; };
 		07C6B8761B28A5A200156D74 /* LevelGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelGenerator.h; sourceTree = "<group>"; };
 		07C6B8771B28A5A200156D74 /* LevelGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelGenerator.m; sourceTree = "<group>"; };
 		07C6B8781B28A5A200156D74 /* model1.level */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = model1.level; sourceTree = "<group>"; };
@@ -124,6 +126,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07A24AFF1B3320700021BFA0 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				07A24B001B3320830021BFA0 /* I-pixel-u.ttf */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
 		07C6B87D1B28A5AB00156D74 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +216,7 @@
 		4F2C19911B272FBC00F95BB7 /* AsAventurasDeMMM */ = {
 			isa = PBXGroup;
 			children = (
+				07A24AFF1B3320700021BFA0 /* Font */,
 				4FA35D3D1B31DB9700E6731A /* Screen */,
 				4FA35D3C1B31DB1300E6731A /* Combat */,
 				18F7B3D11B2B45420033AACA /* Hero */,
@@ -376,6 +387,7 @@
 				4F2C19A81B272FBC00F95BB7 /* LaunchScreen.xib in Resources */,
 				07C6B87C1B28A5A200156D74 /* pattern.level in Resources */,
 				07C6B87B1B28A5A200156D74 /* model1.level in Resources */,
+				07A24B011B3320830021BFA0 /* I-pixel-u.ttf in Resources */,
 				4F2C19A51B272FBC00F95BB7 /* Images.xcassets in Resources */,
 				180C92E01B30641D00270553 /* RegrasPoker in Resources */,
 				4F2C199D1B272FBC00F95BB7 /* GameScene.sks in Resources */,

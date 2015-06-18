@@ -2,7 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rop-AK-6YB">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="I-pixel-u.ttf">
+            <string>I-pixel-u</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Initial Screen-->
         <scene sceneID="PPR-Je-FLV">
@@ -16,20 +22,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgz-zc-pl2">
-                                <rect key="frame" x="285" y="285" width="30" height="30"/>
-                                <state key="normal" title="GO!">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhR-t8-2br">
+                                <rect key="frame" x="429" y="274.5" width="105" height="51"/>
+                                <fontDescription key="fontDescription" name="I-pixel-u" family="I pixel u" pointSize="31"/>
+                                <state key="normal" title="Provar!">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="UYS-MW-L69"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="wfQ-Rx-SdA"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Rgz-zc-pl2" firstAttribute="centerY" secondItem="RUx-TA-T8D" secondAttribute="centerY" id="DTV-ov-pOm"/>
-                            <constraint firstItem="Rgz-zc-pl2" firstAttribute="centerX" secondItem="RUx-TA-T8D" secondAttribute="centerX" id="zUh-5n-rkP"/>
+                            <constraint firstAttribute="centerY" secondItem="rhR-t8-2br" secondAttribute="centerY" id="9YK-oV-EaX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rhR-t8-2br" secondAttribute="trailing" constant="50" id="Kod-6b-rjS"/>
                         </constraints>
                     </view>
                 </viewController>

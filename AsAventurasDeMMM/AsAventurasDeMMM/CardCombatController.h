@@ -43,6 +43,7 @@
 -(void) prepareGame: (Hero*)withHero : (Monster*)andMonster;
 -(void) prepareRound;
 -(void) tradeCards: (int)playerCardsToTrade : (int)monsterCardsToTrade;
+-(void) showDown: (NSMutableArray*)playerHand : (NSMutableArray*) monsterHand;
 
 #pragma mark Game Flow Control Structures
 

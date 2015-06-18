@@ -36,6 +36,7 @@ import UIKit
     func cardsToTrade() -> Int32 {
         return 0;
     }
+    
     func move() -> myMove {
         let move = myMove();
         return move;

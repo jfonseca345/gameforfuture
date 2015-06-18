@@ -312,7 +312,7 @@
 - (void) playTheGameWithHero:(Hero<IsAPlayerProtocol>*)Hero andMonster:(Monster<IsAPlayerProtocol>*)Monster;
 {
     int firstPlayer = arc4random_uniform(1), i;
-    move moveOne, moveTwo;
+    moveStruct moveOne, moveTwo;
     self.gameState = PRE_COMBAT;
     
     while (self.gameState != COMBAT_END) {

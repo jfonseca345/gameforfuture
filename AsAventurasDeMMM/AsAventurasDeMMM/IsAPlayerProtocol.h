@@ -8,19 +8,20 @@
 
 #ifndef AsAventurasDeMMM_IsAPlayerProtocol_h
 #define AsAventurasDeMMM_IsAPlayerProtocol_h
+
 #import "deck.h"
 #import "CombatState.h"
 
 typedef struct myMove { //Struct that holds all information about a move
     action action;
     int raiseNewValue;
-} move;
+} moveStruct;
 
 @protocol IsAPlayerProtocol
 
 - (int) cardsToTrade;
 
-- (move) move;
+- (moveStruct) move;
 
 @end
 

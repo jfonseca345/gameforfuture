@@ -309,12 +309,103 @@
     return 0;
 }
 
-- (void) playTheGameWithHero:(Hero*)Hero andMonster:(Monster*)Monster;
+- (void) playTheGameWithHero:(Hero<IsAPlayerProtocol>*)Hero andMonster:(Monster<IsAPlayerProtocol>*)Monster;
 {
+    int firstPlayer = arc4random_uniform(1);
+    int roundCounter = 0;
+    moveStruct moveOne, moveTwo;
     self.gameState = PRE_COMBAT;
-    [self prepareGame:Hero :Monster];
-    self.gameState = PRE_ROUND;
-    [self prepareRound];
+    
+    while (self.gameState != COMBAT_END) {
+        switch (self.gameState) {
+            case PRE_COMBAT:
+                [self prepareGame:Hero :Monster];
+                self.gameState = PRE_ROUND;
+                break;
+            case PRE_ROUND:
+                [self prepareRound];
+                self.gameState = FIRST_BETTING;
+                break;
+            case FIRST_BETTING:
+                if (firstPlayer == 0){
+                    moveOne = [Hero move];
+                }
+                else{
+                    moveOne = [Monster move];
+                }
+                if (moveOne.action == FOLD){
+                    if (roundCounter == 0) NSLog(@"Fold during first round, first player`s move, ERROR");
+                    self.gameState = DAMAGE;
+                }
+                else{
+                    self.gameState = TRADE_CARDS;
+                }
+                break;
+            case TRADE_CARDS:
+                [self tradeCards:[Hero cardsToTrade] :[Monster cardsToTrade]];
+                self.gameState = SECOND_BETTING;
+                break;
+            case SECOND_BETTING:
+                if (firstPlayer == 0){
+                    moveTwo = [Monster move];
+                }
+                else{
+                    moveTwo = [Hero move];
+                }
+                if (moveTwo.action == FOLD){
+                    self.gameState = DAMAGE;
+                }
+                else
+                {
+                    self.gameState = SHOWDOWN;
+                }
+                break;
+            case SHOWDOWN:
+                [self showDown:self.playerHand :self.monsterHand];
+                if (roundCounter < 3)
+                {
+                    roundCounter++;
+                    self.gameState = PRE_ROUND;
+                }
+                else
+                {
+                    self.gameState = COMBAT_END;
+                }
+                break;
+            case DAMAGE:
+                if (moveOne.action == FOLD)
+                {
+                    if (firstPlayer == 0)
+                    {
+                        int damage = [self damageDone:(int)self.monster.Atk :(int)self.player.def];
+                        Hero.hp -= damage;
+                    }
+                    else
+                    {
+                        int damage = [self damageDone:(int)self.player.atk :(int)self.monster.Def];
+                        Monster.HP -= damage;
+                    }
+                }
+                else if (moveTwo.action == FOLD)
+                {
+                    if (firstPlayer == 0)
+                    {
+                        int damage = [self damageDone:(int)self.monster.Atk :(int)self.player.def];
+                        Hero.hp -= damage;
+                    }
+                    else
+                    {
+                        int damage = [self damageDone:(int)self.player.atk :(int)self.monster.Def];
+                        Monster.HP -= damage;
+                    }
+                }
+                break;
+            default:
+                NSLog(@"ERROR, UNKNOWN STATE");
+                break;
+        }
+    }
+    
 }
 
 //Evaluate both hands, then damages the loser

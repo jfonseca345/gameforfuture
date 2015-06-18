@@ -120,9 +120,9 @@
             
             if (isCombat) NSLog(@"Fight!");
         }
-        CGPoint cameraPosition = [map convertFromTileToMap:self.heroPosition];
-        SKAction* walkAction = [SKAction moveTo:cameraPosition duration:0.15];
         if (self.heroDirection != ANALOG_ZERO){
+            CGPoint cameraPosition = [map convertFromTileToMap:self.heroPosition];
+            SKAction* walkAction = [SKAction moveTo:cameraPosition duration:0.15];
             [heroTile runAction:walkAction completion:^{self.walking = NO;}];
             [map setHeroPosition: self.heroPosition];
             self.walking = YES;

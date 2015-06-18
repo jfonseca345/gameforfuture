@@ -95,10 +95,36 @@
                     break;
             }
         }
+        else {
+            BOOL isCombat;
+            switch (self.heroDirection) {
+                case ANALOG_UP:
+                    isCombat = [map checkCombatCollision:CGPointMake(self.heroPosition.x, self.heroPosition.y-1)];
+                    break;
+                    
+                case ANALOG_LEFT:
+                    isCombat = [map checkCombatCollision:CGPointMake(self.heroPosition.x-1, self.heroPosition.y)];
+                    break;
+                    
+                case ANALOG_RIGHT:
+                    isCombat = [map checkCombatCollision:CGPointMake(self.heroPosition.x+1, self.heroPosition.y)];
+                    break;
+                    
+                case ANALOG_DOWN:
+                    isCombat = [map checkCombatCollision:CGPointMake(self.heroPosition.x, self.heroPosition.y+1)];
+                    break;
+                    
+                default:
+                    break;
+            }
+            
+            if (isCombat) NSLog(@"Fight!");
+        }
         CGPoint cameraPosition = [map convertFromTileToMap:self.heroPosition];
         SKAction* walkAction = [SKAction moveTo:cameraPosition duration:0.15];
         if (self.heroDirection != ANALOG_ZERO){
             [heroTile runAction:walkAction completion:^{self.walking = NO;}];
+            [map setHeroPosition: self.heroPosition];
             self.walking = YES;
         }
     }

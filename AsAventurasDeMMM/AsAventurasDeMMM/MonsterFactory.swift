@@ -200,4 +200,95 @@ class MonsterFactory{
         return bossMonster
     }
     
+    class func createEasyMonsterTesting(onPeriod: Period) -> Monster
+    {
+        var easyMonster: Monster
+        
+        //Monster Graphical Setup
+        var monsterName: String
+        var monsterMapImage: UIImage
+        var monsterBattleImage: UIImage
+        
+        //Monster Version, we have differents sprites for easy monsters
+        let monsterVersion = arc4random_uniform(2)
+        
+        //Sprites and Names change based on time period
+        monsterName = "Bad Cat Dinossaur"
+        monsterMapImage = UIImage(named: "Easy")!
+        monsterBattleImage = UIImage(named: "Easy")!
+        
+        //Now, let us generate monsters stats
+        var monsterHP = 2 + Int(arc4random_uniform(5)) //2~6
+        var monsterAtk = 1 + Int(arc4random_uniform(3)) //1~3
+        var monsterDef = 1 + Int(arc4random_uniform(3)) //1~3
+        var monsterGold = monsterHP*2 + Int(arc4random_uniform(3)) //6~14
+        var monsterXP = monsterHP*2 + Int(arc4random_uniform(3)) //6~14
+        
+        easyMonster = Monster(monsterWithName: monsterName
+            , MapImage: monsterMapImage, BattleImage: monsterBattleImage, hp: monsterHP, atk: monsterAtk, def: monsterDef, xp: monsterXP, gold: monsterGold)
+        
+        return easyMonster
+    }
+    
+    class func createMediumMonsterTesting(onPeriod: Period) -> Monster
+    {
+        var mediumMonster: Monster
+        
+        //Monster Graphical Setup
+        var monsterName: String
+        var monsterMapImage: UIImage
+        var monsterBattleImage: UIImage
+        
+        //Monster Version, we have differents sprites for easy monsters
+        let monsterVersion = arc4random_uniform(2)
+        
+        //Sprites and Names change based on time period
+        
+        monsterName = "Owl of Rocks"
+        monsterMapImage = UIImage(named: "Medium")!
+        monsterBattleImage = UIImage(named: "Medium")!
+        
+        
+        //Now, let us generate monsters stats
+        var monsterHP = 7 + Int(arc4random_uniform(5)) //7~11
+        var monsterAtk = 4 + Int(arc4random_uniform(3)) //4~6
+        var monsterDef = 4 + Int(arc4random_uniform(3)) //4~6
+        var monsterGold = monsterHP*2 + Int(arc4random_uniform(3)) //14~24
+        var monsterXP = monsterHP*2 + Int(arc4random_uniform(3)) //14~24
+        
+        mediumMonster = Monster(monsterWithName: monsterName
+            , MapImage: monsterMapImage, BattleImage: monsterBattleImage, hp: monsterHP, atk: monsterAtk, def: monsterDef, xp: monsterXP, gold: monsterGold)
+        
+        return mediumMonster
+    }
+    
+    class func createBossTesting(onPeriod: Period) ->Monster
+    {
+        //Ey b0ss
+        
+        var bossMonster: Monster
+        
+        //Monster Graphical Setup
+        var monsterName: String
+        var monsterMapImage: UIImage
+        var monsterBattleImage: UIImage
+        
+        //Sprites and Names change based on time period
+        monsterName = "T-Rex"
+        monsterMapImage = UIImage(named: "TrexSprite")!
+        monsterBattleImage = UIImage(named: "TrexSprite")!
+        
+        //Now, let us generate monsters stats
+        var monsterHP = 15 + Int(arc4random_uniform(6)) //15~20
+        var monsterAtk = 7 + Int(arc4random_uniform(4)) //7~10
+        var monsterDef = 7 + Int(arc4random_uniform(4)) //7~10
+        var monsterGold = monsterHP*2 + Int(arc4random_uniform(11)) //30~40
+        var monsterXP = monsterHP*2 + Int(arc4random_uniform(11)) //30~40
+        
+        bossMonster = Monster(monsterWithName: monsterName
+            , MapImage: monsterMapImage, BattleImage: monsterBattleImage, hp: monsterHP, atk: monsterAtk, def: monsterDef, xp: monsterXP, gold: monsterGold)
+        
+        return bossMonster
+    }
+    
 }

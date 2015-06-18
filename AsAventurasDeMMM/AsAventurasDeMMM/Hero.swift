@@ -20,12 +20,12 @@ import UIKit
     var currentExp: Int = 0
     
     //Equipment
-    var weapon: Weapon = Weapon(weaponName: "Fist", weaponIcon: UIImage(named: "Fist")!, weaponBonus: 0)
+    //var weapon: Weapon = Weapon(weaponName: "Fist", weaponIcon: UIImage(named: "Fist")!, weaponBonus: 0)
     //var item1: Item   IMPLEMENTAR
     //var item2: Item   IMPLEMENTAR
     var gold: Int = 0
     
-    let heroMapImage: UIImage = UIImage(named: "HeroImage")!
+    let heroMapImage: UIImage = UIImage(named: "Hero")!
     
     //Init, not used yet
     init()
@@ -35,10 +35,10 @@ import UIKit
     
     //Hero Methods, to be implemented
     
-    func changeWeapon(weapon: Weapon)
+    /*func changeWeapon(weapon: Weapon)
     {
         self.weapon = weapon
-    }
+    }*/
     
     //Checks current XP, and avaliates if character has to go up a level
     func checkEXP()

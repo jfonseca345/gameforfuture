@@ -7,7 +7,7 @@
 //
 
 import UIKit
-@objc class Hero{
+@objc class Hero: IsAPlayerProtocol{
     
     //Hero
     var heroName: String = "DEFAULT_NAME"
@@ -31,6 +31,14 @@ import UIKit
     init()
     {
         
+    }
+    
+    func cardsToTrade() -> Int32 {
+        return 0;
+    }
+    func move() -> myMove {
+        let move = myMove();
+        return move;
     }
     
     //Hero Methods, to be implemented

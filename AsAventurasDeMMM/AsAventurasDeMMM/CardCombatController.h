@@ -10,6 +10,7 @@
 #import "deck.h"
 #import "CombatState.h"
 #import "CardContainer.h"
+#import "IsAPlayerProtocol.h"
 #import "AsAventurasDeMMM-Swift.h"
 
 @interface CardCombatController : NSObject
@@ -42,7 +43,7 @@
 
 #pragma mark Game Flow Control Structures
 
-- (void) playTheGameWithHero:(Hero*)Hero andMonster:(Monster*)Monster;
+- (void) playTheGameWithHero:(Hero<IsAPlayerProtocol>*)Hero andMonster:(Monster<IsAPlayerProtocol>*)Monster;
 
 @property (nonatomic) state gameState;
 

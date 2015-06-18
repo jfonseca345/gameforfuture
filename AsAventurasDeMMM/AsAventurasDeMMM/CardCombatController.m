@@ -278,7 +278,15 @@
     [self prepareGame:Hero :Monster];
     self.gameState = PRE_ROUND;
     [self prepareRound];
+}
+
+//Returns the damage done based on the pot
+-(int) damageDone : (int)attack : (int)defense{
+        int dam = self.pot*(attack-defense);
+        if(dam < 0)
+            dam = 1;
     
+    return dam;
     
 }
 

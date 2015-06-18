@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc class Monster{
+@objc class Monster: IsAPlayerProtocol{
     
     //Monster Graphical Attributes
     var name: String
@@ -24,7 +24,13 @@ import UIKit
     var XP: Int
     var Gold: Int
     
-    
+    func cardsToTrade() -> Int32 {
+        return 0;
+    }
+    func move() -> myMove {
+        let move = myMove();
+        return move;
+    }
     
     //Initiation Method
     init(monsterWithName: String, MapImage: UIImage, BattleImage: UIImage, hp: Int, atk: Int, def: Int, xp: Int, gold: Int)

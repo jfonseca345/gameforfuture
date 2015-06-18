@@ -9,7 +9,7 @@
 #ifndef AsAventurasDeMMM_CombatState_h
 #define AsAventurasDeMMM_CombatState_h
 
-typedef NS_ENUM(state)
+typedef NS_ENUM(NSInteger, state)
 {/*PRE_COMBAT,PRE_ROUND,FIRST_BETTING, TRADE_CARDS, SECOND_BETTING, SHOWDOWN,
     DAMAGE,COMBAT_END*/
     PRE_COMBAT,
@@ -20,6 +20,14 @@ typedef NS_ENUM(state)
     SHOWDOWN,
     DAMAGE,
     COMBAT_END
+    
+};
+
+typedef NS_ENUM(NSInteger, action)
+{/**/
+    CHECK, //Bets the same
+    RAISE, //Raises...
+    FOLD, //Gives up
     
 };
 

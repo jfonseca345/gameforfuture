@@ -62,6 +62,7 @@
 		079062E61B31C0260098F717 /* InitialScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialScreen.m; sourceTree = "<group>"; };
 		07A24AFB1B32EE620021BFA0 /* PathFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFinder.h; sourceTree = "<group>"; };
 		07A24AFC1B32EE620021BFA0 /* PathFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathFinder.m; sourceTree = "<group>"; };
+		07A24AFE1B3300170021BFA0 /* IsAPlayerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsAPlayerProtocol.h; sourceTree = "<group>"; };
 		07C6B8761B28A5A200156D74 /* LevelGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelGenerator.h; sourceTree = "<group>"; };
 		07C6B8771B28A5A200156D74 /* LevelGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelGenerator.m; sourceTree = "<group>"; };
 		07C6B8781B28A5A200156D74 /* model1.level */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = model1.level; sourceTree = "<group>"; };
@@ -272,6 +273,7 @@
 				1868D41F1B31EF5F00B608E8 /* CombatState.h */,
 				4FA35D351B30A28A00E6731A /* CardCombatController.h */,
 				4FA35D361B30A28A00E6731A /* CardCombatController.m */,
+				07A24AFE1B3300170021BFA0 /* IsAPlayerProtocol.h */,
 			);
 			name = Combat;
 			sourceTree = "<group>";

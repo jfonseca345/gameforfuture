@@ -190,6 +190,16 @@
     return 0;
 }
 
+- (void) playTheGameWithHero:(Hero*)Hero andMonster:(Monster*)Monster;
+{
+    self.gameState = PRE_COMBAT;
+    [self prepareGame:Hero :Monster];
+    self.gameState = PRE_ROUND;
+    [self prepareRound];
+    
+    
+}
+
 //Shuffles the deck
 -(void) shuffleCards{
     NSLog(@"InitialConfiguration:");

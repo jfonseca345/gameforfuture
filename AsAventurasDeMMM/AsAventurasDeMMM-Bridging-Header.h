@@ -12,5 +12,6 @@
 #import "LevelGenerator.h"
 #import "AnalogGesture.h"
 #import "deck.h"
+#import "IsAPlayerProtocol.h"
 
 #endif

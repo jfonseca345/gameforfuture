@@ -63,6 +63,8 @@ class MapNode: SKSpriteNode {
                 
                 if (charMap[y][x] == "@"){
                     heroInitialPosition = CGPoint(x: x, y: y)
+                    let camera = childNodeWithName("camera")
+                    camera!.position = convertFromTileToMap(heroInitialPosition)
                 }
                 
                 if (isMovable(charMap[y][x])){

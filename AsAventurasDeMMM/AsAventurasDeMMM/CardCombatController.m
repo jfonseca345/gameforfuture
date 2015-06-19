@@ -153,14 +153,14 @@
 {
     /*
      1.0 High Card -> Nenhuma combinação, apenas uma carta. A carta mais alta do jogo é o A.
-     ->2.0 One Pair  -> Um par de cartas iguais
-     ->3.0 Two Pair  -> Dois pares de cartas iguais
-     ->4.0 Three of a kind -> Uma trinca de cartas iguais
-     ->5.0 Straight -> 5 cartas seguidas de naipes diferentes. Ex: 3,4,5,6,7.
+     2.0 One Pair  -> Um par de cartas iguais
+     3.0 Two Pair  -> Dois pares de cartas iguais
+     4.0 Three of a kind -> Uma trinca de cartas iguais
+     5.0 Straight -> 5 cartas seguidas de naipes diferentes. Ex: 3,4,5,6,7.
      6.0 Flush   -> 5 cartas do mesmo naipe, não seguidas
-     ->7.0 Full House -> Uma trinca e um par
-     ->8.0 Four of a kind -> 4 cartas iguais
-     ->9.0 Straight Flush -> Uma sequencia de mesmo naipe
+     7.0 Full House -> Uma trinca e um par
+     8.0 Four of a kind -> 4 cartas iguais
+     9.0 Straight Flush -> Uma sequencia de mesmo naipe
     */
     
     //First of all, we must sort our hand to make it easier to detect straights
@@ -301,7 +301,7 @@
                 }
                     //If we got to this point we have only a high card
                     CardContainer *highCard = [hand lastObject];
-                    move = @"HIGH CARD";
+                    move = @"High Card";
                     return 1.0 +((float)(highCard.number)/10.0);
                 break;
         }
@@ -444,7 +444,6 @@
     }
     
 }
-
 
 //Returns the damage done based on the pot
 -(int) damageDone : (int)attack : (int)defense{

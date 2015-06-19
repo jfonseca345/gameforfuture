@@ -123,9 +123,9 @@
             
             if (isCombat!=nil) {
                 NSLog(@"Fight!");
-                NSLog(isCombat.monster.name);
+//                NSLog(isCombat.monster.name);
                 HeroTile * myHero = (HeroTile *) heroTile;
-                //[(SKView *)self.view presentScene:[[CombateScene alloc] initWithSize:self.size andWithHero:myHero.hero andMonster:<#(Monster *)#>]  transition:SKTransitionDirectionUp];
+                [(SKView *)self.view presentScene:[[CombateScene alloc] initWithSize:self.size andWithHero:myHero.hero andMonster:isCombat.monster]  transition:SKTransitionDirectionUp];
             }
         }
         if (self.heroDirection != ANALOG_ZERO){

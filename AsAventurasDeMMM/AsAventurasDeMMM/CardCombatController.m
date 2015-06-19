@@ -58,6 +58,9 @@
     self.playerMove = NULL;
     self.monsterMove = NULL;
     
+    [self.playerHand removeAllObjects];
+    [self.monsterHand removeAllObjects];
+    
     //Deals both hands
     for(int i=0; i<5; i++)
     {
@@ -181,7 +184,7 @@
     
     //Assuming it is sorted, we will detect if there is a Straight
     
-    for(int i=0; i<5; i++)
+    for(int i=0; i<4; i++)
     {
         CardContainer *card1 = [hand objectAtIndex:i];
         CardContainer *card2 = [hand objectAtIndex:i+1];
@@ -193,7 +196,7 @@
         if(i==4)
         {
             //Let us just check if we have a plain flush or a straight flush
-            for(int j=0; j<5; j++)
+            for(int j=0; j<4; j++)
             {
                 CardContainer *cardFoo = [hand objectAtIndex:j];
                 CardContainer *cardBar = [hand objectAtIndex:j+1];
@@ -222,7 +225,7 @@
         BOOL group = false;
         
         //Since the hand is sorted, it is easy to count the number of combinations
-        for(int i =0; i<5; i++)
+        for(int i =0; i<4; i++)
         {
             CardContainer *card1 = [hand objectAtIndex:i];
             CardContainer *card2 = [hand objectAtIndex:i+1];
@@ -286,7 +289,7 @@
             default:
                 //We dont have any combinations, lastly let us see if we at least have a flush
                 
-                for(int j=0; j<5; j++)
+                for(int j=0; j<4; j++)
                 {
                     CardContainer *cardFoo = [hand objectAtIndex:j];
                     CardContainer *cardBar = [hand objectAtIndex:j+1];
@@ -310,7 +313,7 @@
     return 0;
 }
 
-- (void) playTheGameWithHero:(Hero<IsAPlayerProtocol>*)myHero andMonster:(Monster<IsAPlayerProtocol>*)Monster onScreen:(CombateScene *)scene
+- (void) playTheGameWithHero:(Hero<IsAPlayerProtocol>*)myHero andMonster:(Monster<IsAPlayerProtocol>*)myMonster onScreen:(CombateScene *)scene
 {
     int firstPlayer = arc4random_uniform(1);
     int roundCounter = 0;
@@ -321,7 +324,7 @@
         NSLog(@"New");
         switch (self.gameState) {
             case PRE_COMBAT:
-                [self prepareGame:myHero :Monster];
+                [self prepareGame:myHero :myMonster];
                 self.gameState = PRE_ROUND;
                 [scene updateHandsWithHeroHand: self.playerHand andMonsterHand:self.monsterHand];
                 break;
@@ -334,7 +337,7 @@
                     moveOne = [myHero move];
                 }
                 else{
-                    moveOne = [Monster move];
+                    moveOne = [myMonster move];
                 }
                 if (moveOne.action == FOLD || moveOne.action == CHECK){
                     if (roundCounter == 0) NSLog(@"Fold or Check during first round, first player`s move, ERROR");
@@ -345,13 +348,13 @@
                 }
                 break;
             case TRADE_CARDS:
-                [self tradeCards:[myHero cardsToTrade] :[Monster cardsToTrade]];
+                [self tradeCards:[myHero cardsToTrade] :[myMonster cardsToTrade]];
                 self.gameState = SECOND_BETTING;
                 [scene updateHandsWithHeroHand: self.playerHand andMonsterHand:self.monsterHand];
                 break;
             case SECOND_BETTING:
                 if (firstPlayer == 0){
-                    moveTwo = [Monster move];
+                    moveTwo = [myMonster move];
                 }
                 else{
                     moveTwo = [myHero move];
@@ -387,7 +390,7 @@
                     else
                     {
                         int damage = [self damageDone:(int)self.player.atk :(int)self.monster.Def];
-                        Monster.HP -= damage;
+                        myMonster.HP -= damage;
                     }
                 }
                 else if (moveTwo.action == FOLD)
@@ -400,7 +403,7 @@
                     else
                     {
                         int damage = [self damageDone:(int)self.player.atk :(int)self.monster.Def];
-                        Monster.HP -= damage;
+                        myMonster.HP -= damage;
                     }
                 }
                 if (roundCounter < 3)

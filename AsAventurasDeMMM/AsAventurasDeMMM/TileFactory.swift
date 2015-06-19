@@ -32,7 +32,7 @@ class TileFactory: Tile {
             case  "3":
                 let obstacleTile = Tile()
             
-                obstacleTile.texture = SKTexture(imageNamed: "tree")
+                obstacleTile.texture = SKTexture(imageNamed: "bostaDeDinossauro")
                 obstacleTile.anchorPoint = CGPointZero
                 obstacleTile.position = tilePosition
                 obstacleTile.zPosition = 1
@@ -41,7 +41,7 @@ class TileFactory: Tile {
             case  "4":
                 let obstacleTile = Tile()
             
-                obstacleTile.texture = SKTexture(imageNamed: "bostaDeDinossauro")
+                obstacleTile.texture = SKTexture(imageNamed: "tree")
                 obstacleTile.anchorPoint = CGPointZero
                 obstacleTile.position = tilePosition
                 obstacleTile.zPosition = 1

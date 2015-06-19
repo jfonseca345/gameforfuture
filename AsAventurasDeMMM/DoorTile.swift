@@ -14,8 +14,8 @@ class DoorTile:Tile{
     var locked = true
     
     override init(){
-        openDoorTexture = UIImage(named: "PastDoor_Unlocked_Horizontal")
-        closedDoorTexture = UIImage(named: "PastDoor_Locked_Horizontal")
+        openDoorTexture = UIImage(named: "doorBosta")
+        closedDoorTexture = UIImage(named: "doorBosta")
         super.init()
         texture = SKTexture(CGImage: closedDoorTexture.CGImage!)
     }

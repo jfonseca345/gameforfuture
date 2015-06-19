@@ -256,7 +256,7 @@ class MapNode: SKSpriteNode {
     
     @objc func setHeroPosition(heroPosition: CGPoint){
         mapMovable[Int(heroInitialPosition.y)][Int(heroInitialPosition.x)] = "0"
-        mapMovable[Int(heroPosition.y)][Int(heroPosition.y)] = "@"
+        mapMovable[Int(heroPosition.y)][Int(heroPosition.x)] = "@"
         heroInitialPosition = heroPosition
     }
     

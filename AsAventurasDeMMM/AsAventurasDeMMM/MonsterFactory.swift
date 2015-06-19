@@ -213,9 +213,9 @@ class MonsterFactory{
         let monsterVersion = arc4random_uniform(2)
         
         //Sprites and Names change based on time period
-        monsterName = "Bad Cat Dinossaur"
-        monsterMapImage = UIImage(named: "Easy")!
-        monsterBattleImage = UIImage(named: "Easy")!
+        monsterName = "Android"
+        monsterMapImage = UIImage(named: "androidSprite")!
+        monsterBattleImage = UIImage(named: "androidSprite")!
         
         //Now, let us generate monsters stats
         var monsterHP = 2 + Int(arc4random_uniform(5)) //2~6
@@ -244,9 +244,9 @@ class MonsterFactory{
         
         //Sprites and Names change based on time period
         
-        monsterName = "Owl of Rocks"
-        monsterMapImage = UIImage(named: "Medium")!
-        monsterBattleImage = UIImage(named: "Medium")!
+        monsterName = "Zombie"
+        monsterMapImage = UIImage(named: "ZombieSprite")!
+        monsterBattleImage = UIImage(named: "ZombieSprite")!
         
         
         //Now, let us generate monsters stats

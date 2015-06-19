@@ -9,6 +9,7 @@
     <customFonts key="customFonts">
         <mutableArray key="I-pixel-u.ttf">
             <string>I-pixel-u</string>
+            <string>I-pixel-u</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -24,6 +25,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="TardisPixel" translatesAutoresizingMaskIntoConstraints="NO" id="lA6-3Z-mtx">
+                                <rect key="frame" x="221" y="116" width="412" height="494"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="412" id="aSL-xz-lVG"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhR-t8-2br">
                                 <rect key="frame" x="455" y="274" width="105" height="51"/>
                                 <fontDescription key="fontDescription" name="I-pixel-u" family="I pixel u" pointSize="31"/>
@@ -35,12 +42,14 @@
                                     <segue destination="BV1-FR-VrT" kind="show" id="wfQ-Rx-SdA"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="TardisPixel" translatesAutoresizingMaskIntoConstraints="NO" id="lA6-3Z-mtx">
-                                <rect key="frame" x="-32" y="48" width="412" height="494"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="412" id="aSL-xz-lVG"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="As Aventuras de Marcio McMosca" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaZ-8O-xf3">
+                                <rect key="frame" x="45" y="60" width="479" height="105"/>
+                                <fontDescription key="fontDescription" name="I-pixel-u" family="I pixel u" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <size key="shadowOffset" width="1" height="-3"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bestPlayerAllTime" translatesAutoresizingMaskIntoConstraints="NO" id="3Zl-N4-Qpi">
                                 <rect key="frame" x="26" y="412" width="498" height="198"/>
                                 <constraints>
@@ -52,13 +61,16 @@
                         <constraints>
                             <constraint firstItem="bpE-6d-24U" firstAttribute="top" secondItem="3Zl-N4-Qpi" secondAttribute="bottom" constant="-10" id="1Ob-Q6-LY7"/>
                             <constraint firstAttribute="centerY" secondItem="rhR-t8-2br" secondAttribute="centerY" id="9YK-oV-EaX"/>
+                            <constraint firstItem="IaZ-8O-xf3" firstAttribute="leading" secondItem="RUx-TA-T8D" secondAttribute="leadingMargin" id="FyP-EI-Xi9"/>
                             <constraint firstItem="3Zl-N4-Qpi" firstAttribute="width" secondItem="RUx-TA-T8D" secondAttribute="width" multiplier="0.33" constant="300" id="Gtm-8s-NYb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rhR-t8-2br" secondAttribute="trailing" constant="24" id="Kod-6b-rjS"/>
-                            <constraint firstItem="lA6-3Z-mtx" firstAttribute="top" secondItem="9Lj-yu-vl5" secondAttribute="bottom" constant="28" id="V2f-GB-0Hn"/>
+                            <constraint firstItem="IaZ-8O-xf3" firstAttribute="top" secondItem="9Lj-yu-vl5" secondAttribute="bottom" id="Kq3-Cy-V7J"/>
+                            <constraint firstItem="lA6-3Z-mtx" firstAttribute="top" secondItem="9Lj-yu-vl5" secondAttribute="bottom" constant="96" id="V2f-GB-0Hn"/>
                             <constraint firstItem="3Zl-N4-Qpi" firstAttribute="leading" secondItem="RUx-TA-T8D" secondAttribute="leadingMargin" constant="10" id="aK9-jU-Gb8"/>
                             <constraint firstItem="bpE-6d-24U" firstAttribute="top" secondItem="3Zl-N4-Qpi" secondAttribute="bottom" constant="-10" id="bXE-TS-UNB"/>
+                            <constraint firstAttribute="centerX" secondItem="IaZ-8O-xf3" secondAttribute="centerX" constant="25" id="f3I-Nv-gHD"/>
                             <constraint firstItem="bpE-6d-24U" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lA6-3Z-mtx" secondAttribute="bottom" constant="58" id="fTp-1j-yN4"/>
-                            <constraint firstItem="rhR-t8-2br" firstAttribute="leading" secondItem="lA6-3Z-mtx" secondAttribute="trailing" constant="75" id="pN0-l8-5q7"/>
+                            <constraint firstItem="rhR-t8-2br" firstAttribute="leading" secondItem="lA6-3Z-mtx" secondAttribute="trailing" constant="-178" id="pN0-l8-5q7"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -69,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C23-cH-e0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-313" y="189"/>
+            <point key="canvasLocation" x="-1077" y="225"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">

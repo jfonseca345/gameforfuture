@@ -33,13 +33,13 @@
         
         self.background = [[SKSpriteNode alloc] initWithColor:nil size:CGSizeMake(BKG_WIDTH, BKG_HEIGHT)];
         [self.background setAnchorPoint:CGPointMake(0.5, 0.5)];
-        self.theAButton = [[SKSpriteNode alloc] initWithImageNamed:@"Button1"];
+        self.theAButton = [[SKSpriteNode alloc] initWithImageNamed:@"CheckButton"];
         [self.theAButton setScale:1.5];
         self.theAButton.name = @"Pbutton1";
-        self.theBButton = [[SKSpriteNode alloc] initWithImageNamed:@"Button2"];
+        self.theBButton = [[SKSpriteNode alloc] initWithImageNamed:@"FoldButton"];
         [self.theBButton setScale:1.5];
         self.theBButton.name = @"Pbutton2";
-        self.theCButton = [[SKSpriteNode alloc] initWithImageNamed:@"Button1"];
+        self.theCButton = [[SKSpriteNode alloc] initWithImageNamed:@"RaiseButton"];
         [self.theCButton setScale:1.5];
         self.theCButton.name = @"Pbutton3";
         

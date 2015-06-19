@@ -23,6 +23,9 @@
 
 @property CardCombatController * combatController;
 
+@property int P1Trade;
+@property int P2Trade;
+
 @end
 
 @implementation CombateScene
@@ -34,6 +37,7 @@
     {
         self.player1 = myHero;
         self.player2 = myMonster;
+        
     }
     return self;
     
@@ -171,5 +175,7 @@
 {
     [self.player1 setMove:RAISE];
 }
+
+
 
 @end

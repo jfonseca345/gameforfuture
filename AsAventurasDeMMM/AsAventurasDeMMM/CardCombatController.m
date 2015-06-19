@@ -16,6 +16,8 @@
 @property int firstPlayer;
 @property int roundCounter;
 
+@property int currentBet;
+
 @end
 
 @implementation CardCombatController
@@ -62,6 +64,9 @@
 {
     //Sets the pot to zero
     self.pot = 0;
+    
+    //Sets the current bet to 1
+    self.currentBet = 1;
     
     //Shuffles the deck
     [self shuffleCards];
@@ -122,7 +127,7 @@
 #pragma mark Deck Manipulation Methods
 //Shuffles the deck
 -(void) shuffleCards{
-    NSLog(@"InitialConfiguration:");
+    //NSLog(@"InitialConfiguration:");
     for(int i = 0; i < [self.deck count]; i++){
 //        NSLog([NSString stringWithFormat:@"%@",[self.deck[i] description]]);
     }
@@ -136,7 +141,7 @@
         
     }
     
-    NSLog(@"shuffledConfiguration:");
+   // NSLog(@"shuffledConfiguration:");
     for(int i = 0; i < [self.deck count]; i++){
 //        NSLog([NSString stringWithFormat:@"%@",[self.deck[i] description]]);
     }
@@ -164,6 +169,8 @@
     
 }
 
+
+
 //Evaluate hand
 -(float) evaluateHand: (NSMutableArray*) hand : (NSString*) move
 {
@@ -180,19 +187,26 @@
     */
     
     //First of all, we must sort our hand to make it easier to detect straights
-    [hand sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
-        CardContainer *card1 = obj1;
-        CardContainer *card2 = obj2;
+    hand = [hand sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
+        CardContainer *card1 = (CardContainer*) obj1;
+        CardContainer *card2 = (CardContainer*) obj2;
         
         if(card1.number == card2.number)
             return (NSComparisonResult)NSOrderedSame;
-        
+       
         if(card2.number > card1.number)
             return (NSComparisonResult)NSOrderedAscending;
         
         else
             return (NSComparisonResult)NSOrderedDescending;
     }];
+    
+    for(int i=0;i<5;i++)
+    {
+        CardContainer *card = [hand objectAtIndex:i];
+        printf("%ld ",(long)card.number);
+    }
+    printf("\n");
     
     //Assuming it is sorted, we will detect if there is a Straight
     
@@ -344,16 +358,21 @@
 //    NSLog(@"New");
     switch (self.gameState) {
         case PRE_COMBAT:
+            NSLog(@"PRE_COMBAT");
             [self setupGameBegin];
             [self prepareGame:myHero :myMonster];
             self.gameState = PRE_ROUND;
-            [scene updateHandsWithHeroHand: self.playerHand andMonsterHand:self.monsterHand];
             break;
+        
         case PRE_ROUND:
+           // NSLog(@"PRE_ROUND");
             [self prepareRound];
             self.gameState = FIRST_BETTING;
+            [scene updateHandsWithHeroHand: self.playerHand andMonsterHand:self.monsterHand];
             break;
+        
         case FIRST_BETTING:
+            //NSLog(@"FIRST_BETTING");
             if (self.firstPlayer == 0){
                 self.moveOne = [myHero move];
             }
@@ -366,47 +385,73 @@
             }
             else
             {
-                NSLog(@"P1 jugou");
+                //NSLog(@"P1 jugou");
             }
-            if (self.moveOne.action == FOLD || self.moveOne.action == CHECK){
-                if (self.roundCounter == 0) NSLog(@"Fold or Check during first round, first player`s move, ERROR");
+            
+            if (self.moveOne.action == FOLD){
+                if (self.roundCounter == 0) NSLog(@"Fold during first round, first player`s move, ERROR");
                 self.gameState = DAMAGE;
             }
             else{
-                
+            if( self.moveOne.action == CHECK)
+            {
+                NSLog(@"P1 Check");
+                self.pot+=self.currentBet;
+                self.gameState = TRADE_CARDS;
+            }else
+                NSLog(@"P1 Raise");
+                self.currentBet++;
+                self.pot += self.currentBet;
                 self.gameState = TRADE_CARDS;
             }
             break;
+       
         case TRADE_CARDS:
-            [self tradeCards:[myHero cardsToTrade] :[myMonster cardsToTrade]];
+            //PRECISO SETAR QUAIS CARTAS TROCAR
+            //[self tradeCards:[myHero cardsToTrade] :[myMonster cardsToTrade]];
             self.gameState = SECOND_BETTING;
-            [scene updateHandsWithHeroHand: self.playerHand andMonsterHand:self.monsterHand];
+           // [scene updateHandsWithHeroHand: self.playerHand andMonsterHand:self.monsterHand];
             break;
+      
         case SECOND_BETTING:
             if (self.firstPlayer == 0){
-                self.moveTwo = [myMonster move];
-            }
-            else{
                 self.moveTwo = [myHero move];
             }
-            if (self.moveOne.action == NONE)
+            else{
+                self.moveTwo = [myMonster move];
+            }
+            if (self.moveTwo.action == NONE)
             {
                 break;
             }
             else
             {
-                NSLog(@"P2 jugou");
+                //NSLog(@"P2 jugou");
             }
             if (self.moveTwo.action == FOLD){
+                //NSLog(@"FOLD");
                 self.gameState = DAMAGE;
             }
             else
+            if (self.moveTwo.action == CHECK)
             {
+                //NSLog(@"CHECK");
+                self.pot+=self.currentBet;
+                self.gameState = SHOWDOWN;
+            }
+            else
+            {
+                //NSLog(@"Check");
+                self.currentBet++;
+                self.pot+=self.currentBet;
                 self.gameState = SHOWDOWN;
             }
             break;
+       
         case SHOWDOWN:
             [self showDown:self.playerHand :self.monsterHand];
+            NSLog(@"ROUND FINISHED\n Hero Life: %d Monster Life: %d", self.player.hp, self.monster.HP);
+            
             if (self.roundCounter < 3)
             {
                 self.roundCounter++;
@@ -417,6 +462,7 @@
                 self.gameState = COMBAT_END;
             }
             break;
+        
         case DAMAGE:
             if (self.moveOne.action == FOLD)
             {
@@ -444,15 +490,25 @@
                     myMonster.HP -= damage;
                 }
             }
-            if (self.roundCounter < 3)
+            
+            if (self.monster.HP>0)
             {
                 self.roundCounter++;
                 self.gameState = PRE_ROUND;
             }
             else
+            if(self.player.hp<0)
+            {
+                //GAMEOVER
+                self.gameState = COMBAT_END;
+            }
+            else
             {
                 self.gameState = COMBAT_END;
             }
+            break;
+        case COMBAT_END:
+            return;
             break;
         default:
             NSLog(@"ERROR, UNKNOWN STATE");
@@ -467,6 +523,8 @@
     float playerScore = [self evaluateHand: playerHand: self.playerMove ];
     
     float monsterScore = [self evaluateHand:monsterHand: self.monsterMove];
+    
+    NSLog(@"SHOWDOWN RESULTS: Player: %f Monster: %f",playerScore,monsterScore);
     
     if(playerScore > monsterScore)
     {

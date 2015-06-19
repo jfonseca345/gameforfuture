@@ -99,7 +99,7 @@
             }
         }
         else {
-            BOOL isCombat;
+            MonsterTile* isCombat;
             switch (self.heroDirection) {
                 case ANALOG_UP:
                     isCombat = [map checkCombatCollision:CGPointMake(self.heroPosition.x, self.heroPosition.y-1)];
@@ -121,8 +121,9 @@
                     break;
             }
             
-            if (isCombat) {
+            if (isCombat!=nil) {
                 NSLog(@"Fight!");
+                NSLog(isCombat.monster.name);
                 HeroTile * myHero = (HeroTile *) heroTile;
                 //[(SKView *)self.view presentScene:[[CombateScene alloc] initWithSize:self.size andWithHero:myHero.hero andMonster:<#(Monster *)#>]  transition:SKTransitionDirectionUp];
             }

@@ -62,7 +62,7 @@ class TileFactory: Tile {
                 //easyTile.texture = SKTexture(imageNamed: "Easy")
                 easyTile.anchorPoint = CGPointZero
                 easyTile.position = tilePosition
-                easyTile.zPosition = 1
+                easyTile.zPosition = 2
                 return easyTile
             
             
@@ -73,7 +73,7 @@ class TileFactory: Tile {
                 //mediumTile.texture = SKTexture(imageNamed: "Medium")
                 mediumTile.anchorPoint = CGPointZero
                 mediumTile.position = tilePosition
-                mediumTile.zPosition = 1
+                mediumTile.zPosition = 2
                 return mediumTile
             
             case "&":
@@ -83,7 +83,7 @@ class TileFactory: Tile {
                 //bossTile.texture = SKTexture(imageNamed: "TrexSprite")
                 bossTile.anchorPoint = CGPointZero
                 bossTile.position = tilePosition
-                bossTile.zPosition = 1
+                bossTile.zPosition = 2
                 return bossTile
             
             case "b":

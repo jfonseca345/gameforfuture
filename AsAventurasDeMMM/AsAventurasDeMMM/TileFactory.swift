@@ -135,6 +135,14 @@ class TileFactory: Tile {
                 npcTile.zPosition = 1
                 return npcTile
             
+            case "x":
+                let exitTile = Tile()
+                exitTile.texture = SKTexture(imageNamed: "tardis")
+                exitTile.anchorPoint = CGPointZero
+                exitTile.position = tilePosition
+                exitTile.zPosition = 1
+                return exitTile
+            
             default:
             
                 let floorTile = Tile()

@@ -136,7 +136,7 @@
         
     }
     
-    NSLog(@"shuffledConfigurtion:");
+    NSLog(@"shuffledConfiguration:");
     for(int i = 0; i < [self.deck count]; i++){
 //        NSLog([NSString stringWithFormat:@"%@",[self.deck[i] description]]);
     }

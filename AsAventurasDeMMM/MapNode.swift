@@ -27,7 +27,7 @@ class MapNode: SKSpriteNode {
         //self.size = CGSize(width: 640, height: 640)
         //centerOnNode()
         self.name = "world"
-        addFromMap(LevelGenerator.randomizeLevel(1, withWeak: 5, medium: 5, strong: 5) as! [[String]], period: Period.Past)
+        addFromMap(LevelGenerator.randomizeLevel(1, withWeak: 5, medium: 5, strong: 1) as! [[String]], period: Period.Past)
         self.anchorPoint = CGPointZero
     }
 
@@ -63,6 +63,8 @@ class MapNode: SKSpriteNode {
                 
                 if (charMap[y][x] == "@"){
                     heroInitialPosition = CGPoint(x: x, y: y)
+                    let camera = childNodeWithName("camera")
+                    camera!.position = convertFromTileToMap(heroInitialPosition)
                 }
                 
                 if (isMovable(charMap[y][x])){

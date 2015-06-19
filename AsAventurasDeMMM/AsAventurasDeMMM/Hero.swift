@@ -11,13 +11,15 @@ import UIKit
     
     //Hero
     var heroName: String = "DEFAULT_NAME"
-    
+    var canPlay: Bool = false
     //NumericalStats
     var lvl: Int = 1
     var hp: Int = 5
     var atk: Int = 1
     var def: Int = 1
     var currentExp: Int = 0
+    
+    var newMove: myMove = myMove(action: action.NONE, raiseNewValue: 0)
     
     //Equipment
     //var weapon: Weapon = Weapon(weaponName: "Fist", weaponIcon: UIImage(named: "Fist")!, weaponBonus: 0)
@@ -38,8 +40,24 @@ import UIKit
     }
     
     func move() -> myMove {
-        let move = myMove(action: .RAISE, raiseNewValue: 40);
+        let move = myMove(action: newMove.action, raiseNewValue: newMove.raiseNewValue);
+        newMove.action = action.NONE;
         return move;
+    }
+    
+    func setMove(myAction: action)
+    {
+        switch (myAction)
+        {
+        case action.RAISE:
+            newMove = myMove(action: action.RAISE, raiseNewValue: 10)
+        case action.FOLD:
+            newMove = myMove(action: action.FOLD, raiseNewValue: 0)
+        case action.CHECK:
+            newMove = myMove(action: action.CHECK, raiseNewValue: 0)
+        default:
+            newMove = myMove(action: action.NONE, raiseNewValue: 0)
+        }
     }
     
     //Hero Methods, to be implemented

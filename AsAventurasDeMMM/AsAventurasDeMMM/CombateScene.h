@@ -18,6 +18,8 @@
 @property Hero * player1;
 @property Monster * player2;
 
+@property SKScene * parentGambi;
+
 @property HeroTile * tile1;
 @property MonsterTile *tile2;
 

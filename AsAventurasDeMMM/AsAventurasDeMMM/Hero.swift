@@ -38,7 +38,7 @@ import UIKit
     }
     
     func move() -> myMove {
-        let move = myMove();
+        let move = myMove(action: .RAISE, raiseNewValue: 40);
         return move;
     }
     

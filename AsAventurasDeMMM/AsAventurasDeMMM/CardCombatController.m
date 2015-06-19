@@ -7,6 +7,7 @@
 //
 
 #import "CardCombatController.h"
+#import "CombateScene.h"
 
 @implementation CardCombatController
 
@@ -309,7 +310,7 @@
     return 0;
 }
 
-- (void) playTheGameWithHero:(Hero<IsAPlayerProtocol>*)Hero andMonster:(Monster<IsAPlayerProtocol>*)Monster;
+- (void) playTheGameWithHero:(Hero<IsAPlayerProtocol>*)myHero andMonster:(Monster<IsAPlayerProtocol>*)Monster onScreen:(CombateScene *)scene
 {
     int firstPlayer = arc4random_uniform(1);
     int roundCounter = 0;
@@ -317,9 +318,10 @@
     self.gameState = PRE_COMBAT;
     
     while (self.gameState != COMBAT_END) {
+        NSLog(@"New");
         switch (self.gameState) {
             case PRE_COMBAT:
-                [self prepareGame:Hero :Monster];
+                [self prepareGame:myHero :Monster];
                 self.gameState = PRE_ROUND;
                 break;
             case PRE_ROUND:
@@ -328,13 +330,13 @@
                 break;
             case FIRST_BETTING:
                 if (firstPlayer == 0){
-                    moveOne = [Hero move];
+                    moveOne = [myHero move];
                 }
                 else{
                     moveOne = [Monster move];
                 }
-                if (moveOne.action == FOLD){
-                    if (roundCounter == 0) NSLog(@"Fold during first round, first player`s move, ERROR");
+                if (moveOne.action == FOLD || moveOne.action == CHECK){
+                    if (roundCounter == 0) NSLog(@"Fold or Check during first round, first player`s move, ERROR");
                     self.gameState = DAMAGE;
                 }
                 else{
@@ -342,7 +344,7 @@
                 }
                 break;
             case TRADE_CARDS:
-                [self tradeCards:[Hero cardsToTrade] :[Monster cardsToTrade]];
+                [self tradeCards:[myHero cardsToTrade] :[Monster cardsToTrade]];
                 self.gameState = SECOND_BETTING;
                 break;
             case SECOND_BETTING:
@@ -350,7 +352,7 @@
                     moveTwo = [Monster move];
                 }
                 else{
-                    moveTwo = [Hero move];
+                    moveTwo = [myHero move];
                 }
                 if (moveTwo.action == FOLD){
                     self.gameState = DAMAGE;
@@ -378,7 +380,7 @@
                     if (firstPlayer == 0)
                     {
                         int damage = [self damageDone:(int)self.monster.Atk :(int)self.player.def];
-                        Hero.hp -= damage;
+                        myHero.hp -= damage;
                     }
                     else
                     {
@@ -391,13 +393,22 @@
                     if (firstPlayer == 0)
                     {
                         int damage = [self damageDone:(int)self.monster.Atk :(int)self.player.def];
-                        Hero.hp -= damage;
+                        myHero.hp -= damage;
                     }
                     else
                     {
                         int damage = [self damageDone:(int)self.player.atk :(int)self.monster.Def];
                         Monster.HP -= damage;
                     }
+                }
+                if (roundCounter < 3)
+                {
+                    roundCounter++;
+                    self.gameState = PRE_ROUND;
+                }
+                else
+                {
+                    self.gameState = COMBAT_END;
                 }
                 break;
             default:

@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Archbold S.A. All rights reserved.
 //
 
-#import "CombateScene.h"
 #import "CardCombatController.h"
 #import "CardSpriteFactory.h"
 #import "CardContainer.h"
@@ -27,6 +26,18 @@
 @end
 
 @implementation CombateScene
+
+- (instancetype)initWithSize:(CGSize)size andWithHero:(Hero *)myHero andMonster:(Monster *) myMonster
+{
+    self = [super initWithSize:size];
+    if (self)
+    {
+        self.player1 = myHero;
+        self.player2 = myMonster;
+    }
+    return self;
+    
+}
 
 -(void)didMoveToView:(SKView *)view
 {
@@ -55,6 +66,17 @@
     
     [self addChild:self.P1Avatar];
     [self addChild:self.P2Avatar];
+    
+    //Adiciona Deck na mesa (firula)
+    //Adiciona Mesa
+    
+    [self.combatController playTheGameWithHero:self.player1 andMonster:self.player2 onScreen: self];
+    
+}
+
+- (void) ShowTable
+{
+    //Adiciona tudo das maos na mesa(virando coisas do inimigo)
 }
 
 - (SKSpriteNode * )avatarWithImage:(SKTexture *)image
@@ -64,6 +86,7 @@
     [avatar setScale:2];
     return avatar;
 }
+
 - (SKNode * )handSpriteWithArray:(NSArray *)hand
 {
     int i;
@@ -91,6 +114,7 @@
     }
     return retHand;
 }
+
 - (void)update:(NSTimeInterval)currentTime{
     [super update:currentTime];
     

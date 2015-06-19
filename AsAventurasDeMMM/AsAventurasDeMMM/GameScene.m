@@ -121,7 +121,11 @@
                     break;
             }
             
-            if (isCombat) NSLog(@"Fight!");
+            if (isCombat) {
+                NSLog(@"Fight!");
+                HeroTile * myHero = (HeroTile *) heroTile;
+                //[(SKView *)self.view presentScene:[[CombateScene alloc] initWithSize:self.size andWithHero:myHero.hero andMonster:<#(Monster *)#>]  transition:SKTransitionDirectionUp];
+            }
         }
         if (self.heroDirection != ANALOG_ZERO){
             CGPoint cameraPosition = [map convertFromTileToMap:self.heroPosition];

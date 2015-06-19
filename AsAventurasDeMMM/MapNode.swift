@@ -242,7 +242,7 @@ class MapNode: SKSpriteNode {
 
             for tilit in tiles{
                 let tile = tilit as! SKNode
-                if (tile.zPosition == 1){
+                if (tile.zPosition == 2){
                     tile.position = convertFromTileToMap(CGPoint(x:x + mx,y:y + my))
                     break
                 }
@@ -256,18 +256,24 @@ class MapNode: SKSpriteNode {
     
     @objc func setHeroPosition(heroPosition: CGPoint){
         mapMovable[Int(heroInitialPosition.y)][Int(heroInitialPosition.x)] = "0"
-        mapMovable[Int(heroPosition.y)][Int(heroPosition.y)] = "@"
+        mapMovable[Int(heroPosition.y)][Int(heroPosition.x)] = "@"
         heroInitialPosition = heroPosition
     }
     
-    @objc func checkCombatCollision(collisionPoint: CGPoint) -> Bool {
+    @objc func checkCombatCollision(collisionPoint: CGPoint) -> MonsterTile! {
         switch( mapMovable[Int(collisionPoint.y)][Int(collisionPoint.x)]){
             case "%", "^", "&":
-                return true
+                let tiles = nodesAtPoint(CGPointApplyAffineTransform(convertFromTileToMap(collisionPoint), CGAffineTransformMakeTranslation(32, 32)))
+                for tilit in tiles{
+                    let tile = tilit as! SKNode
+                    if (tile.zPosition == 2){
+                        return tile as! MonsterTile
+                    }
+                }
         
             default:
-                return false
+                return nil
         }
-    
+        return nil
     }
 }

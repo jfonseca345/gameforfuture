@@ -20,10 +20,28 @@ class TileFactory: Tile {
                 wallTile.zPosition = 1
                 return wallTile
             
-            case  "2", "3", "4":
+            case  "2":
                 let obstacleTile = Tile()
                 
                 obstacleTile.texture = SKTexture(imageNamed: "presentObstacle")
+                obstacleTile.anchorPoint = CGPointZero
+                obstacleTile.position = tilePosition
+                obstacleTile.zPosition = 1
+                return obstacleTile
+            
+            case  "3":
+                let obstacleTile = Tile()
+            
+                obstacleTile.texture = SKTexture(imageNamed: "tree")
+                obstacleTile.anchorPoint = CGPointZero
+                obstacleTile.position = tilePosition
+                obstacleTile.zPosition = 1
+                return obstacleTile
+            
+            case  "4":
+                let obstacleTile = Tile()
+            
+                obstacleTile.texture = SKTexture(imageNamed: "bostaDeDinossauro")
                 obstacleTile.anchorPoint = CGPointZero
                 obstacleTile.position = tilePosition
                 obstacleTile.zPosition = 1
@@ -41,10 +59,10 @@ class TileFactory: Tile {
                 let easyMonster = MonsterFactory.createEasyMonsterTesting(.Past)
                 let easyTile = MonsterTile(monster: easyMonster)
                 //let easyTile = Tile()
-                easyTile.texture = SKTexture(imageNamed: "Easy")
+                //easyTile.texture = SKTexture(imageNamed: "Easy")
                 easyTile.anchorPoint = CGPointZero
                 easyTile.position = tilePosition
-                easyTile.zPosition = 1
+                easyTile.zPosition = 2
                 return easyTile
             
             
@@ -52,20 +70,20 @@ class TileFactory: Tile {
                 let mediumMonster = MonsterFactory.createMediumMonsterTesting(.Past)
                 let mediumTile = MonsterTile(monster: mediumMonster)
                 //let mediumTile = Tile()
-                mediumTile.texture = SKTexture(imageNamed: "Medium")
+                //mediumTile.texture = SKTexture(imageNamed: "Medium")
                 mediumTile.anchorPoint = CGPointZero
                 mediumTile.position = tilePosition
-                mediumTile.zPosition = 1
+                mediumTile.zPosition = 2
                 return mediumTile
             
             case "&":
                 let bossMonster = MonsterFactory.createBossTesting(.Past)
                 let bossTile = MonsterTile(monster: bossMonster)
                 //let bossTile = Tile()
-                bossTile.texture = SKTexture(imageNamed: "TrexSprite")
+                //bossTile.texture = SKTexture(imageNamed: "TrexSprite")
                 bossTile.anchorPoint = CGPointZero
                 bossTile.position = tilePosition
-                bossTile.zPosition = 1
+                bossTile.zPosition = 2
                 return bossTile
             
             case "b":
@@ -111,7 +129,7 @@ class TileFactory: Tile {
             
             case "-":
                 let npcTile = Tile()
-                npcTile.texture = SKTexture(imageNamed: "ZombieSprite")
+                npcTile.texture = SKTexture(imageNamed: "NPC(Cavemen)")
                 npcTile.anchorPoint = CGPointZero
                 npcTile.position = tilePosition
                 npcTile.zPosition = 1

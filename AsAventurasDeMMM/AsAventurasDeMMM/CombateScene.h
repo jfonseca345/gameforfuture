@@ -12,6 +12,7 @@
 @interface CombateScene : SKScene
 
 - (instancetype)initWithSize:(CGSize)size andWithHero:(Hero *)myHero andMonster:(Monster *) myMonster;
+- (void) updateHandsWithHeroHand:(NSMutableArray *)heroHand andMonsterHand:(NSMutableArray *)monsterHand;
 
 @property Hero * player1;
 @property Monster * player2;

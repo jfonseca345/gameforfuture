@@ -17,5 +17,7 @@
 @property (nonatomic) analogDirectionTypes heroDirection;
 @property (nonatomic) CGPoint heroPosition;
 
+@property bool firstLoad;
+
 -(void) updateHero;
 @end

@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, action)
     CHECK, //Bets the same
     RAISE, //Raises...
     FOLD, //Gives up
+    NONE,
     
 };
 

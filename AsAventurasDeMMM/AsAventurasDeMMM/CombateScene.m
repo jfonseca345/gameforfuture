@@ -70,11 +70,30 @@
     //Adiciona Deck na mesa (firula)
     //Adiciona Mesa
     
-    [self.combatController playTheGameWithHero:self.player1 andMonster:self.player2 onScreen: self];
-    
     pokerButtonPad * buttons = [[pokerButtonPad alloc] init];
     [self addChild:buttons];
     
+    buttons.delegate = self;
+    
+    SKAction * gameFlow = [SKAction runBlock:^{
+//        [self.combatController playTheGameWithHero:self.player1 andMonster:self.player2 onScreen: self];
+        if (self.combatController.gameState != COMBAT_END)
+        {
+            [self.combatController playTheGameWithHero:self.player1 andMonster:self.player2 onScreen: self];
+        }
+        else
+        {
+            NSLog(@"AEHASHDJADL");
+            [self removeActionForKey:@"forever"];
+            [((SKView *)self.view) presentScene:self.parentGambi];
+        }
+    }];
+    SKAction * wait = [SKAction waitForDuration:.1];
+    SKAction * all = [SKAction sequence:@[gameFlow, wait]];
+    SKAction * forever = [SKAction repeatActionForever:all];
+    
+    
+    [self runAction:forever withKey:@"forever"];
 }
 
 - (void) updateHandsWithHeroHand:(NSMutableArray *)heroHand andMonsterHand:(NSMutableArray *)monsterHand
@@ -139,22 +158,18 @@
     return retHand;
 }
 
-- (void)update:(NSTimeInterval)currentTime{
-    [super update:currentTime];
-    
-}
-
--(void)bButtonTapped
-{
-    
-}
 -(void)aButtonTapped
 {
-    
+    [self.player1 setMove:CHECK];
+}
+-(void)bButtonTapped
+{
+    [self removeFromParent];
+    [self.player1 setMove:FOLD];
 }
 -(void)cButtonTapped
 {
-    
+    [self.player1 setMove:RAISE];
 }
 
 @end

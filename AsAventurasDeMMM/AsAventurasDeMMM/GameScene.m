@@ -11,6 +11,12 @@
 #import "CardCombatController.h"
 #import "CombateScene.h"
 
+@interface GameScene()
+
+
+
+@end
+
 @implementation GameScene
 
 -(void)didMoveToView:(SKView *)view {
@@ -23,6 +29,19 @@
                                    CGRectGetMidY(self.frame));
     
     [self addChild:myLabel];*/
+    
+    if (self.firstLoad == YES)
+    {
+        [self setup];
+    }
+    
+    
+    //SO PRA TESTAR A COMBAT SCENE, TIRAR DEPOOOOIS
+    //[view presentScene:[[CombateScene alloc] initWithSize:self.size]  transition:SKTransitionDirectionUp];
+}
+
+-(void)setup
+{
     self.walking = NO;
     self.heroDirection = ANALOG_ZERO;
     
@@ -42,16 +61,12 @@
     buttonPad * btp;
     btp = [[buttonPad alloc] init];
     [btp setPosition:CGPointMake([UIScreen mainScreen].bounds.size.width/2, -[UIScreen mainScreen].bounds.size.height/2)];
-//    [btp setPosition:CGPointMake(100, 100)];
+    //    [btp setPosition:CGPointMake(100, 100)];
     NSLog(@"%f, %f", btp.position.x, btp.position.y);
     btp.delegate = self;
     [self addChild:btp];
-    
-    
-    //SO PRA TESTAR A COMBAT SCENE, TIRAR DEPOOOOIS
-    //[view presentScene:[[CombateScene alloc] initWithSize:self.size]  transition:SKTransitionDirectionUp];
+    [self setFirstLoad:NO];
 }
-
 
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -125,7 +140,9 @@
                 NSLog(@"Fight!");
 //                NSLog(isCombat.monster.name);
                 HeroTile * myHero = (HeroTile *) heroTile;
-                [(SKView *)self.view presentScene:[[CombateScene alloc] initWithSize:self.size andWithHero:myHero.hero andMonster:isCombat.monster]  transition:SKTransitionDirectionUp];
+                CombateScene * newScene = [[CombateScene alloc] initWithSize:self.size andWithHero:myHero.hero andMonster:isCombat.monster];
+                [newScene setParentGambi:self.scene];
+                [(SKView *)self.view presentScene: newScene transition:SKTransitionDirectionUp];
             }
         }
         if (self.heroDirection != ANALOG_ZERO){

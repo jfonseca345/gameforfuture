@@ -21,6 +21,7 @@
     NSKeyedUnarchiver *arch = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
     [arch setClass:self forClassName:@"SKScene"];
     SKScene *scene = [arch decodeObjectForKey:NSKeyedArchiveRootObjectKey];
+    ((GameScene *) scene).firstLoad = YES;
     [arch finishDecoding];
     
     return scene;

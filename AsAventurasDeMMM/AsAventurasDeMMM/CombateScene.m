@@ -74,6 +74,24 @@
     
 }
 
+- (void) updateHandsWithHeroHand:(NSMutableArray *)heroHand andMonsterHand:(NSMutableArray *)monsterHand
+{
+    [self.P1HandView removeFromParent];
+    [self.P2HandView removeFromParent];
+    
+    CGPoint save1 = self.P1HandView.position;
+    CGPoint save2 = self.P2HandView.position;
+    
+    self.P1HandView = [self handSpriteWithArray:heroHand];
+    self.P2HandView = [self handSpriteWithArray:monsterHand];
+    
+    [self.P1HandView setPosition:save1];
+    [self.P2HandView setPosition:save2];
+    
+    [self addChild:self.P1Avatar];
+    [self addChild:self.P2Avatar];
+}
+
 - (void) ShowTable
 {
     //Adiciona tudo das maos na mesa(virando coisas do inimigo)

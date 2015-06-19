@@ -323,6 +323,7 @@
             case PRE_COMBAT:
                 [self prepareGame:myHero :Monster];
                 self.gameState = PRE_ROUND;
+                [scene updateHandsWithHeroHand: self.playerHand andMonsterHand:self.monsterHand];
                 break;
             case PRE_ROUND:
                 [self prepareRound];
@@ -346,6 +347,7 @@
             case TRADE_CARDS:
                 [self tradeCards:[myHero cardsToTrade] :[Monster cardsToTrade]];
                 self.gameState = SECOND_BETTING;
+                [scene updateHandsWithHeroHand: self.playerHand andMonsterHand:self.monsterHand];
                 break;
             case SECOND_BETTING:
                 if (firstPlayer == 0){

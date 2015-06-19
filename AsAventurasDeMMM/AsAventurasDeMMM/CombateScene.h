@@ -8,8 +8,9 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "AsAventurasDeMMM-Swift.h"
+#import "pokerButtonPad.h"
 
-@interface CombateScene : SKScene
+@interface CombateScene : SKScene <pokerButtonPadDelegate>
 
 - (instancetype)initWithSize:(CGSize)size andWithHero:(Hero *)myHero andMonster:(Monster *) myMonster;
 - (void) updateHandsWithHeroHand:(NSMutableArray *)heroHand andMonsterHand:(NSMutableArray *)monsterHand;

@@ -72,6 +72,9 @@
     
     [self.combatController playTheGameWithHero:self.player1 andMonster:self.player2 onScreen: self];
     
+    pokerButtonPad * buttons = [[pokerButtonPad alloc] init];
+    [self addChild:buttons];
+    
 }
 
 - (void) updateHandsWithHeroHand:(NSMutableArray *)heroHand andMonsterHand:(NSMutableArray *)monsterHand
@@ -88,8 +91,8 @@
     [self.P1HandView setPosition:save1];
     [self.P2HandView setPosition:save2];
     
-    [self addChild:self.P1Avatar];
-    [self addChild:self.P2Avatar];
+    [self addChild:self.P1HandView];
+    [self addChild:self.P2HandView];
 }
 
 - (void) ShowTable
@@ -114,6 +117,8 @@
     for (i = 0; i < count; i++)
     {
         SKSpriteNode * newNode = [CardSpriteFactory CardNodeWithNumber:[(CardContainer *)[hand objectAtIndex:i] number] andSuit:[(CardContainer *)[hand objectAtIndex:i] suit]];
+        [newNode setScale:2];
+        [newNode setZPosition:i];
         [newNode setPosition:CGPointMake(newNode.position.x, startingPoint)];
         [retHand addChild:newNode];
         startingPoint -= CARD_DISTANCE;
@@ -125,6 +130,7 @@
         {
             SKSpriteNode * newNode = [CardSpriteFactory CardNodeWithNumber:-1 andSuit:0];
             [newNode setScale:2];
+            [newNode setZPosition:i];
             [newNode setPosition:CGPointMake(newNode.position.x, startingPoint)];
             [retHand addChild:newNode];
             startingPoint -= CARD_DISTANCE;
@@ -135,6 +141,19 @@
 
 - (void)update:(NSTimeInterval)currentTime{
     [super update:currentTime];
+    
+}
+
+-(void)bButtonTapped
+{
+    
+}
+-(void)aButtonTapped
+{
+    
+}
+-(void)cButtonTapped
+{
     
 }
 

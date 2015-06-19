@@ -39,10 +39,11 @@ import UIKit
     }
     
     func cardsToTrade() -> Int32 {
-        return 0;
+        let randomTrade = Int32(arc4random_uniform(128))%64
+        return randomTrade
     }
     func move() -> myMove {
-        let move = myMove(action: .RAISE, raiseNewValue: 40);
+        let move = myMove(action: .RAISE, raiseNewValue: 10);
         return move;
     }
     

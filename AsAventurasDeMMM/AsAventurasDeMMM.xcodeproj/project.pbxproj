@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		072268951B3059950090E354 /* buttonPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 072268941B3059950090E354 /* buttonPad.m */; };
 		078AC4561B2B110B00914F33 /* AnalogGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AC4551B2B110B00914F33 /* AnalogGesture.m */; };
+		079029D31B333D2300B25376 /* CombateScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 079029D21B333D2300B25376 /* CombateScene.m */; };
+		079029D61B33426400B25376 /* CardSpriteFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 079029D51B33426400B25376 /* CardSpriteFactory.m */; };
 		079062E71B31C0260098F717 /* InitialScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 079062E61B31C0260098F717 /* InitialScreen.m */; };
 		07A24AFD1B32EE620021BFA0 /* PathFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A24AFC1B32EE620021BFA0 /* PathFinder.m */; };
 		07A24B011B3320830021BFA0 /* I-pixel-u.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A24B001B3320830021BFA0 /* I-pixel-u.ttf */; };
@@ -59,6 +61,10 @@
 		072268961B3069CF0090E354 /* deck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = deck.h; sourceTree = "<group>"; };
 		078AC4541B2B110B00914F33 /* AnalogGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalogGesture.h; sourceTree = "<group>"; };
 		078AC4551B2B110B00914F33 /* AnalogGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalogGesture.m; sourceTree = "<group>"; };
+		079029D11B333D2300B25376 /* CombateScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombateScene.h; sourceTree = "<group>"; };
+		079029D21B333D2300B25376 /* CombateScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombateScene.m; sourceTree = "<group>"; };
+		079029D41B33426400B25376 /* CardSpriteFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardSpriteFactory.h; sourceTree = "<group>"; };
+		079029D51B33426400B25376 /* CardSpriteFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardSpriteFactory.m; sourceTree = "<group>"; };
 		079062E51B31C0260098F717 /* InitialScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialScreen.h; sourceTree = "<group>"; };
 		079062E61B31C0260098F717 /* InitialScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialScreen.m; sourceTree = "<group>"; };
 		07A24AFB1B32EE620021BFA0 /* PathFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFinder.h; sourceTree = "<group>"; };
@@ -285,6 +291,8 @@
 				4FA35D351B30A28A00E6731A /* CardCombatController.h */,
 				4FA35D361B30A28A00E6731A /* CardCombatController.m */,
 				07A24AFE1B3300170021BFA0 /* IsAPlayerProtocol.h */,
+				079029D41B33426400B25376 /* CardSpriteFactory.h */,
+				079029D51B33426400B25376 /* CardSpriteFactory.m */,
 			);
 			name = Combat;
 			sourceTree = "<group>";
@@ -300,6 +308,8 @@
 				4F2C199E1B272FBC00F95BB7 /* GameViewController.h */,
 				4F2C199F1B272FBC00F95BB7 /* GameViewController.m */,
 				4F2C19A11B272FBC00F95BB7 /* Main.storyboard */,
+				079029D11B333D2300B25376 /* CombateScene.h */,
+				079029D21B333D2300B25376 /* CombateScene.m */,
 			);
 			name = Screen;
 			sourceTree = "<group>";
@@ -410,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1853A6401B2870E50040C305 /* WeaponFactory.swift in Sources */,
+				079029D61B33426400B25376 /* CardSpriteFactory.m in Sources */,
 				18F7B3D01B2B40300033AACA /* Hero.swift in Sources */,
 				187366F11B27379E006B539B /* Monster.swift in Sources */,
 				07C6B87A1B28A5A200156D74 /* LevelGenerator.m in Sources */,
@@ -431,6 +442,7 @@
 				4FA35D371B30A28A00E6731A /* CardCombatController.m in Sources */,
 				4F2C199B1B272FBC00F95BB7 /* GameScene.m in Sources */,
 				079062E71B31C0260098F717 /* InitialScreen.m in Sources */,
+				079029D31B333D2300B25376 /* CombateScene.m in Sources */,
 				4F2C19951B272FBC00F95BB7 /* main.m in Sources */,
 				078AC4561B2B110B00914F33 /* AnalogGesture.m in Sources */,
 				072268951B3059950090E354 /* buttonPad.m in Sources */,

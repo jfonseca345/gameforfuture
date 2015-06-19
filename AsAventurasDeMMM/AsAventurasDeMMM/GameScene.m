@@ -9,6 +9,7 @@
 #import "GameScene.h"
 #import "AsAventurasDeMMM-Swift.h"
 #import "CardCombatController.h"
+#import "CombateScene.h"
 
 @implementation GameScene
 
@@ -47,6 +48,8 @@
     [self addChild:btp];
     
     
+    //SO PRA TESTAR A COMBAT SCENE, TIRAR DEPOOOOIS
+    //[view presentScene:[[CombateScene alloc] initWithSize:self.size]  transition:SKTransitionDirectionUp];
 }
 
 

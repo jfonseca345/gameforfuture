@@ -140,8 +140,8 @@
                 NSLog(@"Fight!");
 //                NSLog(isCombat.monster.name);
                 HeroTile * myHero = (HeroTile *) heroTile;
-                CombateScene * newScene = [[CombateScene alloc] initWithSize:self.size andWithHero:myHero.hero andMonster:isCombat.monster];
-                [newScene setParentGambi:self.scene];
+                CombateScene * newScene = [[CombateScene alloc] initWithSize:self.size andWithHeroTile:myHero andMonsterTile:isCombat];
+                [newScene setParentScene:self.scene];
                 [(SKView *)self.view presentScene: newScene transition:SKTransitionDirectionUp];
             }
         }

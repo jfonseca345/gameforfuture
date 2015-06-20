@@ -15,12 +15,16 @@ typedef NS_ENUM(NSInteger, state)
     PRE_COMBAT, //Before combat begins, set the game
     PRE_ROUND,  //Shuffles the deck, deals the hands, pot = zero
     FIRST_BETTING, //Defines the first player to play, he bets. Second player then bets (check, fold, raise)
-    TRADE_CARDS,  //Players trade cards
+    WAITING_FIRST_BET,
+    TRADE_CARDS_P_ONE,  //Players trade cards
+    TRADE_CARDS_P_ONE_WAIT,
+    TRADE_CARDS_P_TWO,  //Players trade cards
+    TRADE_CARDS_P_TWO_WAIT,
     SECOND_BETTING, //Second betting, first player bets (check,fold,raise), second players bets (check,fold,raise)
+    WAITING_SECOND_BET,
     SHOWDOWN,   //Compare hands
     DAMAGE,     //Deals damage to loser
     COMBAT_END  //Check if someone's hp is zero, if so ends.
-    
 };
 
 typedef NS_ENUM(NSInteger, action)

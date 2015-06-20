@@ -30,13 +30,16 @@
 
 @implementation CombateScene
 
-- (instancetype)initWithSize:(CGSize)size andWithHero:(Hero *)myHero andMonster:(Monster *) myMonster
+- (instancetype)initWithSize:(CGSize)size andWithHeroTile:(HeroTile *)myHero andMonsterTile:(MonsterTile *) myMonster
 {
     self = [super initWithSize:size];
     if (self)
     {
-        self.player1 = myHero;
-        self.player2 = myMonster;
+        self.player1 = myHero.hero;
+        self.player2 = myMonster.monster;
+        
+        self.tile1 = myHero;
+        self.tile2 = myMonster;
         
     }
     return self;
@@ -48,7 +51,7 @@
     [self setup];
 }
 
-- (void)setup
+- (void)setup //Adiciona todas firulas graficas do jogo
 {
     self.combatController = [[CardCombatController alloc] init];
     
@@ -77,27 +80,14 @@
     pokerButtonPad * buttons = [[pokerButtonPad alloc] init];
     [self addChild:buttons];
     
-    buttons.delegate = self;
+    buttons.delegate = self.combatController;
     
-    SKAction * gameFlow = [SKAction runBlock:^{
-//        [self.combatController playTheGameWithHero:self.player1 andMonster:self.player2 onScreen: self];
-        if (self.combatController.gameState != COMBAT_END)
-        {
-            [self.combatController playTheGameWithHero:self.player1 andMonster:self.player2 onScreen: self];
-        }
-        else
-        {
-            NSLog(@"AEHASHDJADL");
-            [self removeActionForKey:@"forever"];
-            [((SKView *)self.view) presentScene:self.parentGambi];
-        }
-    }];
-    SKAction * wait = [SKAction waitForDuration:.1];
-    SKAction * all = [SKAction sequence:@[gameFlow, wait]];
-    SKAction * forever = [SKAction repeatActionForever:all];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endCombat) name:@"endCombat" object:nil];
+}
+
+- (void) endCombat//Limpa tudo e chama a ParentScene
+{
     
-    
-    [self runAction:forever withKey:@"forever"];
 }
 
 - (void) updateHandsWithHeroHand:(NSMutableArray *)heroHand andMonsterHand:(NSMutableArray *)monsterHand
@@ -131,7 +121,7 @@
     return avatar;
 }
 
-- (SKNode * )handSpriteWithArray:(NSArray *)hand
+- (SKNode * )handSpriteWithArray:(NSArray *)hand //Essa parte deve ir pra HAND
 {
     int i;
     SKNode * retHand = [[SKNode alloc] init];
@@ -160,20 +150,6 @@
         }
     }
     return retHand;
-}
-
--(void)aButtonTapped
-{
-    [self.player1 setMove:CHECK];
-}
--(void)bButtonTapped
-{
-    [self removeFromParent];
-    [self.player1 setMove:FOLD];
-}
--(void)cButtonTapped
-{
-    [self.player1 setMove:RAISE];
 }
 
 

@@ -13,8 +13,12 @@
 #import "IsAPlayerProtocol.h"
 #import "AsAventurasDeMMM-Swift.h"
 #import "CombateScene.h"
+#import "Hand.h"
+#import "GameDeck.h"
 
-@interface CardCombatController : NSObject
+@interface CardCombatController : NSObject <pokerButtonPadDelegate>
+
+- (id)initWithHero: (Hero *)myHero andMonster:(Monster *)myMonster;
 
 #pragma mark Players Attributes
 
@@ -27,14 +31,19 @@
 
 #pragma mark Deck Manipulation Methods and Attributes
 
-@property (strong, nonatomic) NSMutableArray* deck;
+
+@property GameDeck * gameDeck;
+@property (strong, nonatomic) NSMutableArray* deck;//Remover quando arrumar deck
 @property int drawCounter;
 
--(CardContainer*) drawCard;
--(void) shuffleCards;
+-(CardContainer*) drawCard;//Deve ser implementado no deck
+-(void) shuffleCards;//Deve ser implementado no deck
 
 #pragma mark Hand Atributes
-@property (strong, nonatomic) NSMutableArray* playerHand;
+@property Hand * P1Hand;
+@property Hand * P2Hand;
+
+@property (strong, nonatomic) NSMutableArray* playerHand;//Remover posteriormente, quando arrumar hand
 @property (strong, nonatomic) NSMutableArray* monsterHand;
 
 #pragma mark Game Managements Methods and Attributes
@@ -46,9 +55,6 @@
 -(void) tradeCards: (int)playerCardsToTrade : (int)monsterCardsToTrade;
 -(void) showDown: (NSMutableArray*)playerHand : (NSMutableArray*) monsterHand;
 
-#pragma mark Game Flow Control Structures
-
-- (void) playTheGameWithHero:(Hero<IsAPlayerProtocol>*)Hero andMonster:(Monster<IsAPlayerProtocol>*)Monster onScreen:(CombateScene *)scene;
 
 @property (nonatomic) state gameState;
 

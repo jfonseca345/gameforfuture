@@ -9,6 +9,24 @@
 /* Begin PBXBuildFile section */
 		070039E11B33E33C00BAD821 /* pokerButtonPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 070039E01B33E33C00BAD821 /* pokerButtonPad.m */; };
 		072268951B3059950090E354 /* buttonPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 072268941B3059950090E354 /* buttonPad.m */; };
+		077CDBA21B34DD7D00DCC74A /* AbstractState.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBA11B34DD7D00DCC74A /* AbstractState.m */; };
+		077CDBA61B34E1AC00DCC74A /* PreCombatState.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBA51B34E1AC00DCC74A /* PreCombatState.m */; };
+		077CDBA91B34E1BB00DCC74A /* PreRoundState.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBA81B34E1BB00DCC74A /* PreRoundState.m */; };
+		077CDBAC1B34E1CD00DCC74A /* FirstBettingState.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBAB1B34E1CD00DCC74A /* FirstBettingState.m */; };
+		077CDBAF1B34E1FA00DCC74A /* WaitFirstBetState.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBAE1B34E1FA00DCC74A /* WaitFirstBetState.m */; };
+		077CDBB51B34E23D00DCC74A /* SecondBettingState.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBB41B34E23D00DCC74A /* SecondBettingState.m */; };
+		077CDBB81B34E24E00DCC74A /* WaitSecondBetState.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBB71B34E24E00DCC74A /* WaitSecondBetState.m */; };
+		077CDBBB1B34E25D00DCC74A /* ShowdownState.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBBA1B34E25D00DCC74A /* ShowdownState.m */; };
+		077CDBBE1B34E26500DCC74A /* DamageState.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBBD1B34E26500DCC74A /* DamageState.m */; };
+		077CDBC11B34E27500DCC74A /* CombatEndState.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBC01B34E27500DCC74A /* CombatEndState.m */; };
+		077CDBC41B34E48D00DCC74A /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBC31B34E48D00DCC74A /* Hand.m */; };
+		077CDBC71B34E4AF00DCC74A /* GameDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBC61B34E4AF00DCC74A /* GameDeck.m */; };
+		077CDBCA1B34E4FC00DCC74A /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBC91B34E4FC00DCC74A /* Card.m */; };
+		077CDBCD1B34EB9600DCC74A /* TradeOneState.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBCC1B34EB9600DCC74A /* TradeOneState.m */; };
+		077CDBD01B34EBAA00DCC74A /* TradeOneWaitState.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBCF1B34EBAA00DCC74A /* TradeOneWaitState.m */; };
+		077CDBD31B34EBD100DCC74A /* TradeTwoState.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBD21B34EBD100DCC74A /* TradeTwoState.m */; };
+		077CDBD61B34EBDB00DCC74A /* TradeTwoWaitState.m in Sources */ = {isa = PBXBuildFile; fileRef = 077CDBD51B34EBDB00DCC74A /* TradeTwoWaitState.m */; };
+		077CDBD81B3509A700DCC74A /* OrganizacaoDoCodigo in Resources */ = {isa = PBXBuildFile; fileRef = 077CDBD71B3509A700DCC74A /* OrganizacaoDoCodigo */; };
 		078AC4561B2B110B00914F33 /* AnalogGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 078AC4551B2B110B00914F33 /* AnalogGesture.m */; };
 		079029D31B333D2300B25376 /* CombateScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 079029D21B333D2300B25376 /* CombateScene.m */; };
 		079029D61B33426400B25376 /* CardSpriteFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 079029D51B33426400B25376 /* CardSpriteFactory.m */; };
@@ -62,6 +80,41 @@
 		072268931B3059950090E354 /* buttonPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buttonPad.h; sourceTree = "<group>"; };
 		072268941B3059950090E354 /* buttonPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buttonPad.m; sourceTree = "<group>"; };
 		072268961B3069CF0090E354 /* deck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = deck.h; sourceTree = "<group>"; };
+		077CDBA01B34DD7D00DCC74A /* AbstractState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractState.h; sourceTree = "<group>"; };
+		077CDBA11B34DD7D00DCC74A /* AbstractState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractState.m; sourceTree = "<group>"; };
+		077CDBA41B34E1AC00DCC74A /* PreCombatState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreCombatState.h; sourceTree = "<group>"; };
+		077CDBA51B34E1AC00DCC74A /* PreCombatState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreCombatState.m; sourceTree = "<group>"; };
+		077CDBA71B34E1BB00DCC74A /* PreRoundState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreRoundState.h; sourceTree = "<group>"; };
+		077CDBA81B34E1BB00DCC74A /* PreRoundState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreRoundState.m; sourceTree = "<group>"; };
+		077CDBAA1B34E1CD00DCC74A /* FirstBettingState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstBettingState.h; sourceTree = "<group>"; };
+		077CDBAB1B34E1CD00DCC74A /* FirstBettingState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstBettingState.m; sourceTree = "<group>"; };
+		077CDBAD1B34E1FA00DCC74A /* WaitFirstBetState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitFirstBetState.h; sourceTree = "<group>"; };
+		077CDBAE1B34E1FA00DCC74A /* WaitFirstBetState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitFirstBetState.m; sourceTree = "<group>"; };
+		077CDBB31B34E23D00DCC74A /* SecondBettingState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondBettingState.h; sourceTree = "<group>"; };
+		077CDBB41B34E23D00DCC74A /* SecondBettingState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondBettingState.m; sourceTree = "<group>"; };
+		077CDBB61B34E24E00DCC74A /* WaitSecondBetState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitSecondBetState.h; sourceTree = "<group>"; };
+		077CDBB71B34E24E00DCC74A /* WaitSecondBetState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitSecondBetState.m; sourceTree = "<group>"; };
+		077CDBB91B34E25D00DCC74A /* ShowdownState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowdownState.h; sourceTree = "<group>"; };
+		077CDBBA1B34E25D00DCC74A /* ShowdownState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowdownState.m; sourceTree = "<group>"; };
+		077CDBBC1B34E26500DCC74A /* DamageState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DamageState.h; sourceTree = "<group>"; };
+		077CDBBD1B34E26500DCC74A /* DamageState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DamageState.m; sourceTree = "<group>"; };
+		077CDBBF1B34E27500DCC74A /* CombatEndState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombatEndState.h; sourceTree = "<group>"; };
+		077CDBC01B34E27500DCC74A /* CombatEndState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombatEndState.m; sourceTree = "<group>"; };
+		077CDBC21B34E48D00DCC74A /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hand.h; sourceTree = "<group>"; };
+		077CDBC31B34E48D00DCC74A /* Hand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hand.m; sourceTree = "<group>"; };
+		077CDBC51B34E4AF00DCC74A /* GameDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameDeck.h; sourceTree = "<group>"; };
+		077CDBC61B34E4AF00DCC74A /* GameDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameDeck.m; sourceTree = "<group>"; };
+		077CDBC81B34E4FC00DCC74A /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		077CDBC91B34E4FC00DCC74A /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		077CDBCB1B34EB9600DCC74A /* TradeOneState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TradeOneState.h; path = ../TradeOneState.h; sourceTree = "<group>"; };
+		077CDBCC1B34EB9600DCC74A /* TradeOneState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TradeOneState.m; path = ../TradeOneState.m; sourceTree = "<group>"; };
+		077CDBCE1B34EBAA00DCC74A /* TradeOneWaitState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeOneWaitState.h; sourceTree = "<group>"; };
+		077CDBCF1B34EBAA00DCC74A /* TradeOneWaitState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeOneWaitState.m; sourceTree = "<group>"; };
+		077CDBD11B34EBD100DCC74A /* TradeTwoState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeTwoState.h; sourceTree = "<group>"; };
+		077CDBD21B34EBD100DCC74A /* TradeTwoState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeTwoState.m; sourceTree = "<group>"; };
+		077CDBD41B34EBDB00DCC74A /* TradeTwoWaitState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeTwoWaitState.h; sourceTree = "<group>"; };
+		077CDBD51B34EBDB00DCC74A /* TradeTwoWaitState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeTwoWaitState.m; sourceTree = "<group>"; };
+		077CDBD71B3509A700DCC74A /* OrganizacaoDoCodigo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OrganizacaoDoCodigo; sourceTree = "<group>"; };
 		078AC4541B2B110B00914F33 /* AnalogGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalogGesture.h; sourceTree = "<group>"; };
 		078AC4551B2B110B00914F33 /* AnalogGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalogGesture.m; sourceTree = "<group>"; };
 		079029D11B333D2300B25376 /* CombateScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombateScene.h; sourceTree = "<group>"; };
@@ -135,6 +188,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		077CDB9F1B34DD4900DCC74A /* StateMachine */ = {
+			isa = PBXGroup;
+			children = (
+				077CDBA01B34DD7D00DCC74A /* AbstractState.h */,
+				077CDBA11B34DD7D00DCC74A /* AbstractState.m */,
+				077CDBA41B34E1AC00DCC74A /* PreCombatState.h */,
+				077CDBA51B34E1AC00DCC74A /* PreCombatState.m */,
+				077CDBA71B34E1BB00DCC74A /* PreRoundState.h */,
+				077CDBA81B34E1BB00DCC74A /* PreRoundState.m */,
+				077CDBAA1B34E1CD00DCC74A /* FirstBettingState.h */,
+				077CDBAB1B34E1CD00DCC74A /* FirstBettingState.m */,
+				077CDBAD1B34E1FA00DCC74A /* WaitFirstBetState.h */,
+				077CDBAE1B34E1FA00DCC74A /* WaitFirstBetState.m */,
+				077CDBCB1B34EB9600DCC74A /* TradeOneState.h */,
+				077CDBCC1B34EB9600DCC74A /* TradeOneState.m */,
+				077CDBCE1B34EBAA00DCC74A /* TradeOneWaitState.h */,
+				077CDBCF1B34EBAA00DCC74A /* TradeOneWaitState.m */,
+				077CDBD11B34EBD100DCC74A /* TradeTwoState.h */,
+				077CDBD21B34EBD100DCC74A /* TradeTwoState.m */,
+				077CDBD41B34EBDB00DCC74A /* TradeTwoWaitState.h */,
+				077CDBD51B34EBDB00DCC74A /* TradeTwoWaitState.m */,
+				077CDBB31B34E23D00DCC74A /* SecondBettingState.h */,
+				077CDBB41B34E23D00DCC74A /* SecondBettingState.m */,
+				077CDBB61B34E24E00DCC74A /* WaitSecondBetState.h */,
+				077CDBB71B34E24E00DCC74A /* WaitSecondBetState.m */,
+				077CDBB91B34E25D00DCC74A /* ShowdownState.h */,
+				077CDBBA1B34E25D00DCC74A /* ShowdownState.m */,
+				077CDBBC1B34E26500DCC74A /* DamageState.h */,
+				077CDBBD1B34E26500DCC74A /* DamageState.m */,
+				077CDBBF1B34E27500DCC74A /* CombatEndState.h */,
+				077CDBC01B34E27500DCC74A /* CombatEndState.m */,
+			);
+			name = StateMachine;
+			sourceTree = "<group>";
+		};
+		077CDBA31B34DF5C00DCC74A /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				4FA35D381B30A85E00E6731A /* CardContainer.h */,
+				4FA35D391B30A85E00E6731A /* CardContainer.m */,
+				079029D41B33426400B25376 /* CardSpriteFactory.h */,
+				079029D51B33426400B25376 /* CardSpriteFactory.m */,
+				072268961B3069CF0090E354 /* deck.h */,
+				077CDBC21B34E48D00DCC74A /* Hand.h */,
+				077CDBC31B34E48D00DCC74A /* Hand.m */,
+				077CDBC51B34E4AF00DCC74A /* GameDeck.h */,
+				077CDBC61B34E4AF00DCC74A /* GameDeck.m */,
+				077CDBC81B34E4FC00DCC74A /* Card.h */,
+				077CDBC91B34E4FC00DCC74A /* Card.m */,
+			);
+			name = Cards;
+			sourceTree = "<group>";
+		};
 		07A24AFF1B3320700021BFA0 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,8 +333,10 @@
 		4F2C19911B272FBC00F95BB7 /* AsAventurasDeMMM */ = {
 			isa = PBXGroup;
 			children = (
+				077CDB9F1B34DD4900DCC74A /* StateMachine */,
 				07A24AFF1B3320700021BFA0 /* Font */,
 				4FA35D3D1B31DB9700E6731A /* Screen */,
+				077CDBA31B34DF5C00DCC74A /* Cards */,
 				4FA35D3C1B31DB1300E6731A /* Combat */,
 				18F7B3D11B2B45420033AACA /* Hero */,
 				18F7B3CC1B2B3EEA0033AACA /* Equipment */,
@@ -242,6 +350,7 @@
 				4F2C19A41B272FBC00F95BB7 /* Images.xcassets */,
 				4F2C19A61B272FBC00F95BB7 /* LaunchScreen.xib */,
 				4F2C19921B272FBC00F95BB7 /* Supporting Files */,
+				077CDBD71B3509A700DCC74A /* OrganizacaoDoCodigo */,
 			);
 			path = AsAventurasDeMMM;
 			sourceTree = "<group>";
@@ -289,15 +398,10 @@
 		4FA35D3C1B31DB1300E6731A /* Combat */ = {
 			isa = PBXGroup;
 			children = (
-				4FA35D381B30A85E00E6731A /* CardContainer.h */,
-				4FA35D391B30A85E00E6731A /* CardContainer.m */,
-				072268961B3069CF0090E354 /* deck.h */,
 				1868D41F1B31EF5F00B608E8 /* CombatState.h */,
 				4FA35D351B30A28A00E6731A /* CardCombatController.h */,
 				4FA35D361B30A28A00E6731A /* CardCombatController.m */,
 				07A24AFE1B3300170021BFA0 /* IsAPlayerProtocol.h */,
-				079029D41B33426400B25376 /* CardSpriteFactory.h */,
-				079029D51B33426400B25376 /* CardSpriteFactory.m */,
 			);
 			name = Combat;
 			sourceTree = "<group>";
@@ -402,6 +506,7 @@
 				4F2C19A81B272FBC00F95BB7 /* LaunchScreen.xib in Resources */,
 				07C6B87C1B28A5A200156D74 /* pattern.level in Resources */,
 				07C6B87B1B28A5A200156D74 /* model1.level in Resources */,
+				077CDBD81B3509A700DCC74A /* OrganizacaoDoCodigo in Resources */,
 				07A24B011B3320830021BFA0 /* I-pixel-u.ttf in Resources */,
 				4F2C19A51B272FBC00F95BB7 /* Images.xcassets in Resources */,
 				180C92E01B30641D00270553 /* RegrasPoker in Resources */,
@@ -428,30 +533,47 @@
 				079029D61B33426400B25376 /* CardSpriteFactory.m in Sources */,
 				18F7B3D01B2B40300033AACA /* Hero.swift in Sources */,
 				187366F11B27379E006B539B /* Monster.swift in Sources */,
+				077CDBCA1B34E4FC00DCC74A /* Card.m in Sources */,
+				077CDBCD1B34EB9600DCC74A /* TradeOneState.m in Sources */,
+				077CDBAC1B34E1CD00DCC74A /* FirstBettingState.m in Sources */,
+				077CDBC11B34E27500DCC74A /* CombatEndState.m in Sources */,
+				077CDBBE1B34E26500DCC74A /* DamageState.m in Sources */,
+				077CDBD01B34EBAA00DCC74A /* TradeOneWaitState.m in Sources */,
 				07C6B87A1B28A5A200156D74 /* LevelGenerator.m in Sources */,
 				1853A6421B287F4B0040C305 /* StatsEffects.swift in Sources */,
+				077CDBD61B34EBDB00DCC74A /* TradeTwoWaitState.m in Sources */,
+				077CDBB51B34E23D00DCC74A /* SecondBettingState.m in Sources */,
 				1853A63E1B2870120040C305 /* Weapon.swift in Sources */,
+				077CDBA91B34E1BB00DCC74A /* PreRoundState.m in Sources */,
 				4FA35D341B30584E00E6731A /* TileFactory.swift in Sources */,
 				4FA35D3A1B30A85E00E6731A /* CardContainer.m in Sources */,
 				4F2C19C21B2B1B3500F95BB7 /* WallTile.swift in Sources */,
+				077CDBC71B34E4AF00DCC74A /* GameDeck.m in Sources */,
 				18DDEA561B29C47300255FD9 /* Tile.swift in Sources */,
 				18F7B3D31B2B455E0033AACA /* HeroTile.swift in Sources */,
 				4F2C19BE1B28A28F00F95BB7 /* MapNode.swift in Sources */,
 				070039E11B33E33C00BAD821 /* pokerButtonPad.m in Sources */,
+				077CDBC41B34E48D00DCC74A /* Hand.m in Sources */,
 				07A24AFD1B32EE620021BFA0 /* PathFinder.m in Sources */,
+				077CDBD31B34EBD100DCC74A /* TradeTwoState.m in Sources */,
 				187366F21B27379E006B539B /* MonsterFactory.swift in Sources */,
 				4F2C19A01B272FBC00F95BB7 /* GameViewController.m in Sources */,
 				4F2C19981B272FBC00F95BB7 /* AppDelegate.m in Sources */,
 				18F7B3CE1B2B3F040033AACA /* MonsterTile.swift in Sources */,
 				187366F31B27379E006B539B /* TimePeriodsEnum.swift in Sources */,
+				077CDBBB1B34E25D00DCC74A /* ShowdownState.m in Sources */,
 				18DDEA5A1B29C5BE00255FD9 /* DoorTile.swift in Sources */,
 				4FA35D371B30A28A00E6731A /* CardCombatController.m in Sources */,
 				4F2C199B1B272FBC00F95BB7 /* GameScene.m in Sources */,
+				077CDBA21B34DD7D00DCC74A /* AbstractState.m in Sources */,
 				079062E71B31C0260098F717 /* InitialScreen.m in Sources */,
+				077CDBA61B34E1AC00DCC74A /* PreCombatState.m in Sources */,
 				079029D31B333D2300B25376 /* CombateScene.m in Sources */,
 				4F2C19951B272FBC00F95BB7 /* main.m in Sources */,
+				077CDBB81B34E24E00DCC74A /* WaitSecondBetState.m in Sources */,
 				078AC4561B2B110B00914F33 /* AnalogGesture.m in Sources */,
 				072268951B3059950090E354 /* buttonPad.m in Sources */,
+				077CDBAF1B34E1FA00DCC74A /* WaitFirstBetState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

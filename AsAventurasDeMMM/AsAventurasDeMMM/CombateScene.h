@@ -10,15 +10,15 @@
 #import "AsAventurasDeMMM-Swift.h"
 #import "pokerButtonPad.h"
 
-@interface CombateScene : SKScene <pokerButtonPadDelegate>
+@interface CombateScene : SKScene
 
-- (instancetype)initWithSize:(CGSize)size andWithHero:(Hero *)myHero andMonster:(Monster *) myMonster;
+- (instancetype)initWithSize:(CGSize)size andWithHeroTile:(HeroTile *)myHero andMonsterTile:(MonsterTile *) myMonster;
 - (void) updateHandsWithHeroHand:(NSMutableArray *)heroHand andMonsterHand:(NSMutableArray *)monsterHand;
 
 @property Hero * player1;
 @property Monster * player2;
 
-@property SKScene * parentGambi;
+@property SKScene * parentScene;
 
 @property HeroTile * tile1;
 @property MonsterTile *tile2;

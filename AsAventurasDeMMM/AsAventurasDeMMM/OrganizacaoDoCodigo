@@ -1,0 +1,16 @@
+Seguinte povo,
+
+Pensei em criar a maquina de estados funcionando da seguinte forma:
+
+A CombatScene fica reponsavel so pela inicializacao da cena a manutencao da parte grafica.
+    Ela eh criada e instancia um combatController que vai cuidar do combate.
+
+O combat controller possui uma maquina de estados que vai funcionar assim: criei uma caralhada de classe que herda de abstractState, tem que definir o metodo run state de cada uma, eu vou chamar o run state, no fim do run state o estado sera modificado e ou sera dada uma notificacao pro controller chamar o proximo estado, ou, no caso de um player humano, atribui-se o delegate dos botoes e no clique dos botoes se desatribui o delegate e manda a notificacao pra proseguir c a maq de estados.
+    No fim da maquina uma notificacao eh enviada pra scene chamar o jogo de volta.
+    A maquina de estados recebe um id<IsAPlayerProtocol>, pra ficar mais maleavel, então todo getter de variaveis dos players teriam que ser definidos no protocolo e codados na classe que aplica o protocolo
+
+Criei classes para o baralho, pra facilitar criar animacoes depois, de virar a carta, movimentar etc... dai eh mudar as clases que usam isso e implementar, deixei alguns metodos la ja declarados.
+
+A ideia é a Scene ficar só com a parte visual, o CombatController só com o poker e as classes do baralho gerenciar o baralho.
+
+Acho que é isso.

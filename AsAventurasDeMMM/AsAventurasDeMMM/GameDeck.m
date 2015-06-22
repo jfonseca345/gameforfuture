@@ -12,7 +12,6 @@
 
 @property NSMutableArray * deckArray;
 
-
 @end
 
 @implementation GameDeck
@@ -20,7 +19,7 @@
 - (instancetype)init
 {
     self = [super init];
-    
+    self.deckArray = [NSMutableArray array];
     if (self)
     {
         for (int n = 0; n < numberCount; n++) {
@@ -32,6 +31,7 @@
                 [self.deckArray addObject:card];
             }
         }
+        [self Shuffle];
     }
     
     return self;
@@ -49,22 +49,17 @@
     }
 }
 
-- (void) DistributetoHand1: (Hand*)hand1 andHand2:(Hand *)hand2
+- (Hand*) DistributetoHand
 {
-    NSMutableArray * tempHand1 = [NSMutableArray alloc];
-    NSMutableArray * tempHand2 = [NSMutableArray alloc];
+    NSMutableArray * tempHand1 = [NSMutableArray array];
     for(int i=0; i<5; i++)
     {
-        //Deals a card to the player
+        //Deals a card
         CardContainer *card = [self DrawCard];
         [tempHand1 addObject:card];
-        
-        //Deals a card to the monster
-        card = [self DrawCard];
-        [tempHand2 addObject:card];
     }
-    hand1 = [[Hand alloc] initWithArray:tempHand1];
-    hand2 = [[Hand alloc] initWithArray:tempHand2];
+    Hand* hand = [[Hand alloc] initWithArray:tempHand1];
+    return hand;
 }
 
 - (CardContainer *) DrawCard;

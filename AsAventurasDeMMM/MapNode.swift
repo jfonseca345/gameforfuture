@@ -19,7 +19,7 @@ class MapNode: SKSpriteNode {
     @objc(initWithBackgroundTexture:)
     init(backgroundTexture:SKTexture){
         
-        super.init(texture: backgroundTexture, color: UIColor.clearColor(), size: backgroundTexture.size())
+        super.init(texture: nil, color: UIColor.clearColor(), size: backgroundTexture.size())
         let camera = SKSpriteNode()
         camera.position = CGPoint(x: 320, y: 320)
         camera.name = "camera"
@@ -196,7 +196,7 @@ class MapNode: SKSpriteNode {
         case "@", "-":
             return true
         
-        case "=", "9", "8":
+        case "=", "9", "8", "x":
             return true
             
         case "2", "3", "4":

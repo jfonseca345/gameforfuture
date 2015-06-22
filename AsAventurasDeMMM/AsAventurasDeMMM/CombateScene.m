@@ -53,7 +53,7 @@
 
 - (void)setup //Adiciona todas firulas graficas do jogo
 {
-    self.combatController = [[CardCombatController alloc] init];
+    self.combatController = [[CardCombatController alloc] initWithHero:self.player1 andMonster:self.player2];
     [self.combatController prepareGame];
     
     self.P1HandView = self.combatController.P1Hand;
@@ -68,10 +68,10 @@
     [self addChild:self.P2HandView];
     
 //    self.P1Avatar = [self avatarWithImage:self.tile1.texture];
-    self.P1Avatar = [self avatarWithImage:((SKSpriteNode *)self.P1HandView.children[0]).texture];
-    [self.P1Avatar setPosition:CGPointMake(((SKSpriteNode *)self.P1HandView.children[0]).position.x, self.frame.size.height/2 - self.P1Avatar.size.height/2)];
+    self.P1Avatar = [self avatarWithImage:self.tile1.texture];
+    [self.P1Avatar setPosition:CGPointMake(((SKSpriteNode *)self.P1HandView.children[0]).position.x-100, self.frame.size.height/2 - self.P1Avatar.size.height/2)];
     self.P2Avatar = [self avatarWithImage:self.tile2.texture];
-    [self.P2Avatar setPosition:CGPointMake(((SKSpriteNode *)self.P2HandView.children[0]).position.x, self.frame.size.height/2 - self.P1Avatar.size.height/2)];
+    [self.P2Avatar setPosition:CGPointMake(((SKSpriteNode *)self.P2HandView.children[0]).position.x+100, self.frame.size.height/2 - self.P2Avatar.size.height/2)];
     
     [self addChild:self.P1Avatar];
     [self addChild:self.P2Avatar];
@@ -117,7 +117,7 @@
 
 - (SKSpriteNode * )avatarWithImage:(SKTexture *)image
 {
-    SKSpriteNode * avatar = [[SKSpriteNode alloc] initWithTexture:image color:nil size:CGSizeMake(120, 120)];
+    SKSpriteNode * avatar = [[SKSpriteNode alloc] initWithTexture:image color: [UIColor clearColor] size:CGSizeMake(120, 120)];
     [avatar setAnchorPoint:CGPointMake(0.5, 0.5)];
     [avatar setScale:2];
     return avatar;

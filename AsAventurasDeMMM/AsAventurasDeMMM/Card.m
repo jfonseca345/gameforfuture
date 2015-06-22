@@ -30,7 +30,7 @@
         self.selectable = false;
         self.cardUp = [CardSpriteFactory CardNodeWithNumber:[container number] andSuit:[container suit]];
         [self.cardUp setColor:[UIColor redColor]];//Cor para quando
-        self.cardDown = [SKSpriteNode nodeWithFileNamed:@"card_cover"];
+        self.cardDown = [SKSpriteNode spriteNodeWithImageNamed:@"card_cover"];
         
         [self addChild:self.cardUp];
         [self addChild:self.cardDown];

@@ -19,14 +19,16 @@
     }
 }
 
-- (instancetype)initWithArray:(NSArray *)handArray
+- (instancetype)initWithArray:(NSMutableArray *)handArray
 {
     self = [super init];
     
     if (self){
         int i;
-        long newSize = [self.handCards count];
+        long newSize = [handArray count];
         long cardPosition = (newSize * 128/4);
+        self.handCards = [NSMutableArray array];
+        
         for (i = 0; i < newSize; i++)
         {
             Card * newCard = [[Card alloc] initWithCardContainer:[handArray objectAtIndex:i]];

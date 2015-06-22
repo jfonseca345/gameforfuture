@@ -40,7 +40,8 @@
     self.player = myHero;
     self.monster = myMonster;
     
-    [self.gameDeck DistributetoHand1:self.P1Hand andHand2:self.P2Hand];
+    self.P1Hand = [self.gameDeck DistributetoHand];
+    self.P2Hand = [self.gameDeck DistributetoHand];
     
     self.gameState = PRE_COMBAT;
     
@@ -71,7 +72,8 @@
 -(void) prepareGame;
 {
     [self prepareRound];
-    [self.gameDeck DistributetoHand1:self.P1Hand andHand2:self.P2Hand];
+    self.P1Hand = [self.gameDeck DistributetoHand];
+    self.P2Hand = [self.gameDeck DistributetoHand];
     
 }
 

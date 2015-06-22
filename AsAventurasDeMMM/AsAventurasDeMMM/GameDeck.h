@@ -15,7 +15,7 @@
 @interface GameDeck : NSObject
 
 - (void) Shuffle;
-- (void) DistributetoHand1: (Hand *)hand1 andHand2:(Hand *)hand2;
+- (Hand*) DistributetoHand;
 - (CardContainer *) DrawCard;
 - (void) restartAndShuffle;
 

@@ -54,9 +54,11 @@
 - (void)setup //Adiciona todas firulas graficas do jogo
 {
     self.combatController = [[CardCombatController alloc] init];
+    [self.combatController prepareGame];
     
-    self.P1HandView = [self handSpriteWithArray:self.combatController.playerHand];
-    self.P2HandView = [self handSpriteWithArray:self.combatController.monsterHand];
+    self.P1HandView = self.combatController.P1Hand;
+    self.P2HandView = self.combatController.P2Hand;
+    
     [self setAnchorPoint:CGPointMake(0.5, 0.5)];
     
     [self.P1HandView setPosition:CGPointMake(-self.frame.size.width/2 + 128/2, -self.frame.size.height/2 + CARD_DISTANCE*4)];

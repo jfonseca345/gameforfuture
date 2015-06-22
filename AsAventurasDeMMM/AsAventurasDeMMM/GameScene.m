@@ -13,7 +13,7 @@
 
 @interface GameScene()
 
-
+//@property CardCombatController * cardCombatController;
 
 @end
 
@@ -55,8 +55,7 @@
     gameAnalogic = [[AnalogGesture alloc] initWithTarget:self action:@selector(directionChanged:) scene:self];
     [self.view addGestureRecognizer:gameAnalogic];
     
-    CardCombatController* cardCombatController = [[CardCombatController alloc] init];
-    [cardCombatController shuffleCards];
+//    self.cardCombatController = [[CardCombatController alloc] init];
     
     buttonPad * btp;
     btp = [[buttonPad alloc] init];

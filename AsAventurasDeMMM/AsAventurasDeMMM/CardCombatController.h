@@ -33,26 +33,26 @@
 
 
 @property GameDeck * gameDeck;
-@property (strong, nonatomic) NSMutableArray* deck;//Remover quando arrumar deck
-@property int drawCounter;
+//@property (strong, nonatomic) NSMutableArray* deck;//Remover quando arrumar deck
+//@property int drawCounter;
 
--(CardContainer*) drawCard;//Deve ser implementado no deck
--(void) shuffleCards;//Deve ser implementado no deck
+//-(CardContainer*) drawCard;//Deve ser implementado no deck
+//-(void) shuffleCards;//Deve ser implementado no deck
 
 #pragma mark Hand Atributes
 @property Hand * P1Hand;
 @property Hand * P2Hand;
 
-@property (strong, nonatomic) NSMutableArray* playerHand;//Remover posteriormente, quando arrumar hand
-@property (strong, nonatomic) NSMutableArray* monsterHand;
+//@property (strong, nonatomic) NSMutableArray* playerHand;//Remover posteriormente, quando arrumar hand
+//@property (strong, nonatomic) NSMutableArray* monsterHand;
 
 #pragma mark Game Managements Methods and Attributes
 
 @property int pot;
 
--(void) prepareGame: (Hero*)withHero : (Monster*)andMonster;
+-(void) prepareGame;
 -(void) prepareRound;
--(void) tradeCards: (int)playerCardsToTrade : (int)monsterCardsToTrade;
+-(void) tradeCardsP1: (int)player1CardsToTrade P2:(int) player2CardsToTrade;
 -(void) showDown: (NSMutableArray*)playerHand : (NSMutableArray*) monsterHand;
 
 

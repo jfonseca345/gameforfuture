@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
+#import "Card.h"
 
-@interface Hand : NSObject
+@interface Hand : SKNode
+
+@property NSMutableArray * handCards;
 
 - (void) flipCards;
-
 - (instancetype)initWithArray:(NSArray *)handArray;
-
+- (int)selectedCardsBitMask;
 @end

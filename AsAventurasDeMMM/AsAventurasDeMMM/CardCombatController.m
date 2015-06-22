@@ -33,24 +33,14 @@
 {
     self = [super init];
     
-    self.drawCounter = 1;
-    self.deck = [NSMutableArray array];
+//    self.drawCounter = 1;
+//    self.deck = [NSMutableArray array];
+    self.gameDeck = [[GameDeck alloc] init];
     
     self.player = myHero;
     self.monster = myMonster;
     
-    self.playerHand = [NSMutableArray array];
-    self.monsterHand = [NSMutableArray array];
-    
-    for (int n = 0; n < numberCount; n++) {
-        for (int s = 0; s < suitCount; s++) {
-            CardContainer *card = [[CardContainer alloc] init];
-            card.number = (gameDeckNumber) n;
-            card.suit = (gameDeckSuit) s;
-            
-            [self.deck addObject:card];
-        }
-    }
+    [self.gameDeck DistributetoHand1:self.P1Hand andHand2:self.P2Hand];
     
     self.gameState = PRE_COMBAT;
     
@@ -78,9 +68,10 @@
 #pragma mark Game Managements Methods
 
 //Prepares the game, 
--(void) prepareGame: (Hero*)Hero : (Monster*)Monster;
+-(void) prepareGame;
 {
     [self prepareRound];
+    [self.gameDeck DistributetoHand1:self.P1Hand andHand2:self.P2Hand];
     
 }
 
@@ -94,31 +85,32 @@
     self.currentBet = 1;
     
     //Shuffles the deck
-    [self shuffleCards];
+    [self.gameDeck restartAndShuffle];
+//    [self shuffleCards];
     
     //Init both move strings
     self.playerMove = NULL;
     self.monsterMove = NULL;
     
-    [self.playerHand removeAllObjects];
-    [self.monsterHand removeAllObjects];
+//    [self.playerHand removeAllObjects];
+//    [self.monsterHand removeAllObjects];
     
     //Deals both hands
     for(int i=0; i<5; i++)
     {
         //Deals a card to the player
-        CardContainer *card = [self drawCard];
-        [self.playerHand addObject:card];
+//        CardContainer *card = [self drawCard];
+//        [self.playerHand addObject:card];
         
         //Deals a card to the monster
-        card = [self drawCard];
-        [self.monsterHand addObject:card];
+//        card = [self drawCard];
+//        [self.monsterHand addObject:card];
     }
     
 }
 
 //Trade cards from both hands, the argument has the indexes of the cards to be traded
--(void) tradeCards: (int)playerCardsToTrade : (int) monsterCardsToTrade
+-(void) tradeCardsP1: (int)player1CardsToTrade P2:(int) player2CardsToTrade
 {
     
     int tradeMask = 0b00001;
@@ -126,73 +118,73 @@
     //We start by trading the players cards
     for(int i=0 ;i<5;i++)
     {
-        if(playerCardsToTrade && tradeMask)
+        if(player1CardsToTrade && tradeMask)
         {
             //We can trade that index
-            [self.playerHand removeObjectAtIndex:i];
-            [self.playerHand addObject:[self drawCard]];
+            [self.P1Hand.handCards removeObjectAtIndex:i];
+            [self.P1Hand.handCards addObject:[self.gameDeck DrawCard]];
         }
         //Shift the player mask
-        playerCardsToTrade = playerCardsToTrade >> 1;
+        player1CardsToTrade = player1CardsToTrade >> 1;
     }
     
     for(int i=0; i<5; i++)
     {
-        if(monsterCardsToTrade && tradeMask)
+        if(player2CardsToTrade && tradeMask)
         {
             //We can trade that index
-            [self.monsterHand removeObjectAtIndex:i];
-            [self.monsterHand addObject:[self drawCard]];
+            [self.P2Hand.handCards removeObjectAtIndex:i];
+            [self.P2Hand.handCards addObject:[self.gameDeck DrawCard]];
         }
         //Shift the monster mask
-        monsterCardsToTrade = monsterCardsToTrade >> 1;
+        player2CardsToTrade = player2CardsToTrade >> 1;
     }
 }
 
 #pragma mark Deck Manipulation Methods
 //Shuffles the deck
--(void) shuffleCards{
-    //NSLog(@"InitialConfiguration:");
-    for(int i = 0; i < [self.deck count]; i++){
-//        NSLog([NSString stringWithFormat:@"%@",[self.deck[i] description]]);
-    }
-    
-    for(int i = 0; i < [self.deck count]; i++){
-        int j = arc4random_uniform((u_int32_t) self.deck.count);
-        
-        NSObject* auxiliarSwap = self.deck[i];
-        self.deck[i] = self.deck[j];
-        self.deck[j] = auxiliarSwap;
-        
-    }
-    
-   // NSLog(@"shuffledConfiguration:");
-    for(int i = 0; i < [self.deck count]; i++){
-//        NSLog([NSString stringWithFormat:@"%@",[self.deck[i] description]]);
-    }
-    
-    //Resets the drawCounter
-    self.drawCounter = 1;
-}
+//-(void) shuffleCards{
+//    //NSLog(@"InitialConfiguration:");
+//    for(int i = 0; i < [self.deck count]; i++){
+////        NSLog([NSString stringWithFormat:@"%@",[self.deck[i] description]]);
+//    }
+//    
+//    for(int i = 0; i < [self.deck count]; i++){
+//        int j = arc4random_uniform((u_int32_t) self.deck.count);
+//        
+//        NSObject* auxiliarSwap = self.deck[i];
+//        self.deck[i] = self.deck[j];
+//        self.deck[j] = auxiliarSwap;
+//        
+//    }
+//    
+//   // NSLog(@"shuffledConfiguration:");
+//    for(int i = 0; i < [self.deck count]; i++){
+////        NSLog([NSString stringWithFormat:@"%@",[self.deck[i] description]]);
+//    }
+//    
+//    //Resets the drawCounter
+//    self.drawCounter = 1;
+//}
 
 
 //Draws a card from the deck
--(CardContainer*) drawCard{
-    
-    //If the deck is empty
-    if(self.drawCounter == self.deck.count-1)
-    {
-        NSLog(@"\nErro, deck vazio");
-        return NULL;
-    }
-    
-    //Picks the last card and changes the drawCounter, making the last card inaccessible from the deck
-    CardContainer *card = [self.deck objectAtIndex: (self.deck.count-self.drawCounter)];
-    self.drawCounter++;
-    
-    return card;
-    
-}
+//-(CardContainer*) drawCard{
+//    
+//    //If the deck is empty
+//    if(self.drawCounter == self.deck.count-1)
+//    {
+//        NSLog(@"\nErro, deck vazio");
+//        return NULL;
+//    }
+//    
+//    //Picks the last card and changes the drawCounter, making the last card inaccessible from the deck
+//    CardContainer *card = [self.deck objectAtIndex: (self.deck.count-self.drawCounter)];
+//    self.drawCounter++;
+//    
+//    return card;
+//    
+//}
 
 
 

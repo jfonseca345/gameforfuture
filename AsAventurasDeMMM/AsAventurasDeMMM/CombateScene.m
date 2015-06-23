@@ -15,8 +15,8 @@
 @property SKSpriteNode * P1Avatar;
 @property SKSpriteNode * P2Avatar;
 
-@property SKNode * P1HandView;
-@property SKNode * P2HandView;
+@property Hand * P1HandView;
+@property Hand * P2HandView;
 
 @property SKNode * DeckView;
 @property SKNode * Table;
@@ -63,6 +63,8 @@
     
     [self.P1HandView setPosition:CGPointMake(-self.frame.size.width/2 + 128/2, -self.frame.size.height/2 + CARD_DISTANCE*4)];
     [self.P2HandView setPosition:CGPointMake(self.frame.size.width/2 - 128/2, -self.frame.size.height/2 + CARD_DISTANCE*4)];
+    
+    [self.P2HandView flipCards];
     
     [self addChild:self.P1HandView];
     [self addChild:self.P2HandView];
